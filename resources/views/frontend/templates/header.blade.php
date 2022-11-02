@@ -25,31 +25,31 @@
                         <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-200 menu-state-title-warning nav nav-flush fs-5 fw-semibold"
                             id="kt_landing_menu">
                             <div class="menu-item">
-                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body"
+                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#lineup"
                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                     Lineup
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#kt_body"
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#rundown"
                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                     Jadwal
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#kt_body"
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ticket"
                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                     Tiket
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#kt_body"
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#news"
                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                     News
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#kt_body"
+                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#merchandise"
                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                     Merchandise
                                 </a>

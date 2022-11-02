@@ -26,6 +26,15 @@
                     class="menu-item py-2">
                     <a href="#" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
+                            <i class="fa-light fa-file-invoice-dollar fa-2x"></i>
+                        </span>
+                        <div class="menu-title">Verifikasi</div>
+                    </a>
+                </div>
+                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
+                    class="menu-item py-2">
+                    <a href="#" class="menu-link menu-center flex-column">
+                        <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-ticket fa-2x"></i>
                         </span>
                         <div class="menu-title">Transaksi</div>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mb-12">
-                        <div class="fs-4x text-base font-title ls-4 mb-7" id="tiket"
+                        <div class="fs-4x text-base font-title ls-4 mb-7" id="ticket"
                             data-kt-scroll-offset="{default: 100, lg: 150}">
                             TIKET
                         </div>
