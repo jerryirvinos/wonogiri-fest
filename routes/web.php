@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('frontend.landing');
 });
 
-Route::get('/admin', function () {
-    return view('templates.master');
+Route::get('/admin/user', function () {
+    return view('user.index');
+});
+
+Route::get('/admin/ticket', function () {
+    return view('ticket.index');
 });
