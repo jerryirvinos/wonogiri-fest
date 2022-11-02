@@ -1,0 +1,86 @@
+.bg-header {
+    background-color: rgba(10, 9, 9, 1) !important;
+}
+
+.bg-base {
+    background-color: rgba(7, 78, 159, 1) !important;
+}
+
+.bg-tagline {
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.overlay .overlay-custom {
+    opacity:100 !important;
+}
+
+.font-title {
+    font-family: Ultra !important;
+}
+
+.bg-ticket {
+    background-color: rgba(132, 207, 202, 1) !important;
+}
+
+.text-base {
+    color: #074E9F !important;
+}
+
+.text-base-2 {
+    color: #FEC012 !important;
+}
+
+.btn-primary-custom{
+    color:#fff;
+    background-color:#074E9F !important;
+    border-color:#074E9F !important;
+}
+.btn-primary-custom:hover{
+    color:#fff !important;
+    background-color:#06448a !important;
+    border-color:#063b77 !important;
+}
+.btn-primary-custom.focus,.btn-primary-custom:focus{
+    color:#fff !important;
+    background-color:#06448a !important;
+    border-color:#063b77 !important;
+    box-shadow:0 0 0 .2rem rgba(38,143,255,.5) !important;
+}
+.btn-primary-custom.disabled,.btn-primary-custom:disabled{
+    color:#fff !important;
+    background-color:#074E9F !important;
+    border-color:#074E9F !important;
+}
+.btn-primary-custom:not(:disabled):not(.disabled).active,.btn-primary-custom:not(:disabled):not(.disabled):active,.show>.btn-primary-custom.dropdown-toggle{
+    color:#fff !important;
+    background-color:#063b77 !important;
+    border-color:#005cbf !important;
+}
+.btn-primary-custom:not(:disabled):not(.disabled).active:focus,.btn-primary-custom:not(:disabled):not(.disabled):active:focus,.show>.btn-primary-custom.dropdown-toggle:focus{
+    box-shadow:0 0 0 .2rem rgba(38,143,255,.5) !important;
+}
+
+[data-kt-sticky-landing-header=on] .landing-header {
+    background-color: rgba(10, 9, 9, 0.75) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+[data-kt-sticky-landing-header=on] .landing-header .menu .menu-link.active {
+    color: #FEC012 !important;
+    background-color: rgba(239,242,245,.4);
+    font-weight: 500 !important ;
+}
+
+/* ACTIVE */
+.aside .aside-menu .menu>.menu-item.here>.menu-link .menu-icon, .aside .aside-menu .menu>.menu-item>.menu-link.active .menu-icon {
+    background-color: rgba(254, 192, 18, 1) !important;
+}
+.menu-state-icon-primary .menu-item .menu-link.active .menu-icon, .menu-state-icon-primary .menu-item .menu-link.active .menu-icon .svg-icon, .menu-state-icon-primary .menu-item .menu-link.active .menu-icon i {
+    color: #ffffff !important;
+}
+.menu-state-primary .menu-item .menu-link.active .menu-title {
+    color: #3F4254 !important;
+    font-weight: 800 !important;
+}
+
+/* DEFAULT */
