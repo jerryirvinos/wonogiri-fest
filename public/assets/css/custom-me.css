@@ -92,3 +92,17 @@
     color: rgba(7, 78, 159, 1) !important;
     background-color: rgba(7, 78, 159, .2)  !important;
 }
+
+.scrolltop-custom{
+    background-color: rgba(254, 192, 18, .4) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+[data-kt-scrolltop=on] .scrolltop {
+    opacity: .95;
+}
+
+.symbol .symbol-label.symbol-label-fit {
+    background-size: contain !important;
+    background-color: transparent !important;
+}
