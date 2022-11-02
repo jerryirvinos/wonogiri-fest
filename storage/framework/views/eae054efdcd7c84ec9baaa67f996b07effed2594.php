@@ -17,7 +17,11 @@
                 </div>
                 <div class="col-lg-7 col-sm-12">
                     <div class="card-rounded ratio ratio-16x9 ms-3 rounded-4">
-                        <iframe src="https://www.youtube.com/embed/HJ3RNhoI24A?enablejsapi=1&amp;origin=https%3A%2F%2Fpreview.keenthemes.com" title="Testing" allowfullscreen="allowfullscreen" class="rounded" data-gtm-yt-inspected-11="true" id="735931893" data-gtm-yt-inspected-31871541_91="true"></iframe>
+                        <iframe
+                            src="https://www.youtube.com/embed/HJ3RNhoI24A?enablejsapi=1&amp;origin=https%3A%2F%2Fpreview.keenthemes.com"
+                            title="Themeforest Licenses and Support - Metronic Admin Theme"
+                            allowfullscreen="allowfullscreen" class="rounded" data-gtm-yt-inspected-11="true"
+                            id="735931893" data-gtm-yt-inspected-31871541_91="true"></iframe>
                     </div>
                 </div>
             </div>

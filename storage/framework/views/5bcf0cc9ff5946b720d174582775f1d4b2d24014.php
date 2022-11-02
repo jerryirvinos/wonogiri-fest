@@ -19,13 +19,12 @@
                     <div class="card-rounded ratio ratio-16x9 ms-3 rounded-4">
                         <iframe
                             src="https://www.youtube.com/embed/HJ3RNhoI24A?enablejsapi=1&amp;origin=https%3A%2F%2Fpreview.keenthemes.com"
-                            title="Themeforest Licenses and Support - Metronic Admin Theme"
-                            allowfullscreen="allowfullscreen" class="rounded" data-gtm-yt-inspected-11="true"
-                            id="735931893" data-gtm-yt-inspected-31871541_91="true"></iframe>
+                            title="Testing" allowfullscreen="allowfullscreen" class="rounded"
+                            data-gtm-yt-inspected-11="true" id="735931893"
+                            data-gtm-yt-inspected-31871541_91="true"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<?php /**PATH /Users/yeremiasatrio/Project/wonogiri-fest/resources/views/frontend/home/youtube.blade.php ENDPATH**/ ?>
+</section><?php /**PATH E:\project\wonogirifest\resources\views/frontend/home/youtube.blade.php ENDPATH**/ ?>
