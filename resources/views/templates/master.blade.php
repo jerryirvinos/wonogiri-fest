@@ -9,6 +9,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Wonogiri Fest" />
     <meta name="keywords" content="Wonogiri Fest" />
+    <meta name="_token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="Wonogiri Fest" />
     <meta property="og:url" content="https://wonogirifest.co.id" />
@@ -50,13 +51,13 @@
                     <div class="container-xxl" id="kt_content_container">
                         <div class="row g-5 g-xl-8">
                             @hasSection('content-dasboard')
-                            @yield('content-dasboard')
+                                @yield('content-dasboard')
                             @else
-                            <div class="card">
-                                <div class="card-body p-0">
-                                    @yield('content')
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        @yield('content')
+                                    </div>
                                 </div>
-                            </div>
                             @endif
                         </div>
                     </div>
