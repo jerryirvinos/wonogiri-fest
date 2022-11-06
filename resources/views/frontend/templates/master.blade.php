@@ -43,6 +43,21 @@
     <script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
     <script src="{{ asset('/assets/plugins/custom/fontawesome/js/all.min.js') }}"></script>
     @yield('scripts')
+    @if (session('success'))
+        <script>
+            $(document).ready(function() {
+                toastr.success("{{ session('success') }}");
+            });
+        </script>
+    @endif
+
+    @if (session('warning'))
+        <script>
+            $(document).ready(function() {
+                toastr.warning("{{ session('warning') }}");
+            });
+        </script>
+    @endif
 </body>
 
 </html>

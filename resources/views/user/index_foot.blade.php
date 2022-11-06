@@ -39,16 +39,25 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var html = `<span class="badge badge-light-primary-custom rounded-pill px-6 py-3">
-                                        <span class="fs-6 fw-bold">` + (row.status) ? 'Aktif' : 'Tidak Aktif' + `</span>
-                                    </span>`;
+                        var stt = 'Tidak Aktif';
+                        if (row.status) {
+                            stt = 'Aktif';
+                        }
+                        var html = `<div class="badge badge-light-primary-custom rounded-pill px-6 py-3">
+                                        <span class="fs-6 fw-bold">` + stt + `</span>
+                                    </div>`;
                         return html
                     },
                     orderable: false,
                 },
                 {
-                    name: "modified_by",
-                    data: "modified_by"
+                    render: function(data, type, row) {
+                        var html = `<div class="fs-6 fw-bold text-gray-600">` + row
+                            .modified_by +
+                            `</div>`;
+                        return html
+                    },
+                    orderable: false,
                 },
                 {
                     render: function(data, type, row) {
@@ -77,16 +86,12 @@
             ]
         });
 
-        const filterSearch = document.querySelector('[data-kt-docs-table-filter="search"]');
-        filterSearch.addEventListener('keyup', function(e) {
-            table.search(e.target.value).draw();
-        });
-
         $(".alert").fadeTo(2000, 500).slideUp(500, function() {
             $(".alert").slideUp(500);
         });
 
         $('#kt_datatable').on('click', '.delete', function(e) {
+            console.log('aa')
             e.preventDefault();
             var name = $(this).data('name');
 

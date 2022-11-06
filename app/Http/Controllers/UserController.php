@@ -23,14 +23,14 @@ class UserController extends Controller
             $start = $request->get("start");
             $rowperpage = $request->get("length"); // Rows display per page
 
-            $columnIndex_arr = $request->get('order');
-            $columnName_arr = $request->get('columns');
-            $order_arr = $request->get('order');
+            // $columnIndex_arr = $request->get('order');
+            // $columnName_arr = $request->get('columns');
+            // $order_arr = $request->get('order');
             $search_arr = $request->get('search');
 
-            $columnIndex = $columnIndex_arr[0]['column']; // Column index
-            $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
-            $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+            // $columnIndex = $columnIndex_arr[0]['column']; // Column index
+            // $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
+            // $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
             $totalRecords = DB::table('users')->count();
             $totalRecordswithFilter = DB::table('users')
@@ -50,7 +50,7 @@ class UserController extends Controller
                 })
                 ->skip($start)
                 ->take($rowperpage)
-                ->orderBy($columnName, $columnSortOrder)
+                // ->orderBy($columnName, $columnSortOrder)
                 ->get();
 
             $output = array(
@@ -149,7 +149,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $roles = Role::all();
+
+        return view('user.edit', compact('roles','user'));
     }
 
     /**
@@ -161,7 +164,51 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'identity_number' => 'required',
+                'address' => 'required',
+                'phone' => 'required',
+                'role' => 'required',
+            ],
+            [
+                'name.required' => 'Nama harus diisi!',
+                'identity_number.required' => 'Nomor identitas harus diisi!',
+                'address.required' => 'Alamat harus diisi!',
+                'phone.required' => 'Nomor Telphone harus diisi!',
+                'role.required' => 'Role harus diisi!',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $isExist = User::where('id', '!=' , $id)
+        ->where('identity_number', $request->input('identity_number'))->first();
+
+        if($isExist){
+            return redirect()->route('user.index')->with('warning', "Nomor Identitas sudah digunakan");
+        }
+
+        try {
+            $user = User::find($id);
+
+            $user->name =  strip_tags($request->input('name'));
+            $user->identity_number =  strip_tags($request->input('identity_number'));
+            $user->address =  strip_tags($request->input('address'));
+            $user->phone =  strip_tags($request->input('phone'));
+            $user->role =  strip_tags($request->input('role'));
+            $user->status =  true;
+
+            $user->save();
+            
+            return redirect()->route('user.index')->with('success', 'Berhasil Diubah');
+        } catch (\Exception $e) {
+            return redirect()->route('user.index')->with('warning', $e->getMessage());
+        }
     }
 
     /**
@@ -172,6 +219,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $user = User::find($id);
+
+            $user->delete();
+            return redirect()->route('user.index')->with('success', 'Berhasil Dihapus');
+        } catch (\Exception $e) {
+            return redirect()->route('user.index')->with('warning', $e->getMessage());
+        }
     }
 }
