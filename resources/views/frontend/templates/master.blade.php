@@ -26,11 +26,14 @@
     @yield('styles')
 </head>
 
-<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" class="bg-base position-relative">
+<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu"
+    class="{{ Request::segment(1) == '' ? 'bg-base' : 'bg-light' }} position-relative">
     <div class="d-flex flex-column flex-root">
         @include('frontend.templates.header')
         @yield('content')
-        @include('frontend.templates.footer')
+        @if (Request::segment(1) == '')
+            @include('frontend.templates.footer')
+        @endif
     </div>
     @include('frontend.templates.tools.scrolltop')
     <script>
@@ -40,6 +43,6 @@
     <script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
     <script src="{{ asset('/assets/plugins/custom/fontawesome/js/all.min.js') }}"></script>
     @yield('scripts')
-</body>\
+</body>
 
 </html>

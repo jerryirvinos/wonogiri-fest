@@ -1,4 +1,4 @@
-<div class="bg-header">
+<div class="{{ Request::segment(1) == '' ? 'bg-header' : 'bg-white' }}">
     <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
         data-kt-sticky-offset="{default: '200px', lg: '300px'}">
         <div class="container">
@@ -16,61 +16,67 @@
                     </a>
                 </div>
                 <div class="d-lg-block" id="kt_header_nav_wrapper">
-                    <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu"
-                        data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
-                        data-kt-drawer-width="200px" data-kt-drawer-direction="start"
-                        data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true"
-                        data-kt-swapper-mode="prepend"
-                        data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
-                        <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-200 menu-state-title-warning nav nav-flush fs-5 fw-semibold"
-                            id="kt_landing_menu">
-                            <div class="menu-item">
-                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#lineup"
-                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                    Lineup
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#rundown"
-                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                    Jadwal
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ticket"
-                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                    Tiket
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#news"
-                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                    News
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#merchandise"
-                                    data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                    Merchandise
-                                </a>
+                    @if (Request::segment(1) == '')
+                        <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu"
+                            data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+                            data-kt-drawer-width="200px" data-kt-drawer-direction="start"
+                            data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true"
+                            data-kt-swapper-mode="prepend"
+                            data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
+                            <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-200 menu-state-title-warning nav nav-flush fs-5 fw-semibold"
+                                id="kt_landing_menu">
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#lineup"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        Lineup
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#rundown"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        Jadwal
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ticket"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        Tiket
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#news"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        News
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#merchandise"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        Merchandise
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <div class="flex-equal text-end ms-1">
                     {{-- <a href="../../demo9/dist/authentication/layouts/basic/sign-in.html"
                         class="btn btn-success">Masuk</a> --}}
                     <a href="#" class="btn btn-icon">
-                        <i class="fa-brands fa-facebook fa-2x text-white text-hover-warning d-none d-lg-block"></i>
+                        <i
+                            class="fa-brands fa-facebook fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
                     </a>
                     <a href="#" class="btn btn-icon">
-                        <i class="fa-brands fa-twitter fa-2x text-white text-hover-warning d-none d-lg-block"></i>
+                        <i
+                            class="fa-brands fa-twitter fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
                     </a>
                     <a href="#" class="btn btn-icon">
-                        <i class="fa-brands fa-youtube fa-2x text-white text-hover-warning d-none d-lg-block"></i>
+                        <i
+                            class="fa-brands fa-youtube fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
                     </a>
                     <a href="#" class="btn btn-icon">
-                        <i class="fa-brands fa-instagram fa-2x text-white text-hover-warning d-none d-lg-block"></i>
+                        <i
+                            class="fa-brands fa-instagram fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
                     </a>
                 </div>
             </div>
