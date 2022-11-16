@@ -44,6 +44,7 @@ class UserSeeder extends Seeder
             'phone' => '082',
             'password' => Hash::make('wonogirifest'),
             'role' => 1,
+            'modified_by' => 'Programmer',
             'status' => true,
         ]);
     }

@@ -17,5 +17,5 @@ Route::get('/', function () {
 // });
 
 Route::get('/admin/ticket', function () {
-    return view('ticket.index');
+    return view('verification.index');
 });
