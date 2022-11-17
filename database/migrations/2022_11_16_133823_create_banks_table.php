@@ -18,6 +18,7 @@ class CreateBanksTable extends Migration
             $table->string('name');
             $table->string('account_number');
             $table->string('owner');
+            $table->string('logos');
             $table->boolean('status');
             $table->timestamps();
         });

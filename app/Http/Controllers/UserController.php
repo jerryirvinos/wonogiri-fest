@@ -22,15 +22,7 @@ class UserController extends Controller
             $draw = $request->get('draw');
             $start = $request->get("start");
             $rowperpage = $request->get("length"); // Rows display per page
-
-            // $columnIndex_arr = $request->get('order');
-            // $columnName_arr = $request->get('columns');
-            // $order_arr = $request->get('order');
             $search_arr = $request->get('search');
-
-            // $columnIndex = $columnIndex_arr[0]['column']; // Column index
-            // $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
-            // $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
             $totalRecords = DB::table('users')->count();
             $totalRecordswithFilter = DB::table('users')
@@ -50,7 +42,6 @@ class UserController extends Controller
                 })
                 ->skip($start)
                 ->take($rowperpage)
-                // ->orderBy($columnName, $columnSortOrder)
                 ->get();
 
             $output = array(

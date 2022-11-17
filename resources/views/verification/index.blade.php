@@ -12,7 +12,9 @@
                     User</span>
             </h3>
             <div class="card-toolbar">
-
+                <a href="{{ route('verification.create') }}" class="btn btn-lg btn-warning">
+                    <span class="fs-5 fw-bolder">Tambah</span>
+                </a>
             </div>
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
