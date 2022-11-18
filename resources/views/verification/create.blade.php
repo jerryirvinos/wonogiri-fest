@@ -22,23 +22,39 @@
                     id="kt_create_account_form">
                     @csrf
                     <div class="row">
-                        <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
+                        <div class="col-lg-6 col-sm-12 mb-10 mb-lg-2">
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">ID Identitas</label>
                                 <input type="number"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     min="0" maxlength="16" class="form-control form-control-lg"
-                                    name="identity_number" value="">
+                                    name="identity_number" placeholder="masukkan identitas" value="">
+                                <small class="text-danger">
+                                    @error('identity_number')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Nama Pembeli</label>
-                                <input type="text" class="form-control form-control-lg" name="name" value="">
+                                <input type="text" class="form-control form-control-lg" name="name"
+                                    placeholder="masukkan nama pembeli" value="">
+                                <small class="text-danger">
+                                    @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">No Handphone</label>
                                 <input type="text" class="form-control form-control-lg"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                    min="0" maxlength="13" name="phone" value="">
+                                    min="0" maxlength="13" placeholder="masukkan nohp" name="phone" value="">
+                                <small class="text-danger">
+                                    @error('phone')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Jenis</label>
@@ -51,11 +67,21 @@
                                             {{ $ticketType->name }}</option>
                                     @endforeach
                                 </select>
+                                <small class="text-danger">
+                                    @error('ticket_type')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Jumlah</label>
                                 <input type="number" name="qty" min="1" class="form-control form-control-lg"
-                                    value="">
+                                    placeholder="masukkan jumlah tiket" value="">
+                                <small class="text-danger">
+                                    @error('qty')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Total Harga</label>
@@ -64,15 +90,21 @@
                             </div>
                             <div class="mb-10">
                                 <label for="" class="form-label">Alamat</label>
-                                <textarea class="form-control form-control-lg" data-kt-autosize="true"></textarea>
+                                <textarea class="form-control form-control-lg" data-kt-autosize="true" placeholder="masukkan alamat" name="address"></textarea>
+                                <small class="text-danger">
+                                    @error('address')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
+                        <div class="col-lg-6 col-sm-12 mb-10 mb-lg-2">
                             <div class="border border-light rounded-3 shadow-xs px-5 py-6">
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Bank Pembayaran</label>
                                     <select class="form-select form-select-lg" data-control="select2"
-                                        id="kt_docs_select2_rich_content" data-placeholder="Silahkan pilih salah satu">
+                                        id="kt_docs_select2_rich_content" data-placeholder="Silahkan pilih salah satu"
+                                        name="bank">
                                         <option value=""></option>
                                         @foreach ($banks as $bank)
                                             <option value="{{ $bank->id }}"
@@ -82,11 +114,22 @@
                                             </option>
                                         @endforeach
                                     </select>
+                                    <small class="text-danger">
+                                        @error('bank')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Nomor Rekening</label>
                                     <input type="number" min="0" class="form-control form-control-lg"
-                                        placeholder="Masukan Nomor Rekening Pembeli" value="">
+                                        placeholder="Masukan Nomor Rekening Pembeli" value=""
+                                        name="account_number">
+                                    <small class="text-danger">
+                                        @error('account_number')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Status Pembayaran</label>
@@ -103,22 +146,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button"
-                                    class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-none"
-                                    id="btn-generate">
-                                    <span class="fs-4 fw-bolder">Generate QR Code</span>
-                                </button>
-                                <button type="submit" class="btn btn-primary btn-lg rounded-3 w-100 py-5 my-5 d-none"
+                                <button type="submit" class="btn btn-primary btn-lg rounded-3 w-100 py-5 my-5"
                                     id="btn-submit">
                                     <span class="fs-4 fw-bolder">Simpan</span>
                                 </button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
-                            <div class="bg-secondary w-100 h-50 rounded-4">
-                                <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
-                                    <span class="fs-4 fw-bolder text-gray-800">N/A</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,45 +171,6 @@
 
                 $('[name="total_price"]').val(qty);
             });
-
-            $('.status_bayar').on('change', function() {
-                if ($(this).is(':checked')) {
-                    $("#btn-generate").addClass("d-block").removeClass("d-none");
-                    $("#btn-submit").addClass("d-block").removeClass("d-none");
-                } else {
-                    $("#btn-generate").addClass("d-none").removeClass("d-block");
-                    $("#btn-submit").addClass("d-none").removeClass("d-block");
-                }
-            })
-
-
-
-            // Format options
-            const optionFormat = (item) => {
-                if (!item.id) {
-                    return item.text;
-                }
-
-                var span = document.createElement('span');
-                var template = '';
-
-                template += '<div class="d-flex align-items-center">';
-                template +=
-                    '<div class="symbol symbol-50px px-1 me-5"><div class="symbol-label symbol-label-fit" style="background-image:url(' +
-                    "'" +
-                    item.element.getAttribute('data-kt-rich-content-icon') + "'" +
-                    '"alt="' + item.text + '" /></div></div>';
-                template += '<div class="d-flex flex-column">'
-                template += '<span class="fs-4 fw-bold lh-1 mb-2">' + item.text + '</span>';
-                template += '<span class="text-muted fs-6">' + item.element.getAttribute(
-                    'data-kt-rich-content-subcontent') + '</span>';
-                template += '</div>';
-                template += '</div>';
-
-                span.innerHTML = template;
-
-                return $(span);
-            }
 
             $('#kt_docs_select2_rich_content').select2({
                 placeholder: "Select an option",

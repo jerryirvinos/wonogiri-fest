@@ -27,6 +27,7 @@ class CreateBillsTable extends Migration
             $table->boolean('payment_status');
             $table->foreignId('bank')->constrained('banks');
             $table->foreignId('ticket_type')->constrained('ticket_types');
+            $table->string('branch')->nullable();
             $table->timestamps();
         });
     }
