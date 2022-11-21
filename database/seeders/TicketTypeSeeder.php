@@ -18,20 +18,39 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Early Bird',
             'price' => '200000',
             'quota' => '200',
+            'code' => '11',
             'status' => true,
         ]);
 
         DB::table('ticket_types')->insert([
-            'name' => 'Presale',
+            'name' => 'Presale 1',
             'price' => '250000',
             'quota' => '200',
+            'code' => '21',
             'status' => true,
         ]);
 
         DB::table('ticket_types')->insert([
-            'name' => 'Normal',
+            'name' => '2D Pass',
             'price' => '300000',
             'quota' => '200',
+            'code' => '31',
+            'status' => true,
+        ]);
+
+        DB::table('ticket_types')->insert([
+            'name' => 'Daily Pass',
+            'price' => '300000',
+            'quota' => '200',
+            'code' => '32',
+            'status' => true,
+        ]);
+
+        DB::table('ticket_types')->insert([
+            'name' => 'Invitation',
+            'price' => '300000',
+            'quota' => '200',
+            'code' => '41',
             'status' => true,
         ]);
     }

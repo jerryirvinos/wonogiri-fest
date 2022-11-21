@@ -20,14 +20,15 @@ class CreateBillsTable extends Migration
             $table->string('name');
             $table->text('address');
             $table->text('phone');
-            $table->dateTime('purchase_date');
+            $table->string('email');
             $table->integer('qty');
             $table->integer('total_price');
-            $table->string('account_number');
+            $table->string('account_number')->nullable();
             $table->boolean('payment_status');
-            $table->foreignId('bank')->constrained('banks');
+            $table->integer('bank')->nullable();
             $table->foreignId('ticket_type')->constrained('ticket_types');
-            $table->string('branch')->nullable();
+            $table->string('ticket_box')->nullable();
+            $table->string('code_ticket')->nullable();
             $table->timestamps();
         });
     }

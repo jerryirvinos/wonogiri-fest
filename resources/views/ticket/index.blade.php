@@ -11,6 +11,11 @@
                 <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk verifikasi hasil pembelian ticket dari
                     User</span>
             </h3>
+            <div class="card-toolbar">
+                <a href="{{ route('ticket.create') }}" class="btn btn-lg btn-warning">
+                    <span class="fs-5 fw-bolder">Tambah</span>
+                </a>
+            </div>
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
             <div class="card-body">

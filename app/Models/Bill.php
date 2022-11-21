@@ -16,9 +16,11 @@ class Bill extends Model
         'name',
         'address',
         'phone',
-        'purchase_date',
+        'email',
         'qty',
         'total_price',
+        'ticket_box',
+        'code_ticket',
         'account_number',
         'payment_status',
         'bank',
@@ -31,7 +33,7 @@ class Bill extends Model
         return [
             'ticket_code' => [
                 'format' => function () {
-                    return 'SO/' . date('Y.m.d') . '/' . $this->bank . '/?'; 
+                    return $this->code_ticket.$this->ticket_box . '?'; 
                 },
                 'length' => 5,
             ]

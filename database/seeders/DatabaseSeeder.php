@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BankSeeder::class,
             TicketTypeSeeder::class,
+            TicketBoxSeeder::class,
         ]);
     }
 }
