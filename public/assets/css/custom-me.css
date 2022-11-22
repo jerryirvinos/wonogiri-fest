@@ -106,3 +106,7 @@
     background-size: contain !important;
     background-color: transparent !important;
 }
+
+.btn-active-light-warning-custom:hover .text-seefull {
+    color: #FEC012 !important;
+}
