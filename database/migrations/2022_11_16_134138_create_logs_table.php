@@ -17,7 +17,7 @@ class CreateLogsTable extends Migration
             $table->id();
             $table->foreignId('ticket_id')->constrained('bills');
             $table->enum('logs_status', ['Menunggu', 'Terbayar','Tercetak']);
-            $table->string('verified_by');
+            $table->string('modified_by');
             $table->timestamps();
         });
     }

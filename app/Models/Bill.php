@@ -25,7 +25,7 @@ class Bill extends Model
         'payment_status',
         'bank',
         'ticket_type',
-        'branch',
+        'is_online'
     ];
 
     public function getAutoNumberOptions()

@@ -29,6 +29,7 @@ class CreateBillsTable extends Migration
             $table->foreignId('ticket_type')->constrained('ticket_types');
             $table->string('ticket_box')->nullable();
             $table->string('code_ticket')->nullable();
+            $table->boolean('is_online')->nullable();
             $table->timestamps();
         });
     }
