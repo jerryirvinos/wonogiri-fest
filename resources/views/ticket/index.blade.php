@@ -28,8 +28,6 @@
                                 <th>Nama Pembeli</th>
                                 <th>Tanggal Pembelian</th>
                                 <th class="text-center">Jenis</th>
-                                {{-- <th class="text-center">Jumlah</th>
-                                <th>Total Harga</th> --}}
                                 <th>No Telepon</th>
                                 <th class="text-center"><i class="fa-light fa-grip-dots-vertical"></i></th>
                             </tr>

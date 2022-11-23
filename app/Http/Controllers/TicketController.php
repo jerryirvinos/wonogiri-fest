@@ -125,6 +125,7 @@ class TicketController extends Controller
                 'email' => strip_tags($request->input('email')),
                 'payment_status' => '1',
                 'total_price' => strip_tags($request->input('total_price')),
+                'total_pay' => strip_tags($request->input('total_price')),
                 'ticket_type' => strip_tags($request->input('ticket_type')),
                 'ticket_box' => ($request->input('ticket_box')),
                 'code_ticket' => ($request->input('code_ticket')),
