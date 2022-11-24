@@ -15,8 +15,8 @@
                 <a class="d-block overlay" data-fslightbox="lightbox-hot-sales"
                     href="{{ asset('/assets/media/lineup/kuburan.png') }}">
                     <div class="mb-sm-n20">
-                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded mw-100 h-auto min-h-600px"
-                            style="background-image: url('{{ asset('/assets/media/rundown.jpg') }}')">
+                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover mw-100 h-auto min-h-600px bg-white shadow shadow-lg border border-white border-5  rounded-4"
+                            style="background-image: url('{{ asset('/assets/media/rundowns.jpg') }}')">
                         </div>
                     </div>
                     <div class="mt-lg-n15 position-relative z-index-2">

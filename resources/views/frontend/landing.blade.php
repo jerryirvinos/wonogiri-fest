@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center">
-                        <div class="fs-5 text-muted fw-semibold" id="team"
+                        <div class="fs-8 fs-lg-5 text-gray-200 fw-semibold mb-5 mb-lg-10" id="team"
                             data-kt-scroll-offset="{default: 100, lg: 150}">
-                            Promoted by Ramlan Foundation
+                            Promoted by <span class="fw-bold fs-4">Bedjo Rumah Kreatif</span>
                         </div>
-                        <img class="mw-75 h-auto mh-250px" alt=""
+                        <img class="mw-100 mw-lg-75 h-auto mh-250px" alt=""
                             src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
-                        <div class="fs-2x fw-semibold text-gray-300 my-15">
+                        <div class="fs-4 fs-lg-2x fw-semibold text-gray-300 my-15">
                             25 - 26 Febuari | Lapangan Pringgodani, Wonogiri
                         </div>
                         <a href="#"
@@ -37,24 +37,10 @@
 
     @include('frontend.home.experience')
 
-    @include('frontend.home.instagram')
-
     <section class="my-5 my-lg-10 bg-tagline">
-        <div class="py-5 py-lg-10">
-            <div class="container">
-                <div class="row justify-content-center px-8 px-lg-10">
-                    <div class="col-xl-10 col-xxl-12">
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="d-flex justify-content-center flex-wrap h-100">
-                                    <img src="{{ asset('/assets/media/illustrations/tagline.png') }}"
-                                        class="mh-250px mw-100 mb-9 my-auto mx-2" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex justify-content-center flex-wrap h-100">
+            <img src="{{ asset('/assets/media/illustrations/tagline.png') }}" class="mh-auto w-100 mw-100 my-auto"
+                alt="">
         </div>
     </section>
 

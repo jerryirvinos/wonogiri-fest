@@ -9,10 +9,10 @@
                         <i class="fa-duotone fa-bars-staggered fa-2x text-white"></i>
                     </button>
                     <a href="#">
-                        <img alt="Logo" src="{{ asset('/assets/media/logos/logo-ramlan.png') }}"
-                            class="logo-default h-55px h-lg-60px my-auto" />
-                        <img alt="Logo" src="{{ asset('/assets/media/logos/logo-ramlan.png') }}"
-                            class="logo-sticky h-35px h-lg-40px my-auto" />
+                        <img alt="Logo" src="{{ asset('/assets/media/logos/logo-wonogirifest.png') }}"
+                            class="logo-default h-65px h-lg-75px my-auto" />
+                        <img alt="Logo" src="{{ asset('/assets/media/logos/logo-wonogirifest.png') }}"
+                            class="logo-sticky h-45px h-lg-65px my-auto" />
                     </a>
                 </div>
                 <div class="d-lg-block" id="kt_header_nav_wrapper">
@@ -32,27 +32,9 @@
                                     </a>
                                 </div>
                                 <div class="menu-item">
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#rundown"
-                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                        Jadwal
-                                    </a>
-                                </div>
-                                <div class="menu-item">
                                     <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ticket"
                                         data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                         Tiket
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#news"
-                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                        News
-                                    </a>
-                                </div>
-                                <div class="menu-item">
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#merchandise"
-                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
-                                        Merchandise
                                     </a>
                                 </div>
                             </div>

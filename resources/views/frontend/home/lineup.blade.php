@@ -10,24 +10,22 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 col-sm-6">
+            <div class="col-lg-12 col-sm-12">
                 <div class="row justify-content-center px-8 px-lg-10">
                     <div class="col-xl-12 col-xxl-10">
-                        <div class="lh-xxl fs-1 fw-bold text-white text-center">
-                            Band 1 | Band 2 | Band 3 | Band 4 | Band 5 | Band 6 | Band 7 | Band 8 | Band 9 | Band 10
-                            | Band
-                            11 | Band 12 | Band 13 | Band 14 | Band 15 | Band 16 | Band 17 | Band 18 | Band 19 |
-                            Band 20 |
-                            Band 21 | Band 22 | Band 23 | Band 24 | Band 25 | Band 26 | Band 27 | Band 28 | Band 29
-                            | Band
-                            30 | Band 31 | Band 32 | Band 33 | Band 34 | Band 35
+                        <div class="lh-xxl fs-6 fs-lg-1 fw-bold text-white text-center">
+                            Pas Band | Kuburan | Closehead | Rosemary | Feel
+                            Koplo | Sing Dawn for Life | Hasoe Angels | Kugiran Masdo | Dirty Money | OM PNS | Ksatria
+                            Kegelapan | Lord Symphony | <span class="bg-white">Band 2</span> | <span
+                                class="bg-white">Band 2</span> | <span class="bg-white">Band 2</span> | <span
+                                class="bg-white">Band 2</span> |
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-12 col-sm-12">
-                <div class="d-flex justify-content-center my-15">
+                <div class="d-flex justify-content-center mt-5">
                     <a href="#"
                         class="btn btn-active-light-warning btn-active-light-warning-custom hover-scale mb-10">
                         <span class="fs-2x fw-bolder text-white text-seefull my-auto">
