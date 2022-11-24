@@ -158,7 +158,11 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $bills = Bill::find($id);
+        $ticket_type = Ticket_type::find($bills->ticket_type);
+        $banks = Bank::all();
+
+        return view('ticket.show', compact('bills','ticket_type','banks'));
     }
 
     /**

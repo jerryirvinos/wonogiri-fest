@@ -21,6 +21,7 @@
                 <form class="w-100" method="post" action="{{ route('ticket.store') }}" novalidate="novalidate"
                     id="kt_create_account_form">
                     @csrf
+                    <input type="hidden" name="qty" value="1">
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 mb-10 mb-lg-2">
                             <div class="mb-10">
@@ -104,16 +105,6 @@
                                 </small>
                             </div>
                             <div class="mb-10">
-                                <label class="form-label fs-7 text-gray-700">Jumlah</label>
-                                <input type="number" name="qty" min="1" class="form-control form-control-lg"
-                                    placeholder="masukkan jumlah tiket" value="{{ old('qty') }}">
-                                <small class="text-danger">
-                                    @error('qty')
-                                        {{ $message }}
-                                    @enderror
-                                </small>
-                            </div>
-                            <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Total Harga</label>
                                 <input type="text" name="total_price"
                                     class="form-control form-control-lg form-control-solid" readonly
@@ -157,6 +148,7 @@
             $('select[name="ticket_type"]').on('change', function() {
                 var name = $(this).find('option:selected').data();
                 $('input[name=code_ticket]').val(name.code);
+                $('input[name=total_price]').val(name.price);
             });
         });
     </script>

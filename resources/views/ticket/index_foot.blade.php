@@ -102,7 +102,7 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var url_show = "{{ route('user.show', ':id') }}";
+                        var url_show = "{{ route('ticket.show', ':id') }}";
                         url_show = url_show.replace(':id', row.id);
 
                         var html = `<div class="d-flex justify-content-center">

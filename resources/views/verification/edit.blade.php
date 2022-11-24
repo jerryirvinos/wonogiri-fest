@@ -62,7 +62,7 @@
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Total Harga Satuan</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->total_price }}">
+                                    value="{{ format_rupiah($bills->total_price) }}">
                             </div>
                             <div class="mb-10">
                                 <label for="" class="form-label">Alamat</label>
@@ -74,27 +74,49 @@
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Bank Pembayaran</label>
                                     <select class="form-select form-select-lg" data-control="select2"
-                                        id="kt_docs_select2_rich_content" data-placeholder="Silahkan pilih salah satu">
+                                        id="kt_docs_select2_rich_content" data-placeholder="Silahkan pilih salah satu"
+                                        name="bank">
                                         <option value=""></option>
-                                        <option value="1" data-kt-rich-content-subcontent="12345678"
-                                            data-kt-rich-content-icon="{{ asset('/assets/media/bank/mandiri.png') }}">
-                                            Mandiri
-                                        </option>
-                                        <option value="2" data-kt-rich-content-subcontent="12345678"
-                                            data-kt-rich-content-icon="{{ asset('/assets/media/bank/bca.png') }}">
-                                            BCA
-                                        </option>
+                                        @foreach ($banks as $bank)
+                                            <option value="{{ $bank->id }}"
+                                                {{ $bills->bank == $bank->id ? 'selected' : '' }}
+                                                data-kt-rich-content-subcontent="{{ $bank->account_number }}"
+                                                data-kt-rich-content-icon="{{ asset($bank->logos) }}">
+                                                {{ $bank->name }}
+                                            </option>
+                                        @endforeach
                                     </select>
+                                    <small class="text-danger">
+                                        @error('bank')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+                                </div>
+                                <div class="mb-10">
+                                    <label class="form-label fs-7 text-gray-700">Pemilik Rekening</label>
+                                    <input type="text" class="form-control form-control-lg"
+                                        placeholder="Masukan Nama Rekening Pembeli" value="{{ $bills->account_name }}"
+                                        name="account_name">
+                                    <small class="text-danger">
+                                        @error('account_name')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Nomor Rekening</label>
-                                    <input type="number"class="form-control form-control-lg"
-                                        placeholder="Masukan Nomor Rekening Pembeli" value="">
+                                    <input type="number" class="form-control form-control-lg" min="0"
+                                        placeholder="Masukan Nomor Rekening Pembeli" value="" name="account_number">
+                                    <small class="text-danger">
+                                        @error('account_number')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Total Transfer</label>
                                     <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                        value="{{ $bills->total_pay }}">
+                                        value="{{ format_rupiah($bills->total_pay) }}">
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Status Pembayaran</label>
@@ -104,19 +126,24 @@
                                                 Belum Terbayar
                                             </label>
                                             <input class="form-check-input min-w-65px mx-3 status_bayar" type="checkbox"
-                                                value="true" id="RBStatus" name="RBStatus" />
+                                                value="true" id="RBStatus" name="payment_status" />
                                             <label class="form-check-label text-gray-800 fw-semibold" for="RBStatus">
                                                 Sudah Terbayar
                                             </label>
                                         </div>
                                     </div>
+                                    <small class="text-danger">
+                                        @error('payment_status')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
                                 <button type="button"
                                     class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-none"
                                     id="btn-generate">
                                     <span class="fs-4 fw-bolder">Generate QR Code</span>
                                 </button>
-                                <button type="button" class="btn btn-primary btn-lg rounded-3 w-100 py-5 my-5 d-none"
+                                <button type="submit" class="btn btn-primary btn-lg rounded-3 w-100 py-5 my-5 d-none"
                                     id="btn-submit">
                                     <span class="fs-4 fw-bolder">Simpan</span>
                                 </button>
@@ -125,7 +152,8 @@
                         <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
                             <div class="bg-secondary w-100 h-50 rounded-4">
                                 <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
-                                    <span class="fs-4 fw-bolder text-gray-800">N/A</span>
+                                    <div class="d-none" id="qr-code">{!! QrCode::size(250)->generate($bills->ticket_code) !!}</div>
+                                    <span class="fs-4 fw-bolder text-gray-800 d-block" id="na">N/A</span>
                                 </div>
                             </div>
                         </div>
@@ -146,10 +174,15 @@
                 } else {
                     $("#btn-generate").addClass("d-none").removeClass("d-block");
                     $("#btn-submit").addClass("d-none").removeClass("d-block");
+                    $("#qr-code").addClass("d-none").removeClass("d-block");
+                    $("#na").addClass("d-block").removeClass("d-none");
                 }
             })
 
-
+            $('#btn-generate').on('click', function() {
+                $("#qr-code").addClass("d-block").removeClass("d-none");
+                $("#na").addClass("d-none").removeClass("d-block");
+            });
 
             // Format options
             const optionFormat = (item) => {

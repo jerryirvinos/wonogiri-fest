@@ -72,16 +72,9 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var html = `<div class="d-flex align-items-center">
-                                        <div class="d-flex flex-column">
-                                            <div class="fs-4 fw-bolder text-gray-800">
+                        var html = `<div class="fs-4 fw-bolder text-gray-800">
                                                 ` + row.account_name + `
-                                            </div>
-                                            <div class="fs-6 fw-semibold text-gray-500">
-                                                ` + row.account_number + `
-                                            </div>
-                                        </div>
-                                    </div>`;
+                                            </div>`;
                         return html
                     },
                     orderable: false,

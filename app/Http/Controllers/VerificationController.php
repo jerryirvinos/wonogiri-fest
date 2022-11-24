@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use App\Models\Bill;
+use App\Models\Log;
 use App\Models\Ticket_type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -32,10 +33,11 @@ class VerificationController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('bills')->where('is_online','=','1')->count();
+            $totalRecords = DB::table('bills')->where('is_online','=','1')->where('payment_status','=','0')->count();
             $totalRecordswithFilter = DB::table('bills')
                 ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
                 ->where('is_online','=','1')
+                ->where('payment_status','=','0')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
@@ -46,6 +48,7 @@ class VerificationController extends Controller
                 ->select('bills.*','ticket_types.name AS ticket_name')
                 ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
                 ->where('is_online','=','1')
+                ->where('payment_status','=','0')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
@@ -109,8 +112,9 @@ class VerificationController extends Controller
     {
         $bills = Bill::find($id);
         $ticket_type = Ticket_type::find($bills->ticket_type);
+        $banks = Bank::all();
 
-        return view('verification.edit', compact('bills','ticket_type'));
+        return view('verification.edit', compact('bills','ticket_type','banks'));
     }
 
     /**
@@ -122,7 +126,46 @@ class VerificationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'payment_status' => 'required',
+                'account_number' => 'required',
+                'bank' => 'required',
+            ],
+            [
+                'payment_status.required' => 'Status harus diisi!',
+                'account_number.required' => 'Nomor Rekening harus diisi!',
+                'bank.required' => 'Bank harus diisi!',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        
+        try {
+            $ticket = Bill::find($id);
+
+            $ticket->payment_status = '1';
+            $ticket->account_number = strip_tags($request->input('account_number'));
+            $ticket->account_name = strip_tags($request->input('account_name'));
+            $ticket->bank = strip_tags($request->input('bank'));
+
+            $ticket->save();
+            
+            $log = Log::create([
+                'ticket_id' => $id,
+                'logs_status' => 'Terbayar',
+                'modified_by' => 'AdminProgrammer',
+            ]);
+
+            $log->save();
+
+            return redirect()->route('verification.index')->with('success', 'Berhasil Diubah');
+        } catch (\Exception $e) {
+            return redirect()->route('verification.index')->with('warning', $e->getMessage());
+        }
     }
 
     /**
