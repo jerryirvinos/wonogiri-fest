@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Alfa6661\AutoNumber\AutoNumberTrait;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,6 +20,7 @@ class Bill extends Model
         'email',
         'qty',
         'total_price',
+        'total_pay',
         'ticket_box',
         'code_ticket',
         'account_number',
@@ -33,7 +35,7 @@ class Bill extends Model
         return [
             'ticket_code' => [
                 'format' => function () {
-                    return $this->code_ticket.$this->ticket_box . '?'; 
+                    return $this->code_ticket . $this->ticket_box . '?';
                 },
                 'length' => 5,
             ]
