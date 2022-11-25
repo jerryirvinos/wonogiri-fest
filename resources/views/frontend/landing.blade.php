@@ -1,8 +1,6 @@
 @extends('frontend.templates.master')
 
 @section('content')
-    <img src="{{ asset('/assets/media/illustrations/header-bg.svg') }}" alt=""
-        class="position-fixed z-index-n2 top-0 w-100 gap-2">
     <section class="my-5 my-lg-10">
         <div class="container mt-10">
             <div class="row">
@@ -12,7 +10,7 @@
                             data-kt-scroll-offset="{default: 100, lg: 150}">
                             Promoted by <span class="fw-bold fs-4">Bedjo Rumah Kreatif</span>
                         </div>
-                        <img class="mw-100 mw-lg-75 h-auto mh-250px" alt=""
+                        <img class="mw-100 mw-lg-100 w-75 h-auto mh-450px" alt=""
                             src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
                         <div class="fs-4 fs-lg-2x fw-semibold text-gray-300 my-15">
                             25 - 26 Febuari | Lapangan Pringgodani, Wonogiri
@@ -30,8 +28,6 @@
     @include('frontend.home.lineup')
 
     @include('frontend.home.ticket')
-
-    @include('frontend.home.rundown')
 
     @include('frontend.home.youtube')
 

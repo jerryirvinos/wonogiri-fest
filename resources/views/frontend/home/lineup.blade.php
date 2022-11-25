@@ -12,13 +12,23 @@
 
             <div class="col-lg-12 col-sm-12">
                 <div class="row justify-content-center px-8 px-lg-10">
-                    <div class="col-xl-12 col-xxl-10">
-                        <div class="lh-xxl fs-6 fs-lg-1 fw-bold text-white text-center">
-                            Pas Band | Kuburan | Closehead | Rosemary | Feel
-                            Koplo | Sing Dawn for Life | Hasoe Angels | Kugiran Masdo | Dirty Money | OM PNS | Ksatria
-                            Kegelapan | Lord Symphony | <span class="bg-white">Band 2</span> | <span
-                                class="bg-white">Band 2</span> | <span class="bg-white">Band 2</span> | <span
-                                class="bg-white">Band 2</span> |
+                    <div class="col-xl-10 col-xxl-8">
+                        <div class="lh-xxl fs-6 fs-lg-3 fw-semibold text-white text-center">
+                            Kuburan | <span class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | Pas
+                            Band -
+                            Kugiran Masdo | Down For Life | <span class="bg-white">xxxxxx</span> | Closehead | Feel
+                            Koplo | Rosemary | <span class="bg-white">xxxxxx</span> | Hasoe Angels | <span
+                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
+                                class="bg-white">xxxxxx</span> | Lord Symphony | OM PNS | <span
+                                class="bg-white">xxxxxx</span>
+                            -
+                            Ksatria Kegelapan | Dirty Money Syndct | <span class="bg-white">xxxxxx</span> | <span
+                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
+                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
+                                class="bg-white">xxxxxx</span>
+                        </div>
+                        <div class="fs-6 fs-lg-2x fw-bolder text-white text-center my-10">
+                            MASIH BANYAK <span class="text-base-2">LINEUP</span> BELUM TERUNGKAP!
                         </div>
                     </div>
                 </div>
@@ -26,7 +36,7 @@
 
             <div class="col-lg-12 col-sm-12">
                 <div class="d-flex justify-content-center mt-5">
-                    <a href="#"
+                    <a href="{{ url('/lineup/') }}"
                         class="btn btn-active-light-warning btn-active-light-warning-custom hover-scale mb-10">
                         <span class="fs-2x fw-bolder text-white text-seefull my-auto">
                             See full line up <i class="fa-regular fa-circle-chevron-right ms-3"></i>

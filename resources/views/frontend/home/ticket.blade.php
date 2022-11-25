@@ -14,7 +14,7 @@
                     <div class="col-lg-4 col-sm-12">
                         <a href="#" class="card bg-transparent">
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-175px mw-100 h-auto"
-                                style="background-image: url('{{ asset('/assets/media/ticket.png') }}')">
+                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
                                         <div class="fs-2x text-base font-title">
@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="fs-2hx text-base fw-bold">
-                                        Rp 200.000
+                                        Rp 175.000
                                     </div>
                                 </div>
                             </div>

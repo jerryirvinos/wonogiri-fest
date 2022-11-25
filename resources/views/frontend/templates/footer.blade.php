@@ -5,16 +5,16 @@
                 <div class="col-sm-9 col-lg-4 ps-0 ps-lg-15">
                     <div class="d-flex justify-content-center align-content-end flex-wrap h-100">
                         <div class="d-flex justify-content-center flex-wrap mb-10">
-                            <a href="#" class="btn btn-icon mx-3">
+                            <a href="https://www.facebook.com/wonogirifest" class="btn btn-icon mx-3">
                                 <i class="fa-brands fa-facebook fa-2x text-white text-hover-primary"></i>
                             </a>
-                            <a href="#" class="btn btn-icon mx-3">
+                            <a href="https://twitter.com/wonogirifest" class="btn btn-icon mx-3">
                                 <i class="fa-brands fa-twitter fa-2x text-white text-hover-primary"></i>
                             </a>
-                            <a href="#" class="btn btn-icon mx-3">
+                            <a href="https://www.youtube.com/@wonogirifest/" class="btn btn-icon mx-3">
                                 <i class="fa-brands fa-youtube fa-2x text-white text-hover-primary"></i>
                             </a>
-                            <a href="#" class="btn btn-icon mx-3">
+                            <a href="https://www.instagram.com/wonogirifest/" class="btn btn-icon mx-3">
                                 <i class="fa-brands fa-instagram fa-2x text-white text-hover-primary"></i>
                             </a>
                         </div>

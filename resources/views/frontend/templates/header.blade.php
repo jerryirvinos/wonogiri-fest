@@ -1,4 +1,4 @@
-<div class="{{ Request::segment(1) == '' ? 'bg-header' : 'bg-white' }}">
+<div class="{{ Request::segment(1) == 'checkout' ? 'bg-white' : 'bg-header' }}">
     <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
         data-kt-sticky-offset="{default: '200px', lg: '300px'}">
         <div class="container">
@@ -8,7 +8,7 @@
                         id="kt_landing_menu_toggle">
                         <i class="fa-duotone fa-bars-staggered fa-2x text-white"></i>
                     </button>
-                    <a href="#">
+                    <a href="/">
                         <img alt="Logo" src="{{ asset('/assets/media/logos/logo-wonogirifest.png') }}"
                             class="logo-default h-65px h-lg-75px my-auto" />
                         <img alt="Logo" src="{{ asset('/assets/media/logos/logo-wonogirifest.png') }}"
@@ -37,6 +37,12 @@
                                         Tiket
                                     </a>
                                 </div>
+                                <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ url('/aboutus/') }}"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        About Us
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @endif
@@ -44,21 +50,21 @@
                 <div class="flex-equal text-end ms-1">
                     {{-- <a href="../../demo9/dist/authentication/layouts/basic/sign-in.html"
                         class="btn btn-success">Masuk</a> --}}
-                    <a href="#" class="btn btn-icon">
+                    <a href="https://www.facebook.com/wonogirifest" class="btn btn-icon">
                         <i
-                            class="fa-brands fa-facebook fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
+                            class="fa-brands fa-facebook fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == 'checkout' ? 'text-gray-700' : 'text-white' }}"></i>
                     </a>
-                    <a href="#" class="btn btn-icon">
+                    <a href="https://twitter.com/wonogirifest" class="btn btn-icon">
                         <i
-                            class="fa-brands fa-twitter fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
+                            class="fa-brands fa-twitter fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == 'checkout' ? 'text-gray-700' : 'text-white' }}"></i>
                     </a>
-                    <a href="#" class="btn btn-icon">
+                    <a href="https://www.youtube.com/@wonogirifest/" class="btn btn-icon">
                         <i
-                            class="fa-brands fa-youtube fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
+                            class="fa-brands fa-youtube fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == 'checkout' ? 'text-gray-700' : 'text-white' }}"></i>
                     </a>
-                    <a href="#" class="btn btn-icon">
+                    <a href="https://www.instagram.com/wonogirifest/" class="btn btn-icon">
                         <i
-                            class="fa-brands fa-instagram fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == '' ? 'text-white' : 'text-gray-700' }}"></i>
+                            class="fa-brands fa-instagram fa-2x text-hover-warning d-none d-lg-block {{ Request::segment(1) == 'checkout' ? 'text-gray-700' : 'text-white' }}"></i>
                     </a>
                 </div>
             </div>

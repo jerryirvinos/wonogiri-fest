@@ -11,10 +11,10 @@
     <meta name="keywords" content="Wonogiri Fest" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="Wonogiri Fest" />
-    <meta property="og:url" content="https://wonogirifest.co.id" />
+    <meta property="og:url" content="https://wonogirifest.com" />
     <meta property="og:site_name" content="Wonogiri Fest" />
     <link rel="canonical" href="https://wonogirifest.com" />
-    <link rel="shortcut icon" href="{{ asset('/assets/media/logos/logo-ramlan.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ultra" />
@@ -27,9 +27,11 @@
 </head>
 
 <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu"
-    class="{{ Request::segment(1) == '' ? 'bg-base' : 'bg-light' }} position-relative">
+    class="{{ Request::segment(1) == 'checkout' ? 'bg-light' : 'bg-base' }} position-relative">
     <div class="d-flex flex-column flex-root">
         @include('frontend.templates.header')
+        <img src="{{ asset('/assets/media/illustrations/header-bg.svg') }}" alt=""
+            class="position-fixed z-index-n2 top-0 w-100 gap-2">
         @yield('content')
         @if (Request::segment(1) == '')
             @include('frontend.templates.footer')
