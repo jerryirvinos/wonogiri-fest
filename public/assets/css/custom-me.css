@@ -110,6 +110,7 @@
 
 .bg-base {
     background-color: rgba(7, 78, 159, 1) !important;
+    color: #ffffff !important;
 }
 
 .bg-tagline {
@@ -215,4 +216,19 @@
 
 .btn-active-light-warning-custom:hover .text-seefull {
     color: #FEC012 !important;
+}
+
+.card .content-lineup{
+    background-position: 50%;
+    transition: all .2s cubic-bezier(.55,.085,.68,.53);
+    transition-duration: .4s;
+}
+
+.content-lineup {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.content-lineup:hover {
+    filter: grayscale(0);
 }

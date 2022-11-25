@@ -16,6 +16,14 @@ Route::get('/', function () {
     return view('frontend.landing');
 });
 
+Route::get('/aboutus', function () {
+    return view('frontend.aboutus');
+});
+
+Route::get('/lineup', function () {
+    return view('frontend.detail_lineup');
+});
+
 // Route::get('/admin/user', function () {
 //     return view('user.index');
 // });
