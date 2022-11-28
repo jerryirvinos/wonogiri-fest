@@ -232,3 +232,7 @@
 .content-lineup:hover {
     filter: grayscale(0);
 }
+
+[data-kt-sticky-landing-header="on"] .col-lg-4.col-sm-12 .card-checkout {
+    top: 9%!important;
+}
