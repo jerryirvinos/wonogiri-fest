@@ -219,4 +219,62 @@ class UserController extends Controller
             return redirect()->route('user.index')->with('warning', $e->getMessage());
         }
     }
+
+    public function loginProcess(Request $request)
+    {
+        $message = [
+            'username.required' => 'Username Harus diisi',
+            'password.required' => 'Password Harus diisi',
+        ];
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'username' => 'required',
+                'password' => 'required',
+            ],
+            $message
+        );
+        $status = false;
+        $msg = "Username/Pasword Salah";
+
+        if ($validator->fails()) {
+            $status = false;
+            $msg = $validator;
+        }
+
+        $user = User::where('username', $request->input('username'))->first();
+        if($user){
+            if (Hash::check($request->input('password'), $user->password)) {
+                $status = true;
+                $msg = "Berhasil Login";
+
+                $role = Role::where('id',$user->role)->first();
+
+                $request->session()->flush();
+
+                $request->session()->put('user', [
+                    'user_id' => $user->id,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'identity_number' => $user->identity_number,
+                    'role' => $user->role,
+                    'role_name' => $role->name,
+                    'is_login' => true,
+                ]);
+            }
+        }else{
+            $status = false;
+            $msg = "Anda belum terdaftar";
+        }
+
+        return json_encode(['status' => $status, 'msg' => $msg]);
+    }
+
+    function logout(Request $request)
+    {
+        $request->session()->flush();
+
+        return view('frontend.login');
+    }
 }

@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Huda',
+            'username' => 'huda',
             'identity_number' => '340',
             'address' => 'Jogja',
             'phone' => '085',
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Jerry',
+            'username' => 'jerry',
             'identity_number' => '341',
             'address' => 'Jogja',
             'phone' => '081',
@@ -39,6 +41,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Nico',
+            'username' => 'nico',
             'identity_number' => '342',
             'address' => 'Jogja',
             'phone' => '082',

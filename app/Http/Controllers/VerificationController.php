@@ -132,11 +132,13 @@ class VerificationController extends Controller
                 'payment_status' => 'required',
                 'account_number' => 'required',
                 'bank' => 'required',
+                'generateQr' => 'required',
             ],
             [
                 'payment_status.required' => 'Status harus diisi!',
                 'account_number.required' => 'Nomor Rekening harus diisi!',
                 'bank.required' => 'Bank harus diisi!',
+                'generateQr.required' => 'Silahkan generate QR terlebih dahulu',
             ]
         );
 

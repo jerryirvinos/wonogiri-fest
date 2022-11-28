@@ -3,13 +3,21 @@
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Middleware\AuthCheck;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
+
+Route::group(['prefix' => 'admin',  AuthCheck::class], function () {
+    Route::post('/loginProcess', [UserController::class, 'loginProcess'])->name('user.loginProcess')->withoutMiddleware([AuthCheck::class]);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
     Route::resource('ticket', TicketController::class);
+});
+
+Route::get('/login', function () {
+    return view('frontend.login');
 });
 
 Route::get('/', function () {

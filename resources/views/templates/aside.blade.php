@@ -22,18 +22,16 @@
                         <div class="menu-title">Dashboard</div>
                     </a>
                 </div>
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2">
-                    <a href="#" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2">
+                    <a href="{{ route('verification.index') }}" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-file-invoice-dollar fa-2x"></i>
                         </span>
                         <div class="menu-title">Verifikasi</div>
                     </a>
                 </div>
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2">
-                    <a href="#" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2">
+                    <a href="{{ route('ticket.index') }}" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-ticket fa-2x"></i>
                         </span>
@@ -49,31 +47,33 @@
                         <div class="menu-title">Scan</div>
                     </a>
                 </div>
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2">
-                    <span class="menu-link menu-center flex-column">
-                        <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-database fa-2x"></i>
+                @if (session()->get('user')['role'] == '1')
+                    <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
+                        class="menu-item py-2">
+                        <span class="menu-link menu-center flex-column">
+                            <span class="menu-icon me-0 mb-3">
+                                <i class="fa-light fa-database fa-2x"></i>
+                            </span>
+                            <div class="menu-title">Master</div>
                         </span>
-                        <div class="menu-title">Master</div>
-                    </span>
-                    <!--begin:Menu sub-->
-                    <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
-                        <div class="menu-item">
-                            <div class="menu-content">
-                                <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
+                            <div class="menu-item">
+                                <div class="menu-content">
+                                    <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ route('user.index') }}">
+                                    <span class="menu-icon me-3">
+                                        <i class="fa-light fa-users fa-lg"></i>
+                                    </span>
+                                    <span class="menu-title">User</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="#">
-                                <span class="menu-icon me-3">
-                                    <i class="fa-light fa-users fa-lg"></i>
-                                </span>
-                                <span class="menu-title">User</span>
-                            </a>
-                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

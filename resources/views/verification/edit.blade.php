@@ -138,6 +138,12 @@
                                         @enderror
                                     </small>
                                 </div>
+                                <input type="hidden" name="generateQr" value="">
+                                <small class="text-danger">
+                                    @error('generateQr')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
                                 <button type="button"
                                     class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-none"
                                     id="btn-generate">
@@ -152,7 +158,9 @@
                         <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
                             <div class="bg-secondary w-100 h-50 rounded-4">
                                 <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
-                                    <div class="d-none" id="qr-code">{!! QrCode::size(250)->generate($bills->ticket_code) !!}</div>
+                                    <div class="d-none" id="qr-code">{!! QrCode::size(250)->generate(
+                                        json_encode(['ticketCode' => $bills->ticket_code, 'id' => Crypt::encryptString($bills->id)]),
+                                    ) !!}</div>
                                     <span class="fs-4 fw-bolder text-gray-800 d-block" id="na">N/A</span>
                                 </div>
                             </div>
@@ -182,6 +190,7 @@
             $('#btn-generate').on('click', function() {
                 $("#qr-code").addClass("d-block").removeClass("d-none");
                 $("#na").addClass("d-none").removeClass("d-block");
+                $("name[generateQr]").val(true);
             });
 
             // Format options
