@@ -12,20 +12,80 @@
             <div class="col-xl-9 col-xxl-10">
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="card bg-transparent">
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-175px mw-100 h-auto"
+                        <a href="#" class="card bg-transparent h-100 mb-5">
+                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
-                                <div class="card-body">
+                                <div class="card-body text-center">
                                     <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
                                         <div class="fs-2x text-base font-title">
                                             Early Bird
                                         </div>
-                                        <div class="fs-4 fst-italic text-base  fw-semibold">
-                                            2D Pass
+                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                            2 Hari
                                         </div>
                                     </div>
-                                    <div class="fs-2hx text-base fw-bold">
+                                    <div class="fs-3x text-base fw-bolder">
                                         Rp 175.000
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <a href="#" class="card bg-transparent h-100 mb-5">
+                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
+                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
+                                <div class="card-body text-center">
+                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
+                                        <div class="fs-2x text-base font-title">
+                                            Presale 1
+                                        </div>
+                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                            2 Hari
+                                        </div>
+                                    </div>
+                                    <div class="fs-3x text-base fw-bolder">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <a href="#" class="card bg-transparent h-100 mb-5">
+                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
+                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
+                                <div class="card-body text-center">
+                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
+                                        <div class="fs-2x text-base font-title">
+                                            Presale 2
+                                        </div>
+                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                            1 Hari
+                                        </div>
+                                    </div>
+                                    <div class="fs-3x text-base fw-bolder">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <a href="#" class="card bg-transparent h-100 mb-5">
+                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
+                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
+                                <div class="card-body text-center">
+                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
+                                        <div class="fs-2x text-base font-title">
+                                            OTS
+                                        </div>
+                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                            1 Hari
+                                        </div>
+                                    </div>
+                                    <div class="fs-3x text-base fw-bolder">
+
                                     </div>
                                 </div>
                             </div>
@@ -35,15 +95,16 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-sm-12">
                         <div
-                            class="lh-xl fs-8 fs-lg-5 fw-semibold text-gray-400 text-center mt-5 mt-lg-10 px-5 px-lg-20">
+                            cl3ss="lh-xl fs-8 fs-lg-5fw-semibold mt-4 text-gray-400 text-center mt-5 mt-lg-10 px-5 px-lg-20">
                             Penjualan tiket <span class="fw-bold text-white fs-7 fs-lg-3">Early Bird</span> dilakukan
-                            secara
-                            offlinei di Official Ticket Box Wonogiri Festival. <br>
-                            Untuk wilayah luar Wonogiri & Sukoharjo bisa melalui hotline : <span
-                                class="fw-bold text-white fs-7 fs-lg-4">085161834585 (WA only)</span> <br>
+                            secara offline di Official Ticket Box Wonogiri Festival. <br>
+                            Untuk wilayah luar Wonogiri & Sukoharjo bisa melalui hotline : <a
+                                href="https://wa.me/6285161834585"><span
+                                    class="fw-bold text-white fs-7 fs-lg-4">085161834585
+                                    (WA only)</span></a> <br>
                             <span class="fw-bolder text-white fs-7 fs-lg-2">NOTE : PEMBELIAN TICKET SELAIN DARI OFFICIAL
                                 TICKET
-                                BOX DAN HOTLINE DIANGGAP TIDAK SAH</span>
+                                BOX DAN HOTLINE DIANGGAP TIDAK SAH. KUOTA TERBATAS!</span>
                         </div>
                     </div>
                 </div>
