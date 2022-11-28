@@ -31,6 +31,7 @@
                 </div>
             </div>
         </div>
-        <img src="{{ asset('/assets/media/illustrations/footer.png') }}" class="mh-auto w-100 mw-100 my-auto" alt="">
+        <img src="{{ asset('/assets/media/illustrations/footer.png') }}" class="mh-auto w-100 mw-100 my-auto"
+            alt="">
     </div>
 </div>
