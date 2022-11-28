@@ -30,11 +30,13 @@
     class="{{ Request::segment(1) == 'checkout' ? 'bg-light' : 'bg-base' }} position-relative">
     <div class="d-flex flex-column flex-root">
         @include('frontend.templates.header')
+        @if (Request::segment(1) != 'checkout')
         <img src="{{ asset('/assets/media/illustrations/header-bg.svg') }}" alt=""
             class="position-fixed z-index-n2 top-0 w-100 gap-2">
+        @endif
         @yield('content')
         @if (Request::segment(1) == '')
-            @include('frontend.templates.footer')
+        @include('frontend.templates.footer')
         @endif
     </div>
     @include('frontend.templates.tools.scrolltop')
@@ -46,19 +48,19 @@
     <script src="{{ asset('/assets/plugins/custom/fontawesome/js/all.min.js') }}"></script>
     @yield('scripts')
     @if (session('success'))
-        <script>
-            $(document).ready(function() {
-                toastr.success("{{ session('success') }}");
-            });
-        </script>
+    <script>
+        $(document).ready(function () {
+            toastr.success("{{ session('success') }}");
+        });
+    </script>
     @endif
 
     @if (session('warning'))
-        <script>
-            $(document).ready(function() {
-                toastr.warning("{{ session('warning') }}");
-            });
-        </script>
+    <script>
+        $(document).ready(function () {
+            toastr.warning("{{ session('warning') }}");
+        });
+    </script>
     @endif
 </body>
 
