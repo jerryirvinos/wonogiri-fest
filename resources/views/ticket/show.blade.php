@@ -130,7 +130,9 @@
                     <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
                         <div class="bg-secondary w-100 h-50 rounded-4">
                             <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
-                                <div class="d-block" id="qr-code">{!! QrCode::size(250)->generate($bills->ticket_code) !!}</div>
+                                <div class="d-block" id="qr-code">{!! QrCode::size(250)->generate(
+                                    json_encode(['ticketCode' => $bills->ticket_code, 'id' => Crypt::encryptString($bills->id)]),
+                                ) !!}</div>
                             </div>
                         </div>
                     </div>

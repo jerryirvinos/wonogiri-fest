@@ -92,34 +92,38 @@
                                             <div class="card-body px-3 px-lg-7 pt-0">
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Nomor Indentitas</label>
-                                                    <input type="text" class="form-control form-control-lg"
-                                                        id="identity_number" name="identity_number"
-                                                        placeholder="Masukan nomor identitas Anda" value="" />
+                                                    <input type="number" class="form-control form-control-lg"
+                                                        name="identity_number_order"
+                                                        placeholder="Masukan nomor identitas Anda" value=""
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                        min="0" maxlength="16" />
                                                     <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
                                                         NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Nama</label>
                                                     <input type="text" class="form-control form-control-lg"
-                                                        id="name" name="name" placeholder="Masukan nama lengkap"
+                                                        id="name" name="name_order" placeholder="Masukan nama lengkap"
                                                         value="" />
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Alamat</label>
-                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address" name="address"
+                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address_order" name="address"
                                                         placeholder="Masukan alamat lengkap" value=""></textarea>
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">No Telepon</label>
                                                     <input type="number" class="form-control form-control-lg"
-                                                        id="phone" name="phone" placeholder="Masukan nomor telepon"
+                                                        id="phone" name="phone_order"
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                        min="0" maxlength="13" placeholder="Masukan nomor telepon"
                                                         value="" />
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Email Aktif</label>
                                                     <input type="email" class="form-control form-control-lg"
-                                                        id="email" name="email" placeholder="Masukan nomor telepon"
-                                                        value="" />
+                                                        id="email" name="email_order"
+                                                        placeholder="Masukan nomor telepon" value="" />
                                                     <span class="ms-1 fs-9 text-gray-500">
                                                         E-ticket akan dikirim ke email pemesan ini.</span>
                                                 </div>
@@ -131,6 +135,10 @@
                                                 <h1 class="card-title fw-bolder text-gray-900 align-items-start">
                                                     Detail Pengunjung
                                                 </h1>
+                                                <div class="card-toolbar">
+                                                    <button type="button" class="btn btn-sm btn-success clone"
+                                                        title="Tambah Pengunjung"><i class="fad fa-plus"></i></button>
+                                                </div>
                                             </div>
                                             <div class="card-body px-3 px-lg-7 pt-0">
                                                 <div class="card border rounded-4 mb-5">
@@ -145,89 +153,50 @@
                                                                     for="flexSwitchDefault">
                                                                     Samakan dengan Pemesan
                                                                 </label>
-                                                                <input class="form-check-input px-9" type="checkbox"
-                                                                    value="" id="flexSwitchDefault" />
+                                                                <input class="form-check-input px-9 sameOrder"
+                                                                    type="checkbox" value=""
+                                                                    id="flexSwitchDefault" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card-body px-3 px-lg-7 pt-3">
-                                                        <div class="fv-row mb-5">
+                                                        <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nomor Indentitas</label>
                                                             <input type="text" class="form-control form-control-lg"
-                                                                id="identity_number" name="identity_number"
+                                                                id="identity_number1" name="identity_number"
                                                                 placeholder="Masukan nomor identitas Anda"
                                                                 value="" />
                                                             <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
                                                                 NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
                                                         </div>
-                                                        <div class="fv-row mb-5">
+                                                        <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nama</label>
                                                             <input type="text" class="form-control form-control-lg"
-                                                                id="name" name="name"
+                                                                id="name1" name="name"
                                                                 placeholder="Masukan nama lengkap" value="" />
                                                         </div>
-                                                        <div class="fv-row mb-5">
+                                                        <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Alamat</label>
-                                                            <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address" name="address"
+                                                            <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address1" name="address"
                                                                 placeholder="Masukan alamat lengkap" value=""></textarea>
                                                         </div>
-                                                        <div class="fv-row mb-5">
+                                                        <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">No Telepon</label>
                                                             <input type="number" class="form-control form-control-lg"
-                                                                id="phone" name="phone"
+                                                                id="phone1" name="phone"
                                                                 placeholder="Masukan nomor telepon" value="" />
                                                         </div>
-                                                        <div class="fv-row mb-5">
+                                                        <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Email Aktif</label>
                                                             <input type="email" class="form-control form-control-lg"
-                                                                id="email" name="email"
+                                                                id="email1" name="email"
                                                                 placeholder="Masukan nomor telepon" value="" />
                                                             <span class="ms-1 fs-9 text-gray-500">
                                                                 E-ticket akan dikirim ke email pemesan ini.</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="card border rounded-4 mb-5">
-                                                    <div class="card-header px-3 px-lg-7 pt-5 border-0 bg-light">
-                                                        <h1 class="card-title fw-bolder text-gray-900 align-items-start">
-                                                            Pengunjung 2
-                                                        </h1>
-                                                    </div>
-                                                    <div class="card-body px-3 px-lg-7 pt-3">
-                                                        <div class="fv-row mb-5">
-                                                            <label class="form-label">Nomor Indentitas</label>
-                                                            <input type="text" class="form-control form-control-lg"
-                                                                id="identity_number" name="identity_number"
-                                                                placeholder="Masukan nomor identitas Anda"
-                                                                value="" />
-                                                            <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
-                                                                NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
-                                                        </div>
-                                                        <div class="fv-row mb-5">
-                                                            <label class="form-label">Nama</label>
-                                                            <input type="text" class="form-control form-control-lg"
-                                                                id="name" name="name"
-                                                                placeholder="Masukan nama lengkap" value="" />
-                                                        </div>
-                                                        <div class="fv-row mb-5">
-                                                            <label class="form-label">Alamat</label>
-                                                            <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address" name="address"
-                                                                placeholder="Masukan alamat lengkap" value=""></textarea>
-                                                        </div>
-                                                        <div class="fv-row mb-5">
-                                                            <label class="form-label">No Telepon</label>
-                                                            <input type="number" class="form-control form-control-lg"
-                                                                id="phone" name="phone"
-                                                                placeholder="Masukan nomor telepon" value="" />
-                                                        </div>
-                                                        <div class="fv-row mb-5">
-                                                            <label class="form-label">Email Aktif</label>
-                                                            <input type="email" class="form-control form-control-lg"
-                                                                id="email" name="email"
-                                                                placeholder="Masukan nomor telepon" value="" />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <div class="result"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -435,6 +404,74 @@
         // Handle previous step
         stepper.on("kt.stepper.previous", function(stepper) {
             stepper.goPrevious(); // go previous step
+        });
+
+        $('.sameOrder').on('change', function() {
+            if ($(this).is(':checked')) {
+                document.getElementById('identity_number1').value = $("[name=identity_number_order]").val();
+                document.getElementById('name1').value = $("[name=name_order]").val();
+                document.getElementById('address1').value = $("[name=address_order]").val();
+                document.getElementById('phone1').value = $("[name=phone_order]").val();
+                document.getElementById('email1').value = $("[name=email_order]").val();
+            } else {
+                $('.input-text > input').val("");
+            }
+        });
+
+        $("body").on("click", ".remove", function() {
+            $(this).parents(".parent").remove();
+        });
+
+        $('.clone').on('click', function(e) {
+            e.preventDefault();
+            var html = "";
+
+            html = `<div class="card border rounded-4 mb-5 parent">
+                <div class="card-header px-3 px-lg-7 pt-5 border-0 bg-light">
+                    <h1 class="card-title fw-bolder text-gray-900 align-items-start">
+                        Pengunjung 2
+                    </h1>
+                    <div class="card-toolbar">
+                        <button type="button" class="btn btn-sm btn-danger remove"
+                            title="Hapus Pengunjung"><i class="fad fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body px-3 px-lg-7 pt-3">
+                    <div class="fv-row mb-5">
+                        <label class="form-label">Nomor Indentitas</label>
+                        <input type="text" class="form-control form-control-lg"
+                            id="identity_number" name="identity_number"
+                            placeholder="Masukan nomor identitas Anda"
+                            value="" />
+                        <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
+                            NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
+                    </div>
+                    <div class="fv-row mb-5">
+                        <label class="form-label">Nama</label>
+                        <input type="text" class="form-control form-control-lg"
+                            id="name" name="name"
+                            placeholder="Masukan nama lengkap" value="" />
+                    </div>
+                    <div class="fv-row mb-5">
+                        <label class="form-label">Alamat</label>
+                        <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address" name="address"
+                            placeholder="Masukan alamat lengkap" value=""></textarea>
+                    </div>
+                    <div class="fv-row mb-5">
+                        <label class="form-label">No Telepon</label>
+                        <input type="number" class="form-control form-control-lg"
+                            id="phone" name="phone"
+                            placeholder="Masukan nomor telepon" value="" />
+                    </div>
+                    <div class="fv-row mb-5">
+                        <label class="form-label">Email Aktif</label>
+                        <input type="email" class="form-control form-control-lg"
+                            id="email" name="email"
+                            placeholder="Masukan nomor telepon" value="" />
+                    </div>
+                </div>
+            </div>`;
+            $(".result").append(html);
         });
     </script>
 @endsection
