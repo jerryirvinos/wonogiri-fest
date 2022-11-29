@@ -16,7 +16,7 @@
                         <div class="lh-xxl fs-6 fs-lg-3 fw-semibold text-white text-center">
                             Kuburan | <span class="bg-white">siapa hayo</span> | <span class="bg-white">siapa
                                 hayo</span> | Pas
-                            Band -
+                            Band |
                             Kugiran Masdo | Down For Life | <span class="bg-white text-white">siapa hayo</span> |
                             Closehead
                             | Feel

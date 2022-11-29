@@ -270,15 +270,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
-                            <div class="d-flex justify-content-center flex-column flex-wrap">
-                                <div class="card bg-transparent rounded-4 p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 rounded-4 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
