@@ -14,18 +14,24 @@
                 <div class="row justify-content-center px-8 px-lg-10">
                     <div class="col-xl-10 col-xxl-8">
                         <div class="lh-xxl fs-6 fs-lg-3 fw-semibold text-white text-center">
-                            Kuburan | <span class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | Pas
+                            Kuburan | <span class="bg-white">siapa hayo</span> | <span class="bg-white">siapa
+                                hayo</span> | Pas
                             Band -
-                            Kugiran Masdo | Down For Life | <span class="bg-white">xxxxxx</span> | Closehead | Feel
-                            Koplo | Rosemary | <span class="bg-white">xxxxxx</span> | Hasoe Angels | <span
-                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
-                                class="bg-white">xxxxxx</span> | Lord Symphony | OM PNS | <span
-                                class="bg-white">xxxxxx</span>
+                            Kugiran Masdo | Down For Life | <span class="bg-white text-white">siapa hayo</span> |
+                            Closehead
+                            | Feel
+                            Koplo | Rosemary | <span class="bg-white text-white">siapa hayo</span> | Hasoe Angels |
+                            <span class="bg-white text-white">siapa hayo</span> | <span
+                                class="bg-white text-white">siapa hayo</span> | <span class="bg-white text-white">siapa
+                                hayo</span> | Lord Symphony | OM PNS | <span class="bg-white text-white">siapa
+                                hayo</span>
                             -
-                            Ksatria Kegelapan | Dirty Money Syndct | <span class="bg-white">xxxxxx</span> | <span
-                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
-                                class="bg-white">xxxxxx</span> | <span class="bg-white">xxxxxx</span> | <span
-                                class="bg-white">xxxxxx</span>
+                            Ksatria Kegelapan | Dirty Money Syndct | <span class="bg-white text-white">siapa hayo</span>
+                            |
+                            <span class="bg-white text-white">siapa hayo</span> | <span
+                                class="bg-white text-white">siapa hayo</span> | <span class="bg-white text-white">siapa
+                                hayo</span> | <span class="bg-white text-white">siapa hayo</span> | <span
+                                class="bg-white text-white">siapa hayo</span>
                         </div>
                         <div class="fs-6 fs-lg-2x fw-bolder text-white text-center my-10">
                             MASIH BANYAK <span class="text-base-2">LINEUP</span> BELUM TERUNGKAP!
