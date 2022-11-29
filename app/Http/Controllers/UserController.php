@@ -35,10 +35,10 @@ class UserController extends Controller
 
             $users = DB::table('users')
                 ->join('roles', 'users.role', '=', 'roles.id')
-                ->select('users.*','roles.name AS nama_role')
+                ->select('users.*', 'roles.name AS nama_role')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('users.name', 'like', '%' . $searchValue . '%')
-                    ->orWhere('users.identity_number', 'like', '%' . $searchValue . '%');
+                        ->orWhere('users.identity_number', 'like', '%' . $searchValue . '%');
                 })
                 ->skip($start)
                 ->take($rowperpage)
@@ -79,6 +79,7 @@ class UserController extends Controller
             $request->all(),
             [
                 'name' => 'required',
+                'username' => 'required',
                 'identity_number' => 'required',
                 'address' => 'required',
                 'phone' => 'required',
@@ -86,6 +87,7 @@ class UserController extends Controller
             ],
             [
                 'name.required' => 'Nama harus diisi!',
+                'username.required' => 'username harus diisi!',
                 'identity_number.required' => 'Nomor identitas harus diisi!',
                 'address.required' => 'Alamat harus diisi!',
                 'phone.required' => 'Nomor Telphone harus diisi!',
@@ -99,13 +101,14 @@ class UserController extends Controller
 
         $isExist = User::where('identity_number', $request->input('identity_number'))->first();
 
-        if($isExist){
+        if ($isExist) {
             return redirect('user')->with('warning', "Nomor Identitas sudah digunakan");
         }
 
         try {
             $user = User::create([
                 'name' => strip_tags($request->input('name')),
+                'username' => strip_tags($request->input('username')),
                 'identity_number' => strip_tags($request->input('identity_number')),
                 'address' => strip_tags($request->input('address')),
                 'phone' => strip_tags($request->input('phone')),
@@ -143,7 +146,7 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = Role::all();
 
-        return view('user.edit', compact('roles','user'));
+        return view('user.edit', compact('roles', 'user'));
     }
 
     /**
@@ -159,6 +162,7 @@ class UserController extends Controller
             $request->all(),
             [
                 'name' => 'required',
+                'username' => 'required',
                 'identity_number' => 'required',
                 'address' => 'required',
                 'phone' => 'required',
@@ -166,6 +170,7 @@ class UserController extends Controller
             ],
             [
                 'name.required' => 'Nama harus diisi!',
+                'username.required' => 'Username harus diisi!',
                 'identity_number.required' => 'Nomor identitas harus diisi!',
                 'address.required' => 'Alamat harus diisi!',
                 'phone.required' => 'Nomor Telphone harus diisi!',
@@ -177,16 +182,17 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $isExist = User::where('id', '!=' , $id)
-        ->where('identity_number', $request->input('identity_number'))->first();
+        $isExist = User::where('id', '!=', $id)
+            ->where('identity_number', $request->input('identity_number'))->first();
 
-        if($isExist){
+        if ($isExist) {
             return redirect()->route('user.index')->with('warning', "Nomor Identitas sudah digunakan");
         }
 
         try {
             $user = User::find($id);
 
+            $user->username =  strip_tags($request->input('username'));
             $user->name =  strip_tags($request->input('name'));
             $user->identity_number =  strip_tags($request->input('identity_number'));
             $user->address =  strip_tags($request->input('address'));
@@ -195,7 +201,7 @@ class UserController extends Controller
             $user->status =  true;
 
             $user->save();
-            
+
             return redirect()->route('user.index')->with('success', 'Berhasil Diubah');
         } catch (\Exception $e) {
             return redirect()->route('user.index')->with('warning', $e->getMessage());
@@ -244,12 +250,12 @@ class UserController extends Controller
         }
 
         $user = User::where('username', $request->input('username'))->first();
-        if($user){
+        if ($user) {
             if (Hash::check($request->input('password'), $user->password)) {
                 $status = true;
                 $msg = "Berhasil Login";
 
-                $role = Role::where('id',$user->role)->first();
+                $role = Role::where('id', $user->role)->first();
 
                 $request->session()->flush();
 
@@ -263,7 +269,7 @@ class UserController extends Controller
                     'is_login' => true,
                 ]);
             }
-        }else{
+        } else {
             $status = false;
             $msg = "Anda belum terdaftar";
         }

@@ -35,6 +35,16 @@
                                 </small>
                             </div>
                             <div class="mb-10">
+                                <label class="form-label fs-7 text-gray-700">Username</label>
+                                <input type="text" class="form-control form-control-lg" name="username"
+                                    value="{{ $user->username }}">
+                                <small class="text-danger">
+                                    @error('username')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
+                            </div>
+                            <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">ID Identitas</label>
                                 <input type="number" name="identity_number" class="form-control form-control-lg"
                                     value="{{ $user->identity_number }}" maxlength="16"
