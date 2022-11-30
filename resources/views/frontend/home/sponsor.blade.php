@@ -53,7 +53,7 @@
                                 <div class="col-lg-3 col-sm-4 mb-5">
                                     <div class="symbol symbol-50px symbol-lg-75px">
                                         <div class="symbol-label bg-transparent"
-                                            style="background-image:url('{{ asset('/assets/media/ticketbox/kokok.png') }}')">
+                                            style="background-image:url('{{ asset('/assets/media/ticketbox/ko-kok.png') }}')">
                                         </div>
                                     </div>
                                 </div>

@@ -25,13 +25,12 @@
                                 class="bg-white text-white">siapa hayo</span> | <span class="bg-white text-white">siapa
                                 hayo</span> | Lord Symphony | OM PNS | <span class="bg-white text-white">siapa
                                 hayo</span>
-                            -
+                            |
                             Ksatria Kegelapan | Dirty Money Syndct | <span class="bg-white text-white">siapa hayo</span>
                             |
                             <span class="bg-white text-white">siapa hayo</span> | <span
                                 class="bg-white text-white">siapa hayo</span> | <span class="bg-white text-white">siapa
-                                hayo</span> | <span class="bg-white text-white">siapa hayo</span> | <span
-                                class="bg-white text-white">siapa hayo</span>
+                                hayo</span> | <span class="bg-white text-white">siapa hayo</span>
                         </div>
                         <div class="fs-6 fs-lg-2x fw-bolder text-white text-center my-10">
                             MASIH BANYAK <span class="text-base-2">LINEUP</span> BELUM TERUNGKAP!
