@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
@@ -9,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
+Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::post('/transaction', [CheckoutController::class, 'index'])->name('checkout.transaction');
 Route::resource('checkout', CheckoutController::class);
 
 Route::group(['prefix' => 'admin',  AuthCheck::class], function () {
@@ -22,9 +25,9 @@ Route::get('/login', function () {
     return view('frontend.login');
 });
 
-Route::get('/', function () {
-    return view('frontend.landing');
-});
+// Route::get('/', function () {
+//     return view('frontend.landing');
+// });
 
 Route::get('/aboutus', function () {
     return view('frontend.aboutus');

@@ -11,90 +11,30 @@
             </div>
             <div class="col-xl-9 col-xxl-10">
                 <div class="row justify-content-center">
-                    <div class="col-lg-4 col-sm-12">
-                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
-                            data-bs-target="#modalcheckout">
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
-                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
-                                <div class="card-body text-center">
-                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
-                                        <div class="fs-2x text-base font-title">
-                                            Early Bird
+                    @foreach ($tickets as $ticket)
+                        <div class="col-lg-4 col-sm-12">
+                            <button type="button"
+                                class="card bg-transparent h-100 mb-5 py-5 {{ $ticket->price ? 'ticketClick' : '' }}"
+                                data-id={{ $ticket->id }} data-price={{ $ticket->price }}>
+                                <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
+                                    style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
+                                    <div class="card-body text-center">
+                                        <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
+                                            <div class="fs-2x text-base font-title">
+                                                {{ $ticket->name }}
+                                            </div>
+                                            <div class="fs-3 fst-italic text-base fw-semibold">
+                                                {{ $ticket->title }} <span class="fs-5">{{ $ticket->detail }}</span>
+                                            </div>
                                         </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold">
-                                            Tiket terusan <span class="fs-5">(2 hari show)</span>
+                                        <div class="fs-3x text-base fw-bolder">
+                                            {{ $ticket->price ? format_rupiah($ticket->price) : '' }}
                                         </div>
-                                    </div>
-                                    <div class="fs-3x text-base fw-bolder">
-                                        Rp 175.000
                                     </div>
                                 </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
-                            data-bs-target="#modalcheckout">
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
-                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
-                                <div class="card-body text-center">
-                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
-                                        <div class="fs-2x text-base font-title">
-                                            Presale 1
-                                        </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold">
-                                            Tiket terusan <span class="fs-5">(2 hari show)</span>
-                                        </div>
-                                    </div>
-                                    <div class="fs-3x text-base fw-bolder">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
-                            data-bs-target="#modalcheckout">
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
-                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
-                                <div class="card-body text-center">
-                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
-                                        <div class="fs-2x text-base font-title">
-                                            Presale 2
-                                        </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold">
-                                            Tiket harian <span class="fs-5">(1 hari show)</span>
-                                        </div>
-                                    </div>
-                                    <div class="fs-3x text-base fw-bolder">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
-                            data-bs-target="#modalcheckout">
-                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
-                                style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
-                                <div class="card-body text-center">
-                                    <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
-                                        <div class="fs-2x text-base font-title">
-                                            OTS
-                                        </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold">
-                                            Tiket harian <span class="fs-5">(1 hari show)</span>
-                                        </div>
-                                    </div>
-                                    <div class="fs-3x text-base fw-bolder">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
+                            </button>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-sm-12">

@@ -18,6 +18,8 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Early Bird',
             'price' => '200000',
             'quota' => '200',
+            'title' => 'Ticket Terusan',
+            'detail' => '(2 hari show)',
             'code' => '11',
             'status' => true,
         ]);
@@ -26,6 +28,8 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Presale 1',
             'price' => '250000',
             'quota' => '200',
+            'title' => 'Ticket Terusan',
+            'detail' => '(2 hari show)',
             'code' => '21',
             'status' => true,
         ]);
@@ -34,6 +38,8 @@ class TicketTypeSeeder extends Seeder
             'name' => '2D Pass',
             'price' => '300000',
             'quota' => '200',
+            'title' => 'Ticket Terusan',
+            'detail' => '(2 hari show)',
             'code' => '31',
             'status' => true,
         ]);
@@ -42,6 +48,8 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Daily Pass',
             'price' => '300000',
             'quota' => '200',
+            'title' => 'Ticket Terusan',
+            'detail' => '(2 hari show)',
             'code' => '32',
             'status' => true,
         ]);
@@ -50,6 +58,8 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Invitation',
             'price' => '300000',
             'quota' => '200',
+            'title' => 'Ticket Terusan',
+            'detail' => '(2 hari show)',
             'code' => '41',
             'status' => true,
         ]);

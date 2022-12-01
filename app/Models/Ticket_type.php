@@ -13,6 +13,8 @@ class Ticket_type extends Model
         'name',
         'price',
         'quota',
+        'title',
+        'detail',
         'status',
     ];
 }
