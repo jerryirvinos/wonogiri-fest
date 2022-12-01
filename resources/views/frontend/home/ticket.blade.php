@@ -21,7 +21,7 @@
                                             Early Bird
                                         </div>
                                         <div class="fs-3 fst-italic text-base fw-semibold mt-4">
-                                            2 Hari
+                                            Tiket terusan <span class="fs-5">(2 hari show)</span>
                                         </div>
                                     </div>
                                     <div class="fs-3x text-base fw-bolder">
@@ -41,7 +41,7 @@
                                             Presale 1
                                         </div>
                                         <div class="fs-3 fst-italic text-base fw-semibold mt-4">
-                                            2 Hari
+                                            Tiket terusan <span class="fs-5">(2 hari show)</span>
                                         </div>
                                     </div>
                                     <div class="fs-3x text-base fw-bolder">
@@ -61,7 +61,7 @@
                                             Presale 2
                                         </div>
                                         <div class="fs-3 fst-italic text-base fw-semibold mt-4">
-                                            1 Hari
+                                            Tiket harian <span class="fs-5">(1 hari show)</span>
                                         </div>
                                     </div>
                                     <div class="fs-3x text-base fw-bolder">
@@ -81,7 +81,7 @@
                                             OTS
                                         </div>
                                         <div class="fs-3 fst-italic text-base fw-semibold mt-4">
-                                            1 Hari
+                                            Tiket harian <span class="fs-5">(1 hari show)</span>
                                         </div>
                                     </div>
                                     <div class="fs-3x text-base fw-bolder">
