@@ -12,7 +12,8 @@
             <div class="col-xl-9 col-xxl-10">
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="card bg-transparent h-100 mb-5">
+                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
+                            data-bs-target="#modalcheckout">
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body text-center">
@@ -20,7 +21,7 @@
                                         <div class="fs-2x text-base font-title">
                                             Early Bird
                                         </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                        <div class="fs-3 fst-italic text-base fw-semibold">
                                             Tiket terusan <span class="fs-5">(2 hari show)</span>
                                         </div>
                                     </div>
@@ -29,10 +30,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                     </div>
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="card bg-transparent h-100 mb-5">
+                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
+                            data-bs-target="#modalcheckout">
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body text-center">
@@ -40,7 +42,7 @@
                                         <div class="fs-2x text-base font-title">
                                             Presale 1
                                         </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                        <div class="fs-3 fst-italic text-base fw-semibold">
                                             Tiket terusan <span class="fs-5">(2 hari show)</span>
                                         </div>
                                     </div>
@@ -49,10 +51,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                     </div>
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="card bg-transparent h-100 mb-5">
+                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
+                            data-bs-target="#modalcheckout">
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body text-center">
@@ -60,7 +63,7 @@
                                         <div class="fs-2x text-base font-title">
                                             Presale 2
                                         </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                        <div class="fs-3 fst-italic text-base fw-semibold">
                                             Tiket harian <span class="fs-5">(1 hari show)</span>
                                         </div>
                                     </div>
@@ -69,10 +72,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                     </div>
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="card bg-transparent h-100 mb-5">
+                        <button type="button" class="card bg-transparent h-100 mb-5 py-5" data-bs-toggle="modal"
+                            data-bs-target="#modalcheckout">
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body text-center">
@@ -80,7 +84,7 @@
                                         <div class="fs-2x text-base font-title">
                                             OTS
                                         </div>
-                                        <div class="fs-3 fst-italic text-base fw-semibold mt-4">
+                                        <div class="fs-3 fst-italic text-base fw-semibold">
                                             Tiket harian <span class="fs-5">(1 hari show)</span>
                                         </div>
                                     </div>
@@ -89,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="row justify-content-center">
