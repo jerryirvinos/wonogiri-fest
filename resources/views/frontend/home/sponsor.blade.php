@@ -127,7 +127,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-3 col-sm-4 mb-5">
                                     <div class="symbol symbol-50px symbol-lg-75px">
                                         <div class="symbol-label bg-transparent"
@@ -153,6 +152,35 @@
                                     <div class="symbol symbol-50px symbol-lg-75px">
                                         <div class="symbol-label bg-transparent"
                                             style="background-image:url('{{ asset('/assets/media/ticketbox/filosofi-teh.png') }}')">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-4 mb-5">
+                                    <div class="symbol symbol-50px symbol-lg-75px symbol-circle">
+                                        <div class="symbol-label bg-transparent"
+                                            style="background-image:url('{{ asset('/assets/media/ticketbox/cozy.png') }}')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 mb-5">
+                                    <div class="symbol symbol-50px symbol-lg-75px">
+                                        <div class="symbol-label bg-transparent"
+                                            style="background-image:url('{{ asset('/assets/media/ticketbox/jolly.png') }}')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 mb-5">
+                                    <div class="symbol symbol-50px symbol-lg-75px">
+                                        <div class="symbol-label bg-transparent"
+                                            style="background-image:url('{{ asset('/assets/media/ticketbox/padi-resto.png') }}')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 mb-5">
+                                    <div class="symbol symbol-50px symbol-lg-75px">
+                                        <div class="symbol-label bg-transparent"
+                                            style="background-image:url('{{ asset('/assets/media/ticketbox/rumpun-padi.png') }}')">
                                         </div>
                                     </div>
                                 </div>
