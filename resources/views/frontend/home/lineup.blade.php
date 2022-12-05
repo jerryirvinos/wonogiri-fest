@@ -14,10 +14,9 @@
                 <div class="row justify-content-center px-8 px-lg-10">
                     <div class="col-xl-10 col-xxl-8">
                         <div class="lh-xxl fs-6 fs-lg-3 fw-semibold text-white text-center">
-                            Kuburan |
                             <span class="bg-white">siapahayo</span> |
-                            <span class="bg-white">siapahayo</span>
-                            | Pas Band | Kugiran Masdo | Down For Life |
+                            <span class="bg-white">siapahayo</span> |
+                            Kuburan | Pas Band | Kugiran Masdo | Down For Life |
                             <span class="bg-white text-white">siapahayo</span> |
                             Closehead | Feel Koplo | Rosemary |
                             <span class="bg-white text-white">siapahayo</span> |
