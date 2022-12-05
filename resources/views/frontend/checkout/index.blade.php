@@ -108,7 +108,7 @@
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Alamat</label>
-                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address_order" name="address"
+                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address_order" name="address_order"
                                                         placeholder="Masukan alamat lengkap" value=""></textarea>
                                                 </div>
                                                 <div class="fv-row mb-5">
@@ -135,10 +135,6 @@
                                                 <h1 class="card-title fw-bolder text-gray-900 align-items-start">
                                                     Detail Pengunjung
                                                 </h1>
-                                                <div class="card-toolbar">
-                                                    <button type="button" class="btn btn-sm btn-success clone"
-                                                        title="Tambah Pengunjung"><i class="fad fa-plus"></i></button>
-                                                </div>
                                             </div>
                                             <div class="card-body px-3 px-lg-7 pt-0">
                                                 <div class="card border rounded-4 mb-5">
@@ -153,9 +149,11 @@
                                                                     for="flexSwitchDefault">
                                                                     Samakan dengan Pemesan
                                                                 </label>
+
                                                                 <input class="form-check-input px-9 sameOrder"
                                                                     type="checkbox" value=""
                                                                     id="flexSwitchDefault" />
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -164,8 +162,9 @@
                                                             <label class="form-label">Nomor Indentitas</label>
                                                             <input type="text" class="form-control form-control-lg"
                                                                 id="identity_number1" name="identity_number"
-                                                                placeholder="Masukan nomor identitas Anda"
-                                                                value="" />
+                                                                placeholder="Masukan nomor identitas Anda" value=""
+                                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                min="0" maxlength="16" />
                                                             <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
                                                                 NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
                                                         </div>
@@ -184,7 +183,9 @@
                                                             <label class="form-label">No Telepon</label>
                                                             <input type="number" class="form-control form-control-lg"
                                                                 id="phone1" name="phone"
-                                                                placeholder="Masukan nomor telepon" value="" />
+                                                                placeholder="Masukan nomor telepon"
+                                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                min="0" maxlength="13" value="" />
                                                         </div>
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Email Aktif</label>
@@ -196,7 +197,58 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="result"></div>
+                                                @if ($total)
+                                                    @for ($i = 0; $i < $total - 1; $i++)
+                                                        <div class="card border rounded-4 mb-5">
+                                                            <div class="card-header px-3 px-lg-7 pt-5 border-0 bg-light">
+                                                                <h1
+                                                                    class="card-title fw-bolder text-gray-900 align-items-start">
+                                                                    Pengunjung {{ $i + 2 }}
+                                                                </h1>
+                                                            </div>
+                                                            <div class="card-body px-3 px-lg-7 pt-3">
+                                                                <div class="fv-row mb-5 input-text">
+                                                                    <label class="form-label">Nomor Indentitas</label>
+                                                                    <input type="text"
+                                                                        class="form-control form-control-lg"
+                                                                        name="identity_number"
+                                                                        placeholder="Masukan nomor identitas Anda"
+                                                                        value="" />
+                                                                    <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
+                                                                        NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
+                                                                </div>
+                                                                <div class="fv-row mb-5 input-text">
+                                                                    <label class="form-label">Nama</label>
+                                                                    <input type="text"
+                                                                        class="form-control form-control-lg"
+                                                                        name="name" placeholder="Masukan nama lengkap"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="fv-row mb-5 input-text">
+                                                                    <label class="form-label">Alamat</label>
+                                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" name="address"
+                                                                        placeholder="Masukan alamat lengkap" value=""></textarea>
+                                                                </div>
+                                                                <div class="fv-row mb-5 input-text">
+                                                                    <label class="form-label">No Telepon</label>
+                                                                    <input type="number"
+                                                                        class="form-control form-control-lg"
+                                                                        name="phone" placeholder="Masukan nomor telepon"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="fv-row mb-5 input-text">
+                                                                    <label class="form-label">Email Aktif</label>
+                                                                    <input type="email"
+                                                                        class="form-control form-control-lg"
+                                                                        name="email" placeholder="Masukan nomor telepon"
+                                                                        value="" />
+                                                                    <span class="ms-1 fs-9 text-gray-500">
+                                                                        E-ticket akan dikirim ke email pemesan ini.</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endfor
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -226,33 +278,38 @@
                                                     aria-labelledby="kt_accordion_1_header_1"
                                                     data-bs-parent="#kt_accordion_1">
                                                     <div class="accordion-body">
-                                                        <label
-                                                            class="border border-solid boder-secondary rounded-3 p-5 form-check-label mb-5 w-100"
-                                                            for="mandiri">
-                                                            <div class="d-flex justify-content-between flex-wrap px-2">
-                                                                <div class="d-flex align-items-center flex-wrap">
-                                                                    <div class="symbol symbol-50px px-1 me-5">
-                                                                        <div class="symbol-label symbol-label-fit"
-                                                                            style="background-image:url('{{ asset('/assets/media/bank/mandiri.png') }}')">
+                                                        @foreach ($banks as $bank)
+                                                            <label
+                                                                class="border border-solid boder-secondary rounded-3 p-5 form-check-label mb-5 w-100"
+                                                                for="mandiri">
+                                                                <div class="d-flex justify-content-between flex-wrap px-2">
+                                                                    <div class="d-flex align-items-center flex-wrap">
+                                                                        <div class="symbol symbol-50px px-1 me-5">
+                                                                            <div class="symbol-label symbol-label-fit"
+                                                                                style="background-image:url('{{ asset($bank->logos) }}')">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column">
+                                                                            <div
+                                                                                class="fs-3 fw-bolder text-gray-900 lh-1 mb-2">
+                                                                                {{ $bank->name }}
+                                                                            </div>
+                                                                            <span class="text-muted fs-6">
+                                                                                Transfer ke rekening {{ $bank->name }}
+                                                                            </span>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="d-flex flex-column">
-                                                                        <div
-                                                                            class="fs-3 fw-bolder text-gray-900 lh-1 mb-2">
-                                                                            Bank Mandiri
-                                                                        </div>
-                                                                        <span class="text-muted fs-6">
-                                                                            Transfer ke rekening Mandiri
-                                                                        </span>
+                                                                    <div
+                                                                        class="form-check form-check-custom form-check-solid">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            id="{{ $bank->name }}" name="bank"
+                                                                            value="" />
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        id="mandiri" name="bank" value="" />
-                                                                </div>
-                                                            </div>
-                                                        </label>
-                                                        <label
+                                                            </label>
+                                                        @endforeach
+
+                                                        {{-- <label
                                                             class="border border-solid boder-secondary rounded-3 p-5 form-check-label mb-5 w-100"
                                                             for="bca">
                                                             <div class="d-flex justify-content-between flex-wrap px-2">
@@ -277,7 +334,7 @@
                                                                         id="bca" name="bank" value="" />
                                                                 </div>
                                                             </div>
-                                                        </label>
+                                                        </label> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -353,10 +410,10 @@
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div class="d-flex flex-column flex-wrap mb-3">
                                         <div class="fs-3 fw-bolder text-gray-800">
-                                            Early Bird
+                                            {{ $ticket_type->name }}
                                         </div>
                                         <div class="fs-6 text-muted">
-                                            Ticket Early Bird 1 hari
+                                            {{ $ticket_type->detail }}
                                         </div>
                                     </div>
                                 </div>
@@ -364,10 +421,10 @@
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div class="fs-6 text-gray-800">
-                                        Jumlah ticket <span class="fw-bold text-gray-700">(x2)</span>
+                                        Jumlah ticket <span class="fw-bold text-gray-700">(x{{ $total }})</span>
                                     </div>
                                     <div class="fs-4 fw-semibold text-gray-800 my-auto">
-                                        Rp 200.000,-
+                                        {{ format_rupiah($ticket_type->price) }}
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +435,7 @@
                                 Total Pembayaran
                             </div>
                             <div class="fs-3 text-primary fw-bolder">
-                                Rp 400.000,0
+                                {{ format_rupiah($hasil) }}
                             </div>
                         </div>
                     </div>
@@ -416,62 +473,6 @@
             } else {
                 $('.input-text > input').val("");
             }
-        });
-
-        $("body").on("click", ".remove", function() {
-            $(this).parents(".parent").remove();
-        });
-
-        $('.clone').on('click', function(e) {
-            e.preventDefault();
-            var html = "";
-
-            html = `<div class="card border rounded-4 mb-5 parent">
-                <div class="card-header px-3 px-lg-7 pt-5 border-0 bg-light">
-                    <h1 class="card-title fw-bolder text-gray-900 align-items-start">
-                        Pengunjung 2
-                    </h1>
-                    <div class="card-toolbar">
-                        <button type="button" class="btn btn-sm btn-danger remove"
-                            title="Hapus Pengunjung"><i class="fad fa-minus"></i></button>
-                    </div>
-                </div>
-                <div class="card-body px-3 px-lg-7 pt-3">
-                    <div class="fv-row mb-5">
-                        <label class="form-label">Nomor Indentitas</label>
-                        <input type="text" class="form-control form-control-lg"
-                            id="identity_number" name="identity_number"
-                            placeholder="Masukan nomor identitas Anda"
-                            value="" />
-                        <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
-                            NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
-                    </div>
-                    <div class="fv-row mb-5">
-                        <label class="form-label">Nama</label>
-                        <input type="text" class="form-control form-control-lg"
-                            id="name" name="name"
-                            placeholder="Masukan nama lengkap" value="" />
-                    </div>
-                    <div class="fv-row mb-5">
-                        <label class="form-label">Alamat</label>
-                        <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address" name="address"
-                            placeholder="Masukan alamat lengkap" value=""></textarea>
-                    </div>
-                    <div class="fv-row mb-5">
-                        <label class="form-label">No Telepon</label>
-                        <input type="number" class="form-control form-control-lg"
-                            id="phone" name="phone"
-                            placeholder="Masukan nomor telepon" value="" />
-                    </div>
-                    <div class="fv-row mb-5">
-                        <label class="form-label">Email Aktif</label>
-                        <input type="email" class="form-control form-control-lg"
-                            id="email" name="email"
-                            placeholder="Masukan nomor telepon" value="" />
-                    </div>
-                </div>
-            </div>`;
-            $(".result").append(html);
         });
     </script>
 @endsection

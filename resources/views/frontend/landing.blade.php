@@ -100,10 +100,12 @@
 
         $(function() {
             $('.ticketClick').click(function() {
-                // $('.totalHarga').text(formatRupiah($(this).data('price'), 'Rp. '))
                 $('#modalcheckout').modal('toggle');
                 $('input[name="id"]').val($(this).data('id'));
                 $('input[name="satuan"]').val($(this).data('price'));
+                var price = parseInt($(this).data('price'), 'Rp. ') + 0;
+                var result = formatRupiah(price, 'Rp. ');
+                $('.totalHarga').text(result)
             });
 
             function formatRupiah(bilangan, prefix) {

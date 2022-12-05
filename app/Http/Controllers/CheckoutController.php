@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
+use App\Models\Ticket_type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class CheckoutController extends Controller
 {
@@ -13,7 +16,12 @@ class CheckoutController extends Controller
      */
     public function index(Request $request)
     {
-        return view('frontend.checkout.index');
+        $ticket_type = Ticket_type::find(Crypt::decryptString($request->id));
+        $banks = Bank::all();
+        $total = (int) $request->total;
+        $hasil = (int) $ticket_type->price * (int) $total;
+
+        return view('frontend.checkout.index',compact('ticket_type','total','hasil','banks'));
     }
 
     /**

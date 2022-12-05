@@ -14,7 +14,7 @@
                     @foreach ($tickets as $ticket)
                         <button type="button"
                             class="card bg-transparent h-100 py-0 py-lg-5 mx-auto {{ $ticket->price ? 'ticketClick' : '' }}"
-                            data-id={{ $ticket->id }} data-price={{ $ticket->price }}>
+                            data-id={{ Crypt::encryptString($ticket->id) }} data-price={{ $ticket->price }}>
                             <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
                                 style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                                 <div class="card-body text-center">
