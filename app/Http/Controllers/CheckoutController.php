@@ -13,7 +13,6 @@ class CheckoutController extends Controller
      */
     public function index(Request $request)
     {
-        dd($request);
         return view('frontend.checkout.index');
     }
 
