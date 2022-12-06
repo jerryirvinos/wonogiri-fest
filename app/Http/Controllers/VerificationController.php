@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\Bill;
 use App\Models\Log;
+use App\Models\Order;
 use App\Models\Ticket_type;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -33,25 +35,25 @@ class VerificationController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('bills')->where('is_online','=','1')->where('payment_status','=','0')->count();
-            $totalRecordswithFilter = DB::table('bills')
-                ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
+            $totalRecords = DB::table('orders')->where('is_online','=','1')->where('payment_status','=','0')->count();
+            $totalRecordswithFilter = DB::table('orders')
+                ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('is_online','=','1')
                 ->where('payment_status','=','0')
                 ->where(function ($query) use ($searchValue) {
-                    $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
-                        ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
+                    $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
+                        ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
                 })->count();
 
 
-            $data = DB::table('bills')
-                ->select('bills.*','ticket_types.name AS ticket_name')
-                ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
+            $data = DB::table('orders')
+                ->select('orders.*','ticket_types.name AS ticket_name')
+                ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('is_online','=','1')
                 ->where('payment_status','=','0')
                 ->where(function ($query) use ($searchValue) {
-                    $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
-                        ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
+                    $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
+                        ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
                 })
                 ->skip($start)
                 ->take($rowperpage)
@@ -110,11 +112,12 @@ class VerificationController extends Controller
      */
     public function edit($id)
     {
-        $bills = Bill::find($id);
-        $ticket_type = Ticket_type::find($bills->ticket_type);
+        $order = Order::find($id);
+        $ticket_type = Ticket_type::find($order->ticket_type);
+        $visitors = Visitor::where('order_id',$order->id)->get();
         $banks = Bank::all();
 
-        return view('verification.edit', compact('bills','ticket_type','banks'));
+        return view('verification.edit', compact('order','ticket_type','banks','visitors'));
     }
 
     /**
@@ -147,7 +150,7 @@ class VerificationController extends Controller
         }
         
         try {
-            $ticket = Bill::find($id);
+            $ticket = Order::find($id);
 
             $ticket->payment_status = '1';
             $ticket->account_number = strip_tags($request->input('account_number'));
