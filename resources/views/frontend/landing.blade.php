@@ -45,7 +45,7 @@
     <div class="modal fade" tabindex="-1" id="modalcheckout">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content glassMorph">
-                <form method="POST" action="{{ route('checkout.transaction') }}">
+                <form method="POST" action="{{ route('checkout.index') }}">
                     @csrf
                     <input type="hidden" name="id" value="">
                     <input type="hidden" name="satuan" value="">

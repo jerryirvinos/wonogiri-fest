@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::post('/transaction', [CheckoutController::class, 'index'])->name('checkout.transaction');
-Route::resource('checkout', CheckoutController::class);
+Route::post('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
 
 Route::group(['prefix' => 'admin',  AuthCheck::class], function () {
     Route::post('/loginProcess', [UserController::class, 'loginProcess'])->name('user.loginProcess')->withoutMiddleware([AuthCheck::class]);

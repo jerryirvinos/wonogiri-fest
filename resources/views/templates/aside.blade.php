@@ -3,7 +3,7 @@
     data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
     <div class="aside-logo flex-column-auto pt-10 pt-lg-20" id="kt_aside_logo">
         <a href="#">
-            <img alt="Logo" src="{{ asset('/assets/media/logos/logo-ramlan.png') }}" class="h-40px" />
+            <img alt="Logo" src="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" class="h-40px" />
         </a>
     </div>
     <div class="aside-menu flex-column-fluid pt-0 pb-7 py-lg-10" id="kt_aside_menu">
@@ -30,14 +30,14 @@
                         <div class="menu-title">Verifikasi</div>
                     </a>
                 </div>
-                <div class="menu-item py-2">
+                {{-- <div class="menu-item py-2">
                     <a href="{{ route('ticket.index') }}" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-ticket fa-2x"></i>
                         </span>
                         <div class="menu-title">Transaksi</div>
                     </a>
-                </div>
+                </div> --}}
                 <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
                     class="menu-item py-2">
                     <a href="#" class="menu-link menu-center flex-column">

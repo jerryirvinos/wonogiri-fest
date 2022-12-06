@@ -15,14 +15,6 @@ class BankSeeder extends Seeder
     public function run()
     {
         DB::table('banks')->insert([
-            'name' => 'Mandiri',
-            'account_number' => '1234567',
-            'owner' => 'Yeremia',
-            'logos' => 'assets/media/bank/mandiri.png',
-            'status' => true,
-        ]);
-
-        DB::table('banks')->insert([
             'name' => 'BCA',
             'account_number' => '12345671111',
             'owner' => 'Huda',

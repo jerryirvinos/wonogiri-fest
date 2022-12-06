@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body px-5 px-lg-9">
                         <!--begin::Stepper-->
-                        <div class="stepper stepper-pills" id="kt_stepper_example_basic">
+                        <div class="stepper stepper-pills" id="kt_create_account_stepper">
                             <!--begin::Nav-->
                             <div class="stepper-nav flex-center flex-wrap mb-10">
                                 <!--begin::Step 1-->
@@ -77,8 +77,13 @@
                             <!--end::Nav-->
 
                             <!--begin::Form-->
-                            <form class="form w-100 w-lg-75 mx-auto" novalidate="novalidate"
-                                id="kt_stepper_example_basic_form">
+                            <form class="form w-100 w-lg-75 mx-auto" novalidate="novalidate" id="kt_create_account_form">
+                                @csrf
+                                <input type="hidden" name="code_ticket" value="{{ $ticket_type->code }}" />
+                                <input type="hidden" name="ticket_type" value="{{ $ticket_type->id }}" />
+                                <input type="hidden" name="qty" value="{{ $total }}" />
+                                <input type="hidden" name="total_price" value="{{ $hasil }}" />
+                                <input type="hidden" name="ticket_box" value="" />
                                 <!--begin::Group-->
                                 <div class="mb-5">
                                     <!--begin::Step 1-->
@@ -161,7 +166,7 @@
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nomor Indentitas</label>
                                                             <input type="text" class="form-control form-control-lg"
-                                                                id="identity_number1" name="identity_number"
+                                                                id="identity_number1" name="identity_number[]"
                                                                 placeholder="Masukan nomor identitas Anda" value=""
                                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                                 min="0" maxlength="16" />
@@ -171,18 +176,18 @@
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nama</label>
                                                             <input type="text" class="form-control form-control-lg"
-                                                                id="name1" name="name"
+                                                                id="name1" name="name[]"
                                                                 placeholder="Masukan nama lengkap" value="" />
                                                         </div>
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Alamat</label>
-                                                            <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address1" name="address"
+                                                            <textarea class="form-control form-control-lg" data-kt-autosize="true" id="address1" name="address[]"
                                                                 placeholder="Masukan alamat lengkap" value=""></textarea>
                                                         </div>
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">No Telepon</label>
                                                             <input type="number" class="form-control form-control-lg"
-                                                                id="phone1" name="phone"
+                                                                id="phone1" name="phone[]"
                                                                 placeholder="Masukan nomor telepon"
                                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                                 min="0" maxlength="13" value="" />
@@ -190,7 +195,7 @@
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Email Aktif</label>
                                                             <input type="email" class="form-control form-control-lg"
-                                                                id="email1" name="email"
+                                                                id="email1" name="email[]"
                                                                 placeholder="Masukan nomor telepon" value="" />
                                                             <span class="ms-1 fs-9 text-gray-500">
                                                                 E-ticket akan dikirim ke email pemesan ini.</span>
@@ -211,9 +216,9 @@
                                                                     <label class="form-label">Nomor Indentitas</label>
                                                                     <input type="text"
                                                                         class="form-control form-control-lg"
-                                                                        name="identity_number"
-                                                                        placeholder="Masukan nomor identitas Anda"
-                                                                        value="" />
+                                                                        name="identity_number[]"
+                                                                        placeholder="Masukan nomor identitas Anda"oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                        min="0" maxlength="16" value="" />
                                                                     <span class="ms-1 fs-9 text-gray-500">Dapat memakai No
                                                                         NIK KTP/Paspor (tanpa tanda baca dan gelar)</span>
                                                                 </div>
@@ -221,26 +226,27 @@
                                                                     <label class="form-label">Nama</label>
                                                                     <input type="text"
                                                                         class="form-control form-control-lg"
-                                                                        name="name" placeholder="Masukan nama lengkap"
+                                                                        name="name[]" placeholder="Masukan nama lengkap"
                                                                         value="" />
                                                                 </div>
                                                                 <div class="fv-row mb-5 input-text">
                                                                     <label class="form-label">Alamat</label>
-                                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" name="address"
+                                                                    <textarea class="form-control form-control-lg" data-kt-autosize="true" name="address[]"
                                                                         placeholder="Masukan alamat lengkap" value=""></textarea>
                                                                 </div>
                                                                 <div class="fv-row mb-5 input-text">
                                                                     <label class="form-label">No Telepon</label>
                                                                     <input type="number"
                                                                         class="form-control form-control-lg"
-                                                                        name="phone" placeholder="Masukan nomor telepon"
-                                                                        value="" />
+                                                                        name="phone[]"
+                                                                        placeholder="Masukan nomor telepon"oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                        min="0" maxlength="13" value="" />
                                                                 </div>
                                                                 <div class="fv-row mb-5 input-text">
                                                                     <label class="form-label">Email Aktif</label>
                                                                     <input type="email"
                                                                         class="form-control form-control-lg"
-                                                                        name="email" placeholder="Masukan nomor telepon"
+                                                                        name="email[]" placeholder="Masukan nomor telepon"
                                                                         value="" />
                                                                     <span class="ms-1 fs-9 text-gray-500">
                                                                         E-ticket akan dikirim ke email pemesan ini.</span>
@@ -302,39 +308,12 @@
                                                                     <div
                                                                         class="form-check form-check-custom form-check-solid">
                                                                         <input class="form-check-input" type="radio"
-                                                                            id="{{ $bank->name }}" name="bank"
-                                                                            value="" />
+                                                                            checked id="{{ $bank->name }}"
+                                                                            name="bank" value="{{ $bank->id }}" />
                                                                     </div>
                                                                 </div>
                                                             </label>
                                                         @endforeach
-
-                                                        {{-- <label
-                                                            class="border border-solid boder-secondary rounded-3 p-5 form-check-label mb-5 w-100"
-                                                            for="bca">
-                                                            <div class="d-flex justify-content-between flex-wrap px-2">
-                                                                <div class="d-flex align-items-center flex-wrap">
-                                                                    <div class="symbol symbol-50px px-1 me-5">
-                                                                        <div class="symbol-label symbol-label-fit"
-                                                                            style="background-image:url('{{ asset('/assets/media/bank/bca.png') }}')">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="d-flex flex-column">
-                                                                        <div
-                                                                            class="fs-3 fw-bolder text-gray-900 lh-1 mb-2">
-                                                                            Bank BCA
-                                                                        </div>
-                                                                        <span class="text-muted fs-6">
-                                                                            Transfer ke rekening BCA
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        id="bca" name="bank" value="" />
-                                                                </div>
-                                                            </div>
-                                                        </label> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -447,21 +426,374 @@
 
 @section('scripts')
     <script>
-        // Stepper lement
-        var element = document.querySelector("#kt_stepper_example_basic");
+        var KTCreateAccount = function() {
+            // Elements
+            var modal;
+            var modalEl;
 
-        // Initialize Stepper
-        var stepper = new KTStepper(element);
+            var stepper;
+            var form;
+            var formSubmitButton;
+            var formContinueButton;
 
-        // Handle next step
-        stepper.on("kt.stepper.next", function(stepper) {
-            stepper.goNext(); // go next step
+            // Variables
+            var stepperObj;
+            var validations = [];
+
+            // Private Functions
+            var initStepper = function() {
+                // Initialize Stepper
+                stepperObj = new KTStepper(stepper);
+
+                // Stepper change event
+                stepperObj.on('kt.stepper.changed', function(stepper) {
+                    if (stepperObj.getCurrentStepIndex() === 2) {
+                        formSubmitButton.classList.remove('d-none');
+                        formSubmitButton.classList.add('d-inline-block');
+                        formContinueButton.classList.add('d-none');
+                    } else if (stepperObj.getCurrentStepIndex() === 3) {
+                        formSubmitButton.classList.add('d-none');
+                        formContinueButton.classList.add('d-none');
+                    } else {
+                        formSubmitButton.classList.remove('d-inline-block');
+                        formSubmitButton.classList.remove('d-none');
+                        formContinueButton.classList.remove('d-none');
+                    }
+                });
+
+                // Validation before going to next page
+                stepperObj.on('kt.stepper.next', function(stepper) {
+                    console.log('stepper.next');
+
+                    // Validate form before change stepper step
+                    var validator = validations[stepper.getCurrentStepIndex() -
+                        1]; // get validator for currnt step
+                    console.log("ke" + stepper.getCurrentStepIndex());
+                    if (validator) {
+                        validator.validate().then(function(status) {
+                            console.log('validated!');
+
+                            if (status == 'Valid') {
+                                if (stepper.getCurrentStepIndex() == '2') {
+                                    alert('ajax');
+                                    console.log('apem')
+                                } else {
+                                    console.log('hiya')
+                                }
+                                stepper.goNext();
+
+                                KTUtil.scrollTop();
+                            } else {
+                                Swal.fire({
+                                    text: "Maaf terdapat kesalahan data",
+                                    icon: "error",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok!",
+                                    customClass: {
+                                        confirmButton: "btn btn-light"
+                                    }
+                                }).then(function() {
+                                    KTUtil.scrollTop();
+                                });
+                            }
+                        });
+                    } else {
+                        if (stepper.getCurrentStepIndex() == '2') {
+                            console.log("huda")
+                        }
+                        stepper.goNext();
+
+                        KTUtil.scrollTop();
+                    }
+                });
+
+                // Prev event
+                stepperObj.on('kt.stepper.previous', function(stepper) {
+                    console.log('stepper.previous');
+
+                    stepper.goPrevious();
+                    KTUtil.scrollTop();
+                });
+
+
+                // var handleForm = function() {
+                formSubmitButton.addEventListener('click', function(e) {
+                    // Validate form before change stepper step
+                    var validator = validations[0]; // get validator for last form
+
+                    console.log(validations)
+                    validator.validate().then(function(status) {
+                        console.log('validated!');
+
+                        if (status == 'Valid') {
+                            // Prevent default button action
+                            e.preventDefault();
+                            // Simulate form submission
+
+                            // Hide loading indication
+                            formSubmitButton.removeAttribute(
+                                'data-kt-indicator');
+
+                            // Enable button
+                            formSubmitButton.disabled = false;
+
+                            setTimeout(function() {
+
+
+                                //proses insert
+                                $.ajax({
+                                    url: "{{ route('checkout.store') }}",
+                                    dataType: 'json',
+                                    type: "POST",
+                                    data: $(
+                                            "#kt_create_account_form"
+                                        )
+                                        .serializeArray(),
+                                    success: function(
+                                        data) {
+
+                                        if (data
+                                            .status ==
+                                            true) {
+                                            Swal.fire({
+                                                    text: data
+                                                        .msg,
+                                                    icon: "success",
+                                                    buttonsStyling:
+                                                        !
+                                                        1,
+                                                    confirmButtonText: "Ok",
+                                                    customClass: {
+                                                        confirmButton: "btn btn-primary"
+                                                    }
+                                                })
+                                                .then(
+                                                    (
+                                                        result
+                                                    ) => {
+
+                                                        stepperObj.goNext();
+                                                        KTUtil.scrollTop();
+
+                                                    }
+                                                );
+                                        } else {
+                                            Swal.fire({
+                                                text: data
+                                                    .msg,
+                                                icon: "error",
+                                                buttonsStyling:
+                                                    !
+                                                    1,
+                                                confirmButtonText: "Ok",
+                                                customClass: {
+                                                    confirmButton: "btn btn-primary"
+                                                }
+                                            })
+                                        }
+                                    },
+                                    error: function(
+                                        jqXHR,
+                                        textStatus,
+                                        errorThrown
+                                    ) {
+                                        toastr
+                                            .error(
+                                                'Error to connect a server'
+                                            );
+                                    }
+                                });
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                text: "Maaf, Terdapat kesalahan data, silahkan coba lagi",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-light"
+                                }
+                            }).then(function() {
+                                KTUtil.scrollTop();
+                            });
+                        }
+                    });
+                });
+                // }
+            }
+
+
+            var initValidation = function() {
+                // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+                // Step 1
+                validations.push(FormValidation.formValidation(
+                    form, {
+                        fields: {
+                            identity_number_order: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Nomor Identitas Pemesan harus diisi"
+                                    },
+                                    numeric: {
+                                        message: "Nomor Identitas Pemesan harus angka"
+                                    },
+                                }
+                            },
+                            name_order: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Nama Pemesan harus diisi"
+                                    },
+                                }
+                            },
+                            address_order: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Alamat Pemesan harus diisi"
+                                    },
+                                }
+                            },
+                            phone_order: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Telephone Pemesan harus diisi"
+                                    },
+                                    numeric: {
+                                        message: "Telephone Pemesan harus nomor"
+                                    },
+                                }
+                            },
+                            email_order: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Email Pemesan harus diisi"
+                                    },
+                                    emailAddress: {
+                                        message: "Email Pemesan tidak valid"
+                                    },
+                                }
+                            },
+                            "identity_number[]": {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Nomor Identitas Pemesan harus diisi"
+                                    },
+                                    numeric: {
+                                        message: "Nomor Identitas Pemesan harus angka"
+                                    },
+                                }
+                            },
+                            "name[]": {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Nama Pemesan harus diisi"
+                                    },
+                                }
+                            },
+                            "address[]": {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Alamat Pemesan harus diisi"
+                                    },
+                                }
+                            },
+                            "phone[]": {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Telephone Pemesan harus diisi"
+                                    },
+                                    numeric: {
+                                        message: "Telephone Pemesan harus nomor"
+                                    },
+                                }
+                            },
+                            "email[]": {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Email Pemesan harus diisi"
+                                    },
+                                    emailAddress: {
+                                        message: "Email Pemesan tidak valid"
+                                    },
+                                }
+                            },
+                        },
+                        plugins: {
+                            trigger: new FormValidation.plugins.Trigger(),
+                            bootstrap: new FormValidation.plugins.Bootstrap5({
+                                rowSelector: '.fv-row',
+                                eleInvalidClass: '',
+                                eleValidClass: ''
+                            })
+                        }
+                    }
+                ));
+
+                // Step 2
+                validations.push(FormValidation.formValidation(
+                    form, {
+                        fields: {
+                            bank: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Bank harus harus diisi"
+                                    },
+                                }
+                            },
+                        },
+                        plugins: {
+                            trigger: new FormValidation.plugins.Trigger(),
+                            // Bootstrap Framework Integration
+                            bootstrap: new FormValidation.plugins.Bootstrap5({
+                                rowSelector: '.fv-row',
+                                eleInvalidClass: '',
+                                eleValidClass: ''
+                            })
+                        }
+                    }
+                ));
+            }
+
+            return {
+                // Public Functions
+                init: function() {
+                    // Elements
+                    modalEl = document.querySelector('#kt_modal_create_account');
+                    if (modalEl) {
+                        modal = new bootstrap.Modal(modalEl);
+                    }
+
+                    stepper = document.querySelector('#kt_create_account_stepper');
+                    form = stepper.querySelector('#kt_create_account_form');
+                    formSubmitButton = stepper.querySelector('[data-kt-stepper-action="submit"]');
+                    formContinueButton = stepper.querySelector('[data-kt-stepper-action="next"]');
+                    formPreviousButton = stepper.querySelector('[data-kt-stepper-action="previous"]');
+
+                    initStepper();
+                    initValidation();
+                    // handleForm();
+                }
+            };
+        }();
+
+        KTUtil.onDOMContentLoaded(function() {
+            KTCreateAccount.init();
         });
+        // // Stepper lement
+        // var element = document.querySelector("#kt_stepper_example_basic");
 
-        // Handle previous step
-        stepper.on("kt.stepper.previous", function(stepper) {
-            stepper.goPrevious(); // go previous step
-        });
+        // // Initialize Stepper
+        // var stepper = new KTStepper(element);
+
+        // // Handle next step
+        // stepper.on("kt.stepper.next", function(stepper) {
+        //     stepper.goNext(); // go next step
+        // });
+
+        // // Handle previous step
+        // stepper.on("kt.stepper.previous", function(stepper) {
+        //     stepper.goPrevious(); // go previous step
+        // });
 
         $('.sameOrder').on('change', function() {
             if ($(this).is(':checked')) {
