@@ -45,52 +45,7 @@
                             <div class="d-flex justify-content-center justify-content-lg-between flex-wrap">
                                 <div class="symbol symbol-50px symbol-lg-75px m-5">
                                     <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/lavana-ayam.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/ko-kok.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/hokke-dimsum.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/ayam-plenet-dasdes.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/toejoe-toejoe.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/sunny-story.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
                                         style="background-image:url('{{ asset('/assets/media/ticketbox/sasino-coffe.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/tuan-kopi.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/kopidalem.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/tliti-coffe.png') }}')">
                                     </div>
                                 </div>
                                 <div class="symbol symbol-50px symbol-lg-75px m-5">
@@ -100,50 +55,9 @@
                                 </div>
                                 <div class="symbol symbol-50px symbol-lg-75px m-5">
                                     <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/skena-kopi.png') }}')">
+                                        style="background-image:url('{{ asset('/assets/media/ticketbox/sunny-story.png') }}')">
                                     </div>
                                 </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/gudangs-seng.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/tri-karya-carwash.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/favaholic.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/filosofi-teh.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5 symbol-circle">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/cozy.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/jolly.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/padi-resto.png') }}')">
-                                    </div>
-                                </div>
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
-                                    <div class="symbol-label bg-transparent"
-                                        style="background-image:url('{{ asset('/assets/media/ticketbox/rumpun-padi.png') }}')">
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
