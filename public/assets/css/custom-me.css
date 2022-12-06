@@ -113,6 +113,11 @@
     color: #ffffff !important;
 }
 
+.bg-base-2 {
+    background-color: rgba(186, 150, 50, 1) !important;
+    color: #ffffff !important;
+}
+
 .bg-tagline {
     background-color: rgba(217, 217, 217, 1);
 }
