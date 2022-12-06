@@ -7,7 +7,7 @@
     <div class="card card-flush">
         <div class="card-header pt-lg-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fs-2 fw-bolder text-gray-800">Verifikasi Ticket : {{ $bills->ticket_code }}</span>
+                <span class="card-label fs-2 fw-bolder text-gray-800">Verifikasi Ticket : {{ $order->ticket_code }}</span>
                 <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk verifikasi hasil pembelian ticket online</span>
             </h3>
             <div class="card-toolbar">
@@ -18,7 +18,7 @@
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
             <div class="card-body">
-                <form class="w-100" method="post" action="{{ route('verification.update', $bills->id) }}"
+                <form class="w-100" method="post" action="{{ route('verification.update', $order->id) }}"
                     novalidate="novalidate" id="kt_create_account_form">
                     @csrf
                     @method('put')
@@ -27,32 +27,32 @@
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">ID Ticket</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->ticket_code }}">
+                                    value="{{ $order->ticket_code }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">ID Identitas</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->identity_number }}">
+                                    value="{{ $order->identity_number }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Nama Pembeli</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->name }}">
+                                    value="{{ $order->name }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">No Handphone</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->phone }}">
+                                    value="{{ $order->phone }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Email</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ $bills->email }}">
+                                    value="{{ $order->email }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Tanggal Pembelian</label>
                                 <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ customTanggal($bills->created_at) }}">
+                                    value="{{ customTanggal($order->created_at) }}">
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Jenis</label>
@@ -60,13 +60,8 @@
                                     value="{{ $ticket_type->name }}">
                             </div>
                             <div class="mb-10">
-                                <label class="form-label fs-7 text-gray-700">Total Harga Satuan</label>
-                                <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                    value="{{ format_rupiah($bills->total_price) }}">
-                            </div>
-                            <div class="mb-10">
                                 <label for="" class="form-label">Alamat</label>
-                                <textarea class="form-control form-control-lg form-control-solid" data-kt-autosize="true" readonly>{{ $bills->address }}</textarea>
+                                <textarea class="form-control form-control-lg form-control-solid" data-kt-autosize="true" readonly>{{ $order->address }}</textarea>
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
@@ -79,7 +74,7 @@
                                         <option value=""></option>
                                         @foreach ($banks as $bank)
                                             <option value="{{ $bank->id }}"
-                                                {{ $bills->bank == $bank->id ? 'selected' : '' }}
+                                                {{ $order->bank == $bank->id ? 'selected' : '' }}
                                                 data-kt-rich-content-subcontent="{{ $bank->account_number }}"
                                                 data-kt-rich-content-icon="{{ asset($bank->logos) }}">
                                                 {{ $bank->name }}
@@ -95,7 +90,7 @@
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Pemilik Rekening</label>
                                     <input type="text" class="form-control form-control-lg"
-                                        placeholder="Masukan Nama Rekening Pembeli" value="{{ $bills->account_name }}"
+                                        placeholder="Masukan Nama Rekening Pembeli" value="{{ $order->account_name }}"
                                         name="account_name">
                                     <small class="text-danger">
                                         @error('account_name')
@@ -116,7 +111,7 @@
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Total Transfer</label>
                                     <input type="text" class="form-control form-control-lg form-control-solid" readonly
-                                        value="{{ format_rupiah($bills->total_pay) }}">
+                                        value="{{ format_rupiah($order->total_pay) }}">
                                 </div>
                                 <div class="mb-10">
                                     <label class="form-label fs-7 text-gray-700">Status Pembayaran</label>
@@ -159,9 +154,38 @@
                             <div class="bg-secondary w-100 h-50 rounded-4">
                                 <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
                                     <div class="d-none" id="qr-code">{!! QrCode::size(250)->generate(
-                                        json_encode(['ticketCode' => $bills->ticket_code, 'id' => Crypt::encryptString($bills->id)]),
+                                        json_encode(['ticketCode' => $order->ticket_code, 'id' => Crypt::encryptString($order->id)]),
                                     ) !!}</div>
                                     <span class="fs-4 fw-bolder text-gray-800 d-block" id="na">N/A</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="border border-light rounded-3 shadow-xs px-5 py-6">
+                                <div class="fw-bold fs-6 text-gray-800 mb-2">Daftar Pengunjung</div>
+                                <div class="table-responsive">
+                                    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
+                                        <thead>
+                                            <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                                                <th>Nomor Identitas</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>No Telepon</th>
+                                                <th>Alamat</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($visitors as $item)
+                                                <tr>
+                                                    <td>{{ $item->identity_number }}</td>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->email }}</td>
+                                                    <td>{{ $item->phone }}</td>
+                                                    <td>{{ $item->address }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +214,7 @@
             $('#btn-generate').on('click', function() {
                 $("#qr-code").addClass("d-block").removeClass("d-none");
                 $("#na").addClass("d-none").removeClass("d-block");
-                $("name[generateQr]").val(true);
+                $("[name=generateQr]").val(true);
             });
 
             // Format options

@@ -72,15 +72,6 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var html = `<div class="fs-4 fw-bolder text-gray-800">
-                                                ` + row.account_name + `
-                                            </div>`;
-                        return html
-                    },
-                    orderable: false,
-                },
-                {
-                    render: function(data, type, row) {
                         var index;
                         if (row.ticket_type == 1) {
                             index = 0;

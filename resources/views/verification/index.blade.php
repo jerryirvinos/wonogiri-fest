@@ -27,7 +27,6 @@
                                 <th>ID Ticket</th>
                                 <th>Nama Pembeli</th>
                                 <th>Tanggal Pembelian</th>
-                                <th>Nama Transfer</th>
                                 <th class="text-center">Jenis</th>
                                 <th>No Telepon</th>
                                 <th class="text-center"><i class="fa-light fa-grip-dots-vertical"></i></th>
