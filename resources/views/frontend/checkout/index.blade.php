@@ -364,7 +364,8 @@
                                         <a href="{{ route('landing.index') }}" class="btn btn-primary d-none"
                                             data-kt-stepper-action="done">Selesai</a>
                                     </div>
-                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Actions-->
                             </form>
                             <!--end::Form-->
                         </div>
@@ -458,7 +459,7 @@
                         formSubmitButton.classList.add('d-none');
                         formContinueButton.classList.add('d-none');
                         formPreviousButton.classList.add('d-none');
-                        formDoneButton.classList.add('d-inline-block');
+                        // formDoneButton.classList.add('d-inline-block');
                     } else {
                         formSubmitButton.classList.remove('d-inline-block');
                         formSubmitButton.classList.remove('d-none');
