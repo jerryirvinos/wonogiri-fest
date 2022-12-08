@@ -77,7 +77,7 @@
                             <!--end::Nav-->
 
                             <!--begin::Form-->
-                            <form class="form w-100 w-lg-75 mx-auto" novalidate="novalidate" id="kt_create_account_form">
+                            <form class="form w-100 w-lg-100 mx-auto" novalidate="novalidate" id="kt_create_account_form">
                                 @csrf
                                 <input type="hidden" name="code_ticket" value="{{ $ticket_type->code }}" />
                                 <input type="hidden" name="ticket_type" value="{{ $ticket_type->id }}" />
@@ -97,7 +97,7 @@
                                             <div class="card-body px-3 px-lg-7 pt-0">
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">Nomor Indentitas</label>
-                                                    <input type="number" class="form-control form-control-lg"
+                                                    <input type="text" class="form-control form-control-lg numeric"
                                                         name="identity_number_order"
                                                         placeholder="Masukan nomor identitas Anda" value=""
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -118,7 +118,7 @@
                                                 </div>
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label">No Telepon</label>
-                                                    <input type="number" class="form-control form-control-lg"
+                                                    <input type="text" class="form-control form-control-lg numeric"
                                                         id="phone" name="phone_order"
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         min="0" maxlength="13" placeholder="Masukan nomor telepon"
@@ -165,7 +165,8 @@
                                                     <div class="card-body px-3 px-lg-7 pt-3">
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nomor Indentitas</label>
-                                                            <input type="text" class="form-control form-control-lg"
+                                                            <input type="text"
+                                                                class="form-control form-control-lg numeric"
                                                                 id="identity_number1" name="identity_number[]"
                                                                 placeholder="Masukan nomor identitas Anda" value=""
                                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -175,7 +176,8 @@
                                                         </div>
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">Nama</label>
-                                                            <input type="text" class="form-control form-control-lg"
+                                                            <input type="text"
+                                                                class="form-control form-control-lg namalengkap"
                                                                 id="name1" name="name[]"
                                                                 placeholder="Masukan nama lengkap" value="" />
                                                         </div>
@@ -186,7 +188,8 @@
                                                         </div>
                                                         <div class="fv-row mb-5 input-text">
                                                             <label class="form-label">No Telepon</label>
-                                                            <input type="number" class="form-control form-control-lg"
+                                                            <input type="text"
+                                                                class="form-control form-control-lg numeric"
                                                                 id="phone1" name="phone[]"
                                                                 placeholder="Masukan nomor telepon"
                                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -225,7 +228,7 @@
                                                                 <div class="fv-row mb-5 input-text">
                                                                     <label class="form-label">Nama</label>
                                                                     <input type="text"
-                                                                        class="form-control form-control-lg"
+                                                                        class="form-control form-control-lg namalengkap"
                                                                         name="name[]" placeholder="Masukan nama lengkap"
                                                                         value="" />
                                                                 </div>
@@ -328,10 +331,37 @@
                                             <div class="row justify-content-center my-5 my-lg-15">
                                                 <div class="col-xl-12 col-xxl-10 text-center">
                                                     <img class="w-25 mw-50 mw-lg-50 h-auto text-center mx-auto mb-10"
-                                                        alt=""
-                                                        src="{{ asset('/assets/media/bank/mandiri.png') }}">
-                                                    <h4 class="fw-bold text-gray-800">TATA CARA PEMBAYARAN MELALUI BANK ...
+                                                        alt="" src="{{ asset('/assets/media/bank/bca.png') }}">
+                                                    <h4 class="fw-bold text-gray-800">
+                                                        TATA CARA PEMBAYARAN MELALUI BANK ...
                                                     </h4>
+                                                    <div class="fs-5 fw-semibold text-gray-700">
+                                                        Terimakasih kak ..... (sesuai nama data pembelian) pembelian sudah
+                                                        selesai.
+
+                                                        Terimakasih sudah mendukung WONOGIRI FESTIVAL 2023.
+
+                                                        Kirimkan bukti transaksi ke nomor <a
+                                                            href="https://wa.me/6285161834585"><span
+                                                                class="fs-3 fw-bolder text-primary">
+                                                                0851-6183-4585</span></a>. Voucher akan
+                                                        dikirimkan ke nomor WA yang ada pada data pembelian dalam waktu 1x24
+                                                        jam setelah semua data tervalidasi.
+
+                                                        Sampai jumpa di lokasi.
+                                                        #AYOWONOGIRIISO
+
+                                                        <div class="fst-italic">
+                                                            *) Penukaran Tiket dilakukan di venue di area
+                                                            Stadion Pringgondani
+                                                            Wonogiri mulai hari Sabtu, 25 Februari 2023, pukul 09.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-12 col-xxl-12 text-center px-0 mx-0">
+                                                    <img class="w-100 mw-100 mw-lg-100 h-auto text-center mx-auto mb-10"
+                                                        alt=""
+                                                        src="{{ asset('/assets/media/illustrations/tata-cara.jpg') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -428,6 +458,15 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+            $(".numeric").on("keypress keyup blur", function(event) {
+                $(this).val($(this).val().replace(/[^\d].+/, ""));
+                if ((event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            });
+        })
+
         var KTCreateAccount = function() {
             // Elements
             var modal;
