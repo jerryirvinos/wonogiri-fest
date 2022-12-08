@@ -19,8 +19,8 @@ class CreateTicketTypesTable extends Migration
             $table->integer('price')->nullable();
             $table->integer('quota');
             $table->string('code');
-            $table->string('title');
-            $table->string('detail');
+            $table->string('title')->nullable();
+            $table->string('detail')->nullable();
             $table->boolean('status');
             $table->timestamps();
         });
