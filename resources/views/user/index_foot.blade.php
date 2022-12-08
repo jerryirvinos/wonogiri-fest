@@ -68,10 +68,10 @@
                         url_delete = url_delete.replace(':id', row.id);
 
                         var html = `<div class="d-flex justify-content-center">
-                                    <a href="` + url_edit + `" class="edit btn btn-icon btn-warning me-2"><i class="fa-duotone fa-check-to-slot fa-lg"></i></a>
+                                    <a href="` + url_edit + `" class="edit btn btn-icon btn-warning me-2"><i class="fa-duotone fa-check-to-slot fs-lg"></i></a>
                                     <a class="delete btn btn-icon btn-danger me-2" title="Delete" 
                                  data-name="` + row.name + `">
-                                    <i class="fa-duotone fa-trash fa-lg"></i>
+                                    <i class="fa-duotone fa-trash fs-lg"></i>
                                     <form method="post" action="` + url_delete + `">
                                          {{ csrf_field() }}
                                          {{ method_field('delete') }}

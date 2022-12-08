@@ -106,7 +106,7 @@
                         url_edit = url_edit.replace(':id', row.id);
 
                         var html = `<div class="d-flex justify-content-center">
-                                    <a href="` + url_edit + `" class="btn btn-icon btn-warning me-1" title=""><i class="fa-duotone fa-check-to-slot fa-lg"></i></a>
+                                    <a href="` + url_edit + `" class="btn btn-icon btn-warning me-1" title=""><i class="fa-duotone fa-check-to-slot fs-lg"></i></a>
                                     </div>`
                         return html
                     },

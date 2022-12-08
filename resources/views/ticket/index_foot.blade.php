@@ -106,7 +106,7 @@
                         url_show = url_show.replace(':id', row.id);
 
                         var html = `<div class="d-flex justify-content-center">
-                                    <a href="` + url_show + `" class="btn btn-icon btn-primary-custom me-1"><i class="fa-duotone fa-eyes fa-lg"></i></a>
+                                    <a href="` + url_show + `" class="btn btn-icon btn-primary-custom me-1"><i class="fa-duotone fa-eyes fs-lg"></i></a>
                                     </div>`
                         return html
                     },

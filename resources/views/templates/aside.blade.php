@@ -17,7 +17,7 @@
                     class="menu-item py-2 here">
                     <a href="#" class="menu-link menu-center flex-column active">
                         <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-chart-pie fa-2x"></i>
+                            <i class="fa-light fa-chart-pie fs-2x"></i>
                         </span>
                         <div class="menu-title">Dashboard</div>
                     </a>
@@ -25,24 +25,16 @@
                 <div class="menu-item py-2">
                     <a href="{{ route('verification.index') }}" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-file-invoice-dollar fa-2x"></i>
+                            <i class="fa-light fa-file-invoice-dollar fs-2x"></i>
                         </span>
                         <div class="menu-title">Verifikasi</div>
                     </a>
                 </div>
-                {{-- <div class="menu-item py-2">
-                    <a href="{{ route('ticket.index') }}" class="menu-link menu-center flex-column">
-                        <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-ticket fa-2x"></i>
-                        </span>
-                        <div class="menu-title">Transaksi</div>
-                    </a>
-                </div> --}}
                 <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
                     class="menu-item py-2">
                     <a href="#" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-qrcode fa-2x"></i>
+                            <i class="fa-light fa-qrcode fs-2x"></i>
                         </span>
                         <div class="menu-title">Scan</div>
                     </a>
@@ -52,7 +44,7 @@
                         class="menu-item py-2">
                         <span class="menu-link menu-center flex-column">
                             <span class="menu-icon me-0 mb-3">
-                                <i class="fa-light fa-database fa-2x"></i>
+                                <i class="fa-light fa-database fs-2x"></i>
                             </span>
                             <div class="menu-title">Master</div>
                         </span>
@@ -66,7 +58,7 @@
                             <div class="menu-item">
                                 <a class="menu-link" href="{{ route('user.index') }}">
                                     <span class="menu-icon me-3">
-                                        <i class="fa-light fa-users fa-lg"></i>
+                                        <i class="fa-light fa-users fs-lg"></i>
                                     </span>
                                     <span class="menu-title">User</span>
                                 </a>
@@ -77,15 +69,13 @@
             </div>
         </div>
     </div>
-    <!--begin::Footer-->
     <div class="aside-footer flex-column-auto pb-5 pb-lg-10" id="kt_aside_footer">
         <div class="d-flex flex-center w-100 scroll-px" data-bs-toggle="tooltip" data-bs-placement="right"
             data-bs-dismiss="click" title="Logout">
             <button type="button" class="btn btn-custom" data-kt-menu-trigger="click" data-kt-menu-overflow="true"
                 data-kt-menu-placement="top-start">
-                <i class="fa-light fa-right-from-bracket fa-2x"></i>
+                <i class="fa-light fa-right-from-bracket fs-2x"></i>
             </button>
         </div>
     </div>
-    <!--end::Footer-->
 </div>

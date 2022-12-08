@@ -42,7 +42,7 @@
                             </a>
                         </div>
                         <button class="btn btn-icon btn-active-color-primary" id="kt_aside_toggle">
-                            <i class="fa-duotone fa-align-right text-white fa-2x"></i>
+                            <i class="fa-duotone fa-align-right text-white fs-2x"></i>
                         </button>
                     </div>
                 </div>
