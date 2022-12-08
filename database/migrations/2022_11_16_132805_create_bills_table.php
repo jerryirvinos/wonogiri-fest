@@ -28,7 +28,7 @@ class CreateBillsTable extends Migration
             $table->string('account_name')->nullable();
             $table->boolean('payment_status');
             $table->integer('bank')->nullable();
-            $table->foreignId('ticket_type')->constrained('ticket_types');
+            $table->foreignId('ticket_type');
             $table->string('ticket_box')->nullable();
             $table->string('code_ticket')->nullable();
             $table->boolean('is_online')->nullable();
