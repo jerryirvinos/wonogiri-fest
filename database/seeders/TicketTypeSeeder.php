@@ -16,7 +16,7 @@ class TicketTypeSeeder extends Seeder
     {
         DB::table('ticket_types')->insert([
             'name' => 'Early Bird',
-            'price' => '200000',
+            'price' => '0',
             'quota' => '200',
             'title' => 'Ticket Terusan',
             'detail' => '(2 hari show)',
@@ -35,22 +35,22 @@ class TicketTypeSeeder extends Seeder
         ]);
 
         DB::table('ticket_types')->insert([
-            'name' => '2D Pass',
-            'price' => '300000',
+            'name' => 'Presale 1',
+            'price' => '150000',
             'quota' => '200',
-            'title' => 'Ticket Terusan',
-            'detail' => '(2 hari show)',
+            'title' => 'Ticket Harian',
+            'detail' => '(Hari 1 show)',
             'code' => '31',
             'status' => true,
         ]);
 
         DB::table('ticket_types')->insert([
-            'name' => 'Daily Pass',
-            'price' => '300000',
+            'name' => 'Presale 1',
+            'price' => '150000',
             'quota' => '200',
-            'title' => 'Ticket Terusan',
-            'detail' => '(2 hari show)',
-            'code' => '32',
+            'title' => 'Ticket Harian',
+            'detail' => '(Hari 2 show)',
+            'code' => '23',
             'status' => true,
         ]);
 
@@ -58,10 +58,20 @@ class TicketTypeSeeder extends Seeder
             'name' => 'Invitation',
             'price' => '300000',
             'quota' => '200',
-            'title' => 'Ticket Terusan',
-            'detail' => '(2 hari show)',
+            'title' => null,
+            'detail' => null,
             'code' => '41',
-            'status' => true,
+            'status' => false,
+        ]);
+
+        DB::table('ticket_types')->insert([
+            'name' => 'Presale 2',
+            'price' => '1',
+            'quota' => '200',
+            'title' => 'Ticket Harian',
+            'detail' => '(1 hari show)',
+            'code' => '31',
+            'status' => false,
         ]);
     }
 }
