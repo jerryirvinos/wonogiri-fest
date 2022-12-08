@@ -361,9 +361,10 @@
                                         <button type="button" class="btn btn-primary" data-kt-stepper-action="next">
                                             Continue
                                         </button>
+                                        <a href="{{ route('landing.index') }}" class="btn btn-primary d-none"
+                                            data-kt-stepper-action="done">Selesai</a>
                                     </div>
-                                </div>
-                                <!--end::Actions-->
+                                    <!--end::Actions-->
                             </form>
                             <!--end::Form-->
                         </div>
@@ -435,6 +436,8 @@
             var form;
             var formSubmitButton;
             var formContinueButton;
+            var formPreviousButton;
+            var formDoneButton;
 
             // Variables
             var stepperObj;
@@ -454,6 +457,8 @@
                     } else if (stepperObj.getCurrentStepIndex() === 3) {
                         formSubmitButton.classList.add('d-none');
                         formContinueButton.classList.add('d-none');
+                        formPreviousButton.classList.add('d-none');
+                        formDoneButton.classList.add('d-inline-block');
                     } else {
                         formSubmitButton.classList.remove('d-inline-block');
                         formSubmitButton.classList.remove('d-none');
@@ -768,6 +773,7 @@
                     formSubmitButton = stepper.querySelector('[data-kt-stepper-action="submit"]');
                     formContinueButton = stepper.querySelector('[data-kt-stepper-action="next"]');
                     formPreviousButton = stepper.querySelector('[data-kt-stepper-action="previous"]');
+                    formDoneButton = stepper.querySelector('[data-kt-stepper-action="done"]');
 
                     initStepper();
                     initValidation();
