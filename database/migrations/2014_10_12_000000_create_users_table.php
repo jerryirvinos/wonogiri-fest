@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('status');
             $table->string('password');
             $table->string('modified_by');
-            $table->foreignId('role')->constrained('roles');
+            $table->foreignId('role');
             $table->timestamps();
         });
     }
