@@ -265,16 +265,70 @@
 
                                     <!--begin::Step 2-->
                                     <div class="flex-column" data-kt-stepper-element="content">
-                                        <div class="d-flex flex-column flex-wrap">
+                                        <div class="d-flex flex-column flex-wrap text-center">
                                             <div class="fs-2 text-gray-800 fw-bold">
-                                                Metode Pembayaran
+                                                Tata Cara Pembayaran
                                             </div>
                                             <div class="fs-5 text-gray-400 fw-semibold mb-5">
-                                                Silahkan pilih salah satu metode pembayaran yang tersedia
+                                                Silahkan ikuti tata cara pembayaran yang tersedia di bawah ini
                                             </div>
                                         </div>
+                                        <div class="card rounded-4 shadow-xs mb-lg-15 mb-10 d-block d-lg-none">
+                                            <div class="card-header">
+                                                <h3 class="card-title fw-bolder">INFORMASI PESANAN</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row mb-3">
+                                                    <div class="col-2 px-0">
+                                                        <div
+                                                            class="border border-secondary border shadow-xs rounded-1 px-2 my-auto">
+                                                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center w-100 min-h-40px"
+                                                                style="background-image:url('{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}')">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <div class="d-flex justify-content-between flex-wrap">
+                                                            <div class="d-flex flex-column flex-wrap mb-3">
+                                                                <div class="fs-3 fw-bolder text-gray-800">
+                                                                    {{ $ticket_type->name }}
+                                                                </div>
+                                                                <div class="fs-6 text-muted">
+                                                                    {{ $ticket_type->detail }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <div class="d-flex justify-content-between flex-wrap">
+                                                            <div class="fs-6 text-gray-800">
+                                                                Jumlah ticket <span
+                                                                    class="fw-bold text-gray-700">(x{{ $total }})</span>
+                                                            </div>
+                                                            <div class="fs-4 fw-semibold text-gray-800 my-auto">
+                                                                {{ format_rupiah($ticket_type->price) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="separator separator-dashed border-secondary my-5"></div>
+                                                <div class="d-flex justify-content-between flex-wrap">
+                                                    <div class="fs-2 text-gray-700 fw-semibold">
+                                                        Total Pembayaran
+                                                    </div>
+                                                    <div class="fs-3 text-primary fw-bolder">
+                                                        {{ format_rupiah($hasil) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12 col-xxl-12 text-center px-0 mx-0">
+                                            <img class="w-100 mw-100 mw-lg-100 h-auto text-center mx-auto mb-10"
+                                                alt=""
+                                                src="{{ asset('/assets/media/illustrations/tata-cara.jpg') }}">
+                                        </div>
                                         <!--begin::Accordion-->
-                                        <div class="accordion" id="kt_accordion_1">
+                                        {{-- <div class="accordion" id="kt_accordion_1">
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="kt_accordion_1_header_1">
                                                     <button class="accordion-button fs-4 fw-semibold" type="button"
@@ -320,7 +374,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--end::Accordion-->
                                     </div>
                                     <!--begin::Step 2-->
@@ -332,10 +386,8 @@
                                                 <div class="col-xl-12 col-xxl-10 text-center">
                                                     <img class="w-25 mw-50 mw-lg-50 h-auto text-center mx-auto mb-10"
                                                         alt="" src="{{ asset('/assets/media/bank/bca.png') }}">
-                                                    <h4 class="fw-bold text-gray-800">
-                                                        TATA CARA PEMBAYARAN MELALUI BANK ...
-                                                    </h4>
-                                                    <div class="fs-5 fw-semibold text-gray-700">
+
+                                                    <div class="fs-5 fs-lg-3 fw-semibold text-gray-700 lh-xl">
                                                         Terimakasih kak <span class="kakak"></span> pembelian sudah
                                                         selesai.
 
@@ -343,7 +395,7 @@
 
                                                         Kirimkan bukti transaksi ke nomor <a
                                                             href="https://wa.me/6285161834585"><span
-                                                                class="fs-3 fw-bolder text-primary">
+                                                                class="fs-lg-1 fw-bolder text-primary">
                                                                 0851-6183-4585</span></a>. Voucher akan
                                                         dikirimkan ke nomor WA yang ada pada data pembelian dalam waktu 1x24
                                                         jam setelah semua data tervalidasi.
@@ -357,11 +409,6 @@
                                                             Wonogiri mulai hari Sabtu, 25 Februari 2023, pukul 09.00
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xl-12 col-xxl-12 text-center px-0 mx-0">
-                                                    <img class="w-100 mw-100 mw-lg-100 h-auto text-center mx-auto mb-10"
-                                                        alt=""
-                                                        src="{{ asset('/assets/media/illustrations/tata-cara.jpg') }}">
                                                 </div>
                                             </div>
                                         </div>
