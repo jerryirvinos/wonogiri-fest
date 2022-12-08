@@ -121,20 +121,22 @@
             $('.line_count_elements').on('click', '.add', function() {
                 var satuan = parseInt($('input[name="satuan"]').val());
                 var n = parseInt(n_place.text(), 10);
-                n_place.empty().append(n + 1);
-
-                var result = (n + 1) * satuan;
-                $('input[name="total"]').val(n + 1);
-                $('.totalHarga').text(formatRupiah(result, 'Rp. '))
+                if (n + 1 <= 10) {
+                    n_place.empty().append(n + 1);
+                    var result = (n + 1) * satuan;
+                    $('input[name="total"]').val(n + 1);
+                    $('.totalHarga').text(formatRupiah(result, 'Rp. '))
+                }
             });
             $('.line_count_elements').on('click', '.minus', function() {
                 var satuan = parseInt($('input[name="satuan"]').val());
                 var n = parseInt(n_place.text(), 10);
-                n_place.empty().append(Math.max(1, n - 1));
-
-                var result = (n - 1) * satuan;
-                $('input[name="total"]').val(n - 1);
-                $('.totalHarga').text(formatRupiah(result, 'Rp. '))
+                if (n - 1 > 1) {
+                    n_place.empty().append(Math.max(1, n - 1));
+                    var result = (n - 1) * satuan;
+                    $('input[name="total"]').val(n - 1);
+                    $('.totalHarga').text(formatRupiah(result, 'Rp. '))
+                }
             });
         });
     </script>

@@ -336,7 +336,7 @@
                                                         TATA CARA PEMBAYARAN MELALUI BANK ...
                                                     </h4>
                                                     <div class="fs-5 fw-semibold text-gray-700">
-                                                        Terimakasih kak ..... (sesuai nama data pembelian) pembelian sudah
+                                                        Terimakasih kak <span class="kakak"></span> pembelian sudah
                                                         selesai.
 
                                                         Terimakasih sudah mendukung WONOGIRI FESTIVAL 2023.
@@ -495,10 +495,12 @@
                         formSubmitButton.classList.add('d-inline-block');
                         formContinueButton.classList.add('d-none');
                     } else if (stepperObj.getCurrentStepIndex() === 3) {
+                        console.log("done 3")
                         formSubmitButton.classList.add('d-none');
                         formContinueButton.classList.add('d-none');
                         formPreviousButton.classList.add('d-none');
-                        // formDoneButton.classList.add('d-inline-block');
+                        formDoneButton.classList.remove('d-none');
+                        formDoneButton.classList.add('d-inline-block');
                     } else {
                         formSubmitButton.classList.remove('d-inline-block');
                         formSubmitButton.classList.remove('d-none');
@@ -573,60 +575,32 @@
                         if (status == 'Valid') {
                             // Prevent default button action
                             e.preventDefault();
-                            // Simulate form submission
 
-                            // Hide loading indication
-                            formSubmitButton.removeAttribute(
-                                'data-kt-indicator');
+                            formSubmitButton.disabled = true;
 
-                            // Enable button
-                            formSubmitButton.disabled = false;
+                            // Show loading indication
+                            formSubmitButton.setAttribute('data-kt-indicator', 'on');
+                            $('.kakak').text($('[name="name_order"]').val());
+                            //             ).value")
+                            //proses insert
+                            $.ajax({
+                                url: "{{ route('checkout.store') }}",
+                                dataType: 'json',
+                                type: "POST",
+                                data: $(
+                                        "#kt_create_account_form"
+                                    )
+                                    .serializeArray(),
+                                success: function(
+                                    data) {
 
-                            setTimeout(function() {
-
-
-                                //proses insert
-                                $.ajax({
-                                    url: "{{ route('checkout.store') }}",
-                                    dataType: 'json',
-                                    type: "POST",
-                                    data: $(
-                                            "#kt_create_account_form"
-                                        )
-                                        .serializeArray(),
-                                    success: function(
-                                        data) {
-
-                                        if (data
-                                            .status ==
-                                            true) {
-                                            Swal.fire({
-                                                    text: data
-                                                        .msg,
-                                                    icon: "success",
-                                                    buttonsStyling:
-                                                        !
-                                                        1,
-                                                    confirmButtonText: "Ok",
-                                                    customClass: {
-                                                        confirmButton: "btn btn-primary"
-                                                    }
-                                                })
-                                                .then(
-                                                    (
-                                                        result
-                                                    ) => {
-
-                                                        stepperObj.goNext();
-                                                        KTUtil.scrollTop();
-
-                                                    }
-                                                );
-                                        } else {
-                                            Swal.fire({
+                                    if (data
+                                        .status ==
+                                        true) {
+                                        Swal.fire({
                                                 text: data
                                                     .msg,
-                                                icon: "error",
+                                                icon: "success",
                                                 buttonsStyling:
                                                     !
                                                     1,
@@ -635,20 +609,42 @@
                                                     confirmButton: "btn btn-primary"
                                                 }
                                             })
-                                        }
-                                    },
-                                    error: function(
-                                        jqXHR,
-                                        textStatus,
-                                        errorThrown
-                                    ) {
-                                        toastr
-                                            .error(
-                                                'Error to connect a server'
+                                            .then(
+                                                (
+                                                    result
+                                                ) => {
+
+                                                    stepperObj.goNext();
+                                                    KTUtil.scrollTop();
+
+                                                }
                                             );
+                                    } else {
+                                        Swal.fire({
+                                            text: data
+                                                .msg,
+                                            icon: "error",
+                                            buttonsStyling:
+                                                !
+                                                1,
+                                            confirmButtonText: "Ok",
+                                            customClass: {
+                                                confirmButton: "btn btn-primary"
+                                            }
+                                        })
                                     }
-                                });
-                            }, 2000);
+                                },
+                                error: function(
+                                    jqXHR,
+                                    textStatus,
+                                    errorThrown
+                                ) {
+                                    toastr
+                                        .error(
+                                            'Error to connect a server'
+                                        );
+                                }
+                            });
                         } else {
                             Swal.fire({
                                 text: "Maaf, Terdapat kesalahan data, silahkan coba lagi",
@@ -825,21 +821,6 @@
         KTUtil.onDOMContentLoaded(function() {
             KTCreateAccount.init();
         });
-        // // Stepper lement
-        // var element = document.querySelector("#kt_stepper_example_basic");
-
-        // // Initialize Stepper
-        // var stepper = new KTStepper(element);
-
-        // // Handle next step
-        // stepper.on("kt.stepper.next", function(stepper) {
-        //     stepper.goNext(); // go next step
-        // });
-
-        // // Handle previous step
-        // stepper.on("kt.stepper.previous", function(stepper) {
-        //     stepper.goPrevious(); // go previous step
-        // });
 
         $('.sameOrder').on('change', function() {
             if ($(this).is(':checked')) {

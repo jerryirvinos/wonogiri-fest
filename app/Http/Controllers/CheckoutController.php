@@ -77,7 +77,7 @@ class CheckoutController extends Controller
 
         try {
             $order = Order::create([
-                'name' => strip_tags($request->input('name_order')),
+                'name' => strip_tags(strtoupper($request->input('name_order'))),
                 'identity_number' => strip_tags($request->input('identity_number_order')),
                 'address' => strip_tags($request->input('address_order')),
                 'phone' => strip_tags($request->input('phone_order')),
@@ -100,7 +100,7 @@ class CheckoutController extends Controller
                 $visitor[] = [
                     'order_id' => $orderId,
                     'identity_number' => $request->identity_number[$i],
-                    'name' => $request->name[$i],
+                    'name' => strtoupper($request->name[$i]),
                     'address' => $request->address[$i],
                     'phone' => $request->phone[$i],
                     'email' => $request->email[$i],
