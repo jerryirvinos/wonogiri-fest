@@ -33,7 +33,7 @@ class Order extends Model
         return [
             'ticket_code' => [
                 'format' => function () {
-                    return $this->code_ticket . $this->ticket_box . '?';
+                    return $this->code_ticket .'-'. $this->ticket_box . '?';
                 },
                 'length' => 5,
             ]

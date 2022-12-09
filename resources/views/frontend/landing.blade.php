@@ -131,7 +131,7 @@
             $('.line_count_elements').on('click', '.minus', function() {
                 var satuan = parseInt($('input[name="satuan"]').val());
                 var n = parseInt(n_place.text(), 10);
-                if (n - 1 > 1) {
+                if (n - 1 >= 1) {
                     n_place.empty().append(Math.max(1, n - 1));
                     var result = (n - 1) * satuan;
                     $('input[name="total"]').val(n - 1);
