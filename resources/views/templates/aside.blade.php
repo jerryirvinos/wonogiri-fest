@@ -30,6 +30,14 @@
                         <div class="menu-title">Verifikasi</div>
                     </a>
                 </div>
+                <div class="menu-item py-2">
+                    <a href="{{ route('ticket.index') }}" class="menu-link menu-center flex-column">
+                        <span class="menu-icon me-0 mb-3">
+                            <i class="fa-light fa-file-invoice-dollar fs-2x"></i>
+                        </span>
+                        <div class="menu-title">Ticket</div>
+                    </a>
+                </div>
                 <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
                     class="menu-item py-2">
                     <a href="#" class="menu-link menu-center flex-column">

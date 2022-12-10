@@ -88,7 +88,7 @@ class CheckoutController extends Controller
                 'ticket_type' => strip_tags($request->input('ticket_type')),
                 'ticket_box' => ($request->input('ticket_box')),
                 'code_ticket' => ($request->input('code_ticket')),
-                'bank' => ($request->input('bank')),
+                'bank' => 1,
                 'is_online' => 1,
             ]);
 

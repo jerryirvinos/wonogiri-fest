@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\Bill;
 use App\Models\Log;
+use App\Models\Order;
 use App\Models\Ticket_box;
 use App\Models\Ticket_type;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -34,21 +36,23 @@ class TicketController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('bills')->count();
-            $totalRecordswithFilter = DB::table('bills')
-                ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
+            $totalRecords = DB::table('orders')->where('payment_status','=','1')->count();
+            $totalRecordswithFilter = DB::table('orders')
+                ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
+                ->where('payment_status','=','1')
                 ->where(function ($query) use ($searchValue) {
-                    $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
-                        ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
+                    $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
+                        ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
                 })->count();
 
 
-            $data = DB::table('bills')
-                ->select('bills.*','ticket_types.name AS ticket_name')
-                ->join('ticket_types', 'ticket_types.id', '=', 'bills.ticket_type')
+            $data = DB::table('orders')
+                ->select('orders.*','ticket_types.name AS ticket_name')
+                ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
+                ->where('payment_status','=','1')
                 ->where(function ($query) use ($searchValue) {
-                    $query->where('bills.ticket_code', 'like', '%' . $searchValue . '%')
-                        ->orWhere('bills.name', 'like', '%' . $searchValue . '%');
+                    $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
+                        ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
                 })
                 ->skip($start)
                 ->take($rowperpage)
@@ -158,11 +162,12 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        $bills = Bill::find($id);
-        $ticket_type = Ticket_type::find($bills->ticket_type);
+        $order = Order::find($id);
+        $visitors = Visitor::where('order_id',$order->id)->get();
+        $ticket_type = Ticket_type::find($order->ticket_type);
         $banks = Bank::all();
 
-        return view('ticket.show', compact('bills','ticket_type','banks'));
+        return view('ticket.show', compact('order','ticket_type','banks','visitors'));
     }
 
     /**
