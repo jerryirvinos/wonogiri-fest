@@ -18,7 +18,6 @@
                                 data-id={{ Crypt::encryptString($ticket->id) }} data-price={{ $ticket->price }}>
                             @elseif ($ticket->is_release == 0)
                                 <div class="card bg-transparent h-100 py-0 py-lg-5 mx-auto {{ $ticket->is_release ? 'ticketClick' : '' }}"
-                                    data-id={{ Crypt::encryptString($ticket->id) }} data-price={{ $ticket->price }}
                                     style="filter: grayscale(.95);">
                         @endif
                         <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
