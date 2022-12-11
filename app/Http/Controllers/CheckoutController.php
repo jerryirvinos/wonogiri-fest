@@ -75,6 +75,12 @@ class CheckoutController extends Controller
             return json_encode(['status' => $status, 'msg' => $msg]);
         }
 
+        if($request->qty != count($request->identity_number)){
+            $status = false;
+            $msg = "Terdapat Kesalahan Data";
+            return json_encode(['status' => $status, 'msg' => $msg]);
+        }
+
         try {
             $order = Order::create([
                 'name' => strip_tags(strtoupper($request->input('name_order'))),

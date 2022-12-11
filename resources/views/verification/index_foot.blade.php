@@ -23,8 +23,8 @@
                     className: 'text-center'
                 },
                 {
-                    name: "ticket_code",
-                    data: "ticket_code",
+                    name: "created_at",
+                    data: "created_at",
                     visible: false,
                 },
                 {
@@ -94,11 +94,12 @@
                 {
                     render: function(data, type, row) {
                         var html = `<span class="fs-5 text-gray-900">
-                                        ` + row.phone + `
+                                        ` + row.qty + `
                                     </span>`;
                         return html
                     },
                     orderable: false,
+                    className: 'text-center'
                 },
                 {
                     render: function(data, type, row) {

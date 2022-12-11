@@ -60,6 +60,11 @@
                                     value="{{ $ticket_type->name }}">
                             </div>
                             <div class="mb-10">
+                                <label class="form-label fs-7 text-gray-700">Jumlah Tiket</label>
+                                <input type="text" class="form-control form-control-lg form-control-solid" readonly
+                                    value="{{ $order->qty }}">
+                            </div>
+                            <div class="mb-10">
                                 <label for="" class="form-label">Alamat</label>
                                 <textarea class="form-control form-control-lg form-control-solid" data-kt-autosize="true" readonly>{{ $order->address }}</textarea>
                             </div>

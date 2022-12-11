@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin',  AuthCheck::class], function () {
     Route::post('/loginProcess', [UserController::class, 'loginProcess'])->name('user.loginProcess')->withoutMiddleware([AuthCheck::class]);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
+    Route::get('/cetak', [TicketController::class, 'cetak'])->name('ticket.cetak');
     Route::resource('ticket', TicketController::class);
 });
 

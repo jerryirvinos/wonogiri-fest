@@ -56,6 +56,11 @@
                                 value="{{ $ticket_type->name }}">
                         </div>
                         <div class="mb-10">
+                            <label class="form-label fs-7 text-gray-700">Jumlah Tiket</label>
+                            <input type="text" class="form-control form-control-lg form-control-solid" readonly
+                                value="{{ $order->qty }}">
+                        </div>
+                        <div class="mb-10">
                             <label for="" class="form-label">Alamat</label>
                             <textarea class="form-control form-control-lg form-control-solid" data-kt-autosize="true" readonly>{{ $order->address }}</textarea>
                         </div>
@@ -115,11 +120,9 @@
 
                                 </div>
                             </div>
-                            <button type="button"
+                            <a href="{{ route('ticket.cetak', ['id' => Crypt::encryptString($order->id)]) }}"
                                 class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
-                                id="btn-generate">
-                                <span class="fs-4 fw-bolder">Cetak</span>
-                            </button>
+                                id="btn-generate">Cetak</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">

@@ -9,9 +9,12 @@ use App\Models\Order;
 use App\Models\Ticket_box;
 use App\Models\Ticket_type;
 use App\Models\Visitor;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TicketController extends Controller
 {
@@ -202,5 +205,16 @@ class TicketController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cetak(Request $request)
+    {
+        $id = Crypt::decryptString($request->id);
+        $html = '<h1 style="color:red;">Hello World</h1>';
+        
+        $data = ['title' => 'Welcome to belajarphp.net'];
+
+        $pdf = Pdf::loadView('ticket.pdf', $data);
+        return $pdf->download('laporan-pdf.pdf');
     }
 }
