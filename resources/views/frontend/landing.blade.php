@@ -31,8 +31,6 @@
 
     @include('frontend.home.youtube')
 
-    @include('frontend.home.merchandise')
-
     @include('frontend.home.experience')
 
     <section class="my-5 my-lg-10 bg-tagline">
