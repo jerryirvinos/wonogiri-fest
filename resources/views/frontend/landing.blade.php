@@ -15,7 +15,7 @@
                         <div class="fs-4 fs-lg-2x fw-semibold text-gray-300 my-15">
                             25 - 26 Febuari | Lapangan Pringgodani, Wonogiri
                         </div>
-                        <a href="#"
+                        <a href="#ticket"
                             class="btn btn-outline btn-outline btn-outline-warning btn-active-light-warning mb-10">
                             <span class="fw-bold fs-1">Beli Tiket</span>
                         </a>
@@ -30,6 +30,8 @@
     @include('frontend.home.ticket')
 
     @include('frontend.home.youtube')
+
+    @include('frontend.home.merchandise')
 
     @include('frontend.home.experience')
 
