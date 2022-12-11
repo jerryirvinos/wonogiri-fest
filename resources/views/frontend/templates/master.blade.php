@@ -16,11 +16,61 @@
     <link rel="canonical" href="https://wonogirifest.com" />
     <link rel="shortcut icon" href="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ultra" />
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "{{ asset('/assets/plugins/global/plugins.bundle.css') }}";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "https://fonts.googleapis.com/css?family=Ultra";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "{{ asset('/assets/plugins/custom/fontawesome/css/all.min.css') }}";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
     <!--end::Fonts-->
-    <link href="{{ asset('/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/plugins/custom/fontawesome/css/all.min.css') }}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "{{ asset('/assets/plugins/global/plugins.bundle.css') }}";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var css = document.createElement('link');
+            css.href = "{{ asset('/assets/plugins/custom/fontawesome/css/all.min.css') }}";
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
     <link href="{{ asset('/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/assets/css/custom-me.css') }}" rel="stylesheet" type="text/css" />
     @yield('styles')
@@ -45,7 +95,6 @@
     </script>
     <script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
-    <script src="{{ asset('/assets/plugins/custom/fontawesome/js/all.min.js') }}"></script>
     @yield('scripts')
     @if (session('success'))
         <script>
