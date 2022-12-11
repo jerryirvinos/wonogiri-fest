@@ -22,6 +22,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => '(2 hari show)',
             'code' => '11',
             'status' => true,
+            'is_release' => true,
         ]);
 
         DB::table('ticket_types')->insert([
@@ -32,6 +33,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => '(2 hari show)',
             'code' => '21',
             'status' => true,
+            'is_release' => true,
         ]);
 
         DB::table('ticket_types')->insert([
@@ -42,6 +44,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => '(Hari 1 show)',
             'code' => '31',
             'status' => true,
+            'is_release' => true,
         ]);
 
         DB::table('ticket_types')->insert([
@@ -52,6 +55,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => '(Hari 2 show)',
             'code' => '23',
             'status' => true,
+            'is_release' => true,
         ]);
 
         DB::table('ticket_types')->insert([
@@ -62,6 +66,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => null,
             'code' => '41',
             'status' => false,
+            'is_release' => true,
         ]);
 
         DB::table('ticket_types')->insert([
@@ -72,6 +77,7 @@ class TicketTypeSeeder extends Seeder
             'detail' => '(1 hari show)',
             'code' => '31',
             'status' => false,
+            'is_release' => true,
         ]);
     }
 }

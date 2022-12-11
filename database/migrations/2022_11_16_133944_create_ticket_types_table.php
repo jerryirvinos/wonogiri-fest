@@ -22,6 +22,7 @@ class CreateTicketTypesTable extends Migration
             $table->string('title')->nullable();
             $table->string('detail')->nullable();
             $table->boolean('status');
+            $table->boolean('is_release');
             $table->timestamps();
         });
     }

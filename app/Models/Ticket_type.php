@@ -16,5 +16,6 @@ class Ticket_type extends Model
         'title',
         'detail',
         'status',
+        'is_release',
     ];
 }
