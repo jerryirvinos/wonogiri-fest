@@ -886,9 +886,11 @@
                                 <div class="d-flex align-content-center justify-content-end flex-wrap">
                                     <div
                                         class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
-                                        {!! QrCode::size(250)->generate(
-                                            json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]),
-                                        ) !!}
+                                        <div class="mw-100 mw-lg-100 w-100 h-auto mh-200px">
+                                            {!! QrCode::size(250)->generate(
+                                                json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]),
+                                            ) !!}
+                                        </div>
                                         {{-- <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px" alt=""
                                             src="{{ asset('/assets/media/qrcode-sample.png') }}"> --}}
                                     </div>
