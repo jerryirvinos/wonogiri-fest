@@ -40,10 +40,10 @@ class TicketController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('orders')->where('payment_status','=','1')->count();
+            $totalRecords = DB::table('orders')->where('payment_status', '=', '1')->count();
             $totalRecordswithFilter = DB::table('orders')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
-                ->where('payment_status','=','1')
+                ->where('payment_status', '=', '1')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -51,9 +51,9 @@ class TicketController extends Controller
 
 
             $data = DB::table('orders')
-                ->select('orders.*','ticket_types.name AS ticket_name')
+                ->select('orders.*', 'ticket_types.name AS ticket_name')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
-                ->where('payment_status','=','1')
+                ->where('payment_status', '=', '1')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -86,7 +86,7 @@ class TicketController extends Controller
         $banks = Bank::all();
         $ticketBoxs = Ticket_box::all();
 
-        return view('ticket.create', compact('ticketTypes','banks','ticketBoxs'));
+        return view('ticket.create', compact('ticketTypes', 'banks', 'ticketBoxs'));
     }
 
     /**
@@ -122,7 +122,7 @@ class TicketController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
+
         try {
             $ticket = Bill::create([
                 'name' => strip_tags($request->input('name')),
@@ -143,7 +143,7 @@ class TicketController extends Controller
             $ticket->save();
 
             $ticketId = $ticket->id;
-            
+
             $log = Log::create([
                 'ticket_id' => $ticketId,
                 'logs_status' => 'Terbayar',
@@ -167,11 +167,11 @@ class TicketController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
-        $visitors = Visitor::where('order_id',$order->id)->get();
+        $visitors = Visitor::where('order_id', $order->id)->get();
         $ticket_type = Ticket_type::find($order->ticket_type);
         $banks = Bank::all();
 
-        return view('ticket.show', compact('order','ticket_type','banks','visitors'));
+        return view('ticket.show', compact('order', 'ticket_type', 'banks', 'visitors'));
     }
 
     /**
@@ -211,16 +211,16 @@ class TicketController extends Controller
     public function cetak(Request $request)
     {
         // $browsershot = new BrowsershotBrowsershot();
-        
+
         // BrowsershotBrowsershot::html('<h1>Hello world!!</h1>')->setNodeBinary('/usr/bin/node')->save('example.pdf');
 
         // $id = Crypt::decryptString($request->id);
         $html = '<h1 style="color:red;">Hello World</h1>';
-        
+
         $data = ['title' => 'Welcome to belajarphp.net'];
 
         // $pdf = Pdf::loadView('verification.preview2', $data);
-        $pdf = Pdf::loadView('ticket.pdf2', $data)->setPaper('a4', 'landscape');
+        $pdf = Pdf::loadView('ticket.pdf2', $data);
         return $pdf->download('laporan-pdf.pdf');
     }
 }
