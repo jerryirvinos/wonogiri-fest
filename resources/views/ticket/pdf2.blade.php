@@ -1514,7 +1514,8 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-12 col-xxl-8">
-                                            <div class="fw-semibold fs-8 fs-lg-2 text-muted text-center mb-3 mb-lg-5">
+                                            <div class="fw-semibold fs-8 fs-lg-2 text-muted text-center mb-3 mb-lg-5"
+                                                style="color:#ffffff !important;">
                                                 Hallo, <span class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">Huda
                                                     Primagama</span>
                                             </div>
