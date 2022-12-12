@@ -893,11 +893,12 @@
                                         </div> --}}
 
                                         <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px"
-                                            src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}
+                                            src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}">
                                         {{-- <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px" alt=""
                                             src="{{ asset('/assets/media/qrcode-sample.png') }}"> --}}
                                     </div>
-                                    <div class="fs-6
+                                    <div
+                                        class="fs-6
                                             fs-lg-3x fw-bolder text-gray-200 text-center w-100">
                                         {{ $data[0]->ticket_code }}
                                     </div>
