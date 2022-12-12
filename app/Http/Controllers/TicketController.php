@@ -220,7 +220,7 @@ class TicketController extends Controller
         $data = ['title' => 'Welcome to belajarphp.net'];
 
         // $pdf = Pdf::loadView('verification.preview2', $data);
-        $pdf = Pdf::loadView('ticket.pdf2', $data);
+        $pdf = Pdf::loadView('ticket.pdf2', $data)->setPaper('a4', 'landscape');
         return $pdf->download('laporan-pdf.pdf');
     }
 }
