@@ -1482,9 +1482,9 @@
                 style="box-sizing: border-box; --bs-card-spacer-y: 1rem; --bs-card-spacer-x: 1rem; --bs-card-title-spacer-y: 0.5rem; --bs-card-border-width: 1px; --bs-card-border-color: #eff2f5; --bs-card-border-radius: 0.95rem; --bs-card-box-shadow: 0px 0px 20px rgba(94, 98, 120, 0.04); --bs-card-inner-border-radius: calc(0.95rem - 1px); --bs-card-cap-padding-y: 0.5rem; --bs-card-cap-padding-x: 1rem; --bs-card-cap-bg: transparent; --bs-card-bg: #ffffff; --bs-card-img-overlay-padding: 1rem; --bs-card-group-margin: 0.75rem; position: relative; display: flex; flex-direction: column; min-width: 0; height: var(--bs-card-height); word-wrap: break-word; background-clip: border-box; border-radius: var(--bs-card-border-radius); border: 0; box-shadow: var(--kt-card-box-shadow); background-color: var(--kt-card-bg);">
                 <img class="mx-auto w-100 img-fluid" src="{{ asset('/assets/media/illustrations/bg_ticket.jpg') }}"
                     alt=""
-                    style="box-sizing: border-box; vertical-align: middle; max-width: 100%; height: auto; width: 100%; margin-right: auto; margin-left: auto;">
+                    style="box-sizing: border-box; vertical-align: middle; max-width: 100%; height: auto; width: 100%; margin-right: auto; margin-left: auto;.z-index: 1 !important">
                 <div class="card-body position-absolute top-25 left-50"
-                    style="box-sizing: border-box; flex: 1 1 auto; padding: 2rem 2.25rem; color: var(--kt-card-color); position: absolute !important; top: 25% !important;">
+                    style="box-sizing: border-box; flex: 1 1 auto; padding: 2rem 2.25rem; color: var(--kt-card-color); position: absolute !important; top: 25% !important;z-index: 2 !important">
                     <div class="row justify-content-center my-5 px-0 my-lg-15 px-lg-10 mt-sm-n20 ms-7 ms-lg-0"
                         style="box-sizing: border-box; --bs-gutter-x: 1.5rem; --bs-gutter-y: 0; display: flex; flex-wrap: wrap; margin-right: calc(-.5 * var(--bs-gutter-x)); justify-content: center; margin-top: 1.25rem; margin-bottom: 1.25rem; margin-left: 1.75rem; padding-right: 0; padding-left: 0;">
                         <div class="col-sm-12 col-xl-10 col-xxl-10"
