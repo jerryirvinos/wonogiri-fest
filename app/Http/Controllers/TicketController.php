@@ -210,9 +210,11 @@ class TicketController extends Controller
     {
         $id = Crypt::decryptString($request->id);
         
-        $data = Order::find($id)->get();
+        // $data = Order::find($id)->get();
+        $data = Order::where('id', $id)->get();
+        
+        dd($data[0]);
         $ticket_type = Ticket_type::find($data[0]->id)->get();
-
         // return view('ticket.pdf2',compact('data','ticket_type'));
 
         $pdf = Pdf::loadView('ticket.pdf2', compact('data','ticket_type'));
