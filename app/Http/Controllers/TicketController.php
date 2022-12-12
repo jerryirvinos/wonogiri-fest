@@ -214,7 +214,7 @@ class TicketController extends Controller
         $data = Order::where('id', $id)->get();
         $ticket_type = Ticket_type::find($data[0]->ticket_type)->get();
         // return view('ticket.pdf2',compact('data','ticket_type'));
-
+        //titik
         $pdf = Pdf::loadView('ticket.pdf2', compact('data','ticket_type'));
         return $pdf->download('laporan-pdf.pdf');
     }
