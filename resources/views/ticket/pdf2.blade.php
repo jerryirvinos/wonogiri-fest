@@ -866,7 +866,7 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-2 px-lg-15">
-                <div class="d-flex justify-content-center mb-2 mb-lg-10 px-0 px-10">
+                <div class="d-flex justify-content-center mb-2 mb-lg-10 px-0 px-lg-5">
                     <div class="w-75 p-5 p-lg-10" style="background-color:#E4E6EF !important;">
                         <div class="row justify-content-center">
                             <div class="col-xl-12 col-xxl-10">
@@ -908,58 +908,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="fs-4 fs-lg-4x text-white font-title text-base-2 ls-4 text-center my-5"
-                    style="color: #eff2f5 !important;">
-                    INFORMASI PENTING
-                </div>
-                <div class="flex-wrap">
-                    <ol class="list-group list-group-numbered">
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Ini adalah bukti pembelian tiket berupa voucher pembelian, harap agar disimpan
-                            dengan baik.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Voucher hanya berlaku untuk satu kali penukaran saja.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Voucher tidak dapat dipindahtangankan.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Voucher harus ditukarkan menjadi tiket gelang di lokasi acara
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Penukaran voucher dilayani di lokasi acara dari tanggal 25 Februari 2023 jam
-                            09.00 WIB dengan menunjukkan voucher dan kartu identitas asli sesuai yang
-                            tertera di voucher pembelian.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Voucher tidak dapat ditukar dan diuangkan.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Panitia Wonogiri Festival 2023 hanya menghubungi pembeli melalui email
-                            Official Wonogiri Festival, dan nomor WA Official Ticketing Wonogiri Festival.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Jangan menunjukkan voucher di media sosial untuk menghindari adanya
-                            penyalahgunaan.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Voucher mohon jangan dipindahtangankan.
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
-                            style="color: #eff2f5 !important;">
-                            Panitia Wonogiri Festival 2023 tidak bertanggung jawab atas kerugian yang
-                            timbul dari kelalaian pembeli.
-                        </li>
-                    </ol>
+                <div class="container">
+                    <div class="fs-4 fs-lg-4x text-white font-title text-base-2 ls-4 text-center my-5"
+                        style="color: #eff2f5 !important;">
+                        INFORMASI PENTING
+                    </div>
+                    <div class="flex-wrap">
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Ini adalah bukti pembelian tiket berupa voucher pembelian, harap agar disimpan
+                                dengan baik.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Voucher hanya berlaku untuk satu kali penukaran saja.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Voucher tidak dapat dipindahtangankan.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Voucher harus ditukarkan menjadi tiket gelang di lokasi acara
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Penukaran voucher dilayani di lokasi acara dari tanggal 25 Februari 2023 jam
+                                09.00 WIB dengan menunjukkan voucher dan kartu identitas asli sesuai yang
+                                tertera di voucher pembelian.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Voucher tidak dapat ditukar dan diuangkan.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Panitia Wonogiri Festival 2023 hanya menghubungi pembeli melalui email
+                                Official Wonogiri Festival, dan nomor WA Official Ticketing Wonogiri Festival.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Jangan menunjukkan voucher di media sosial untuk menghindari adanya
+                                penyalahgunaan.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Voucher mohon jangan dipindahtangankan.
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 text-white fs-8 fs-lg-4 fw-bold pt-0 pt-lg-2"
+                                style="color: #eff2f5 !important;">
+                                Panitia Wonogiri Festival 2023 tidak bertanggung jawab atas kerugian yang
+                                timbul dari kelalaian pembeli.
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
             <img class="mx-auto w-100 img-fluid rounded-4"
