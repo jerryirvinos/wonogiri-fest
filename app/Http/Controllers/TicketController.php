@@ -9,13 +9,11 @@ use App\Models\Order;
 use App\Models\Ticket_box;
 use App\Models\Ticket_type;
 use App\Models\Visitor;
-use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Spatie\Browsershot\Browsershot as BrowsershotBrowsershot;
 
 class TicketController extends Controller
 {
@@ -210,17 +208,16 @@ class TicketController extends Controller
 
     public function cetak(Request $request)
     {
-        // $browsershot = new BrowsershotBrowsershot();
+        $id = Crypt::decryptString($request->id);
+        
+        $data = Order::find($id);
+        $ticket_type = Ticket_type::find($data->id);
 
-        // BrowsershotBrowsershot::html('<h1>Hello world!!</h1>')->setNodeBinary('/usr/bin/node')->save('example.pdf');
-
-        // $id = Crypt::decryptString($request->id);
-        $html = '<h1 style="color:red;">Hello World</h1>';
-
-        $data = ['title' => 'Welcome to belajarphp.net'];
-
-        // $pdf = Pdf::loadView('verification.preview2', $data);
-        $pdf = Pdf::loadView('ticket.pdf2', $data);
+        $pdf = Pdf::loadView('ticket.pdf2',  [
+            'data' => @$data,
+            'ticket_type' => $ticket_type,
+        ]
+);
         return $pdf->download('laporan-pdf.pdf');
     }
 }

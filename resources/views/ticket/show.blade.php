@@ -120,11 +120,11 @@
 
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
-                                id="btn-generate">Cetak</a>
-                            {{-- <a href="{{ route('ticket.cetak', ['id' => Crypt::encryptString($order->id)]) }}"
-                                class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
+                            {{-- <a href="#" class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
                                 id="btn-generate">Cetak</a> --}}
+                            <a href="{{ route('ticket.cetak', ['id' => Crypt::encryptString($order->id)]) }}"
+                                class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
+                                id="btn-generate">Cetak</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">

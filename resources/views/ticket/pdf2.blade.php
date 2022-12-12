@@ -862,13 +862,13 @@
                                     </div>
                                     <div class="col-xl-12 col-xxl-8">
                                         <div class="fw-semibold fs-8 fs-lg-2 text-muted text-center mb-3 mb-lg-5">
-                                            Hallo, <span class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">Huda
-                                                Primagama</span>
+                                            Hallo, <span
+                                                class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">{{ $data->name }}</span>
                                         </div>
                                         <div
                                             class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
                                             <div class="fs-8 fs-lg-1 fw-bolder text-gray-900">
-                                                Daily Pass
+                                                {{ $ticket_type->name }}
                                             </div>
                                         </div>
                                         <div
