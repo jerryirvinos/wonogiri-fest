@@ -112,6 +112,8 @@ class VerificationController extends Controller
      */
     public function edit($id)
     {
+        $id = base64_decode($id);
+        
         $order = Order::find($id);
         $ticket_type = Ticket_type::find($order->ticket_type);
         $visitors = Visitor::where('order_id',$order->id)->get();

@@ -164,6 +164,8 @@ class TicketController extends Controller
      */
     public function show($id)
     {
+        $id = base64_decode($id);
+        
         $order = Order::find($id);
         $visitors = Visitor::where('order_id', $order->id)->get();
         $ticket_type = Ticket_type::find($order->ticket_type);
