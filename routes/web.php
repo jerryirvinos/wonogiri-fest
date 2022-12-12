@@ -38,6 +38,10 @@ Route::get('/lineup', function () {
     return view('frontend.detail_lineup');
 });
 
+Route::get('/pdf', function () {
+    return view('verification.preview2');
+});
+
 // Route::get('/admin/user', function () {
 //     return view('user.index');
 // });

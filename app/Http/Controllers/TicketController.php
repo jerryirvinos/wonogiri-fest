@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Spatie\Browsershot\Browsershot as BrowsershotBrowsershot;
 
 class TicketController extends Controller
 {
@@ -209,12 +210,17 @@ class TicketController extends Controller
 
     public function cetak(Request $request)
     {
-        $id = Crypt::decryptString($request->id);
+        // $browsershot = new BrowsershotBrowsershot();
+        
+        // BrowsershotBrowsershot::html('<h1>Hello world!!</h1>')->setNodeBinary('/usr/bin/node')->save('example.pdf');
+
+        // $id = Crypt::decryptString($request->id);
         $html = '<h1 style="color:red;">Hello World</h1>';
         
         $data = ['title' => 'Welcome to belajarphp.net'];
 
-        $pdf = Pdf::loadView('ticket.pdf', $data);
+        // $pdf = Pdf::loadView('verification.preview2', $data);
+        $pdf = Pdf::loadView('ticket.pdf2', $data);
         return $pdf->download('laporan-pdf.pdf');
     }
 }
