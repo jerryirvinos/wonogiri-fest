@@ -863,18 +863,18 @@
                                     <div class="col-xl-12 col-xxl-8">
                                         <div class="fw-semibold fs-8 fs-lg-2 text-muted text-center mb-3 mb-lg-5">
                                             Hallo, <span
-                                                class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">{{ $data->name }}</span>
+                                                class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">{{ $data[0]->name }}</span>
                                         </div>
                                         <div
                                             class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
                                             <div class="fs-8 fs-lg-1 fw-bolder text-gray-900">
-                                                {{ $ticket_type->name }}
+                                                {{ $ticket_type[0]->name }}
                                             </div>
                                         </div>
                                         <div
                                             class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
                                             <div class="fs-8 fs-lg-1 fw-bolder text-gray-900">
-                                                2 Ticket
+                                                {{ $data[0]->qty }} Ticket
                                             </div>
                                         </div>
                                     </div>
@@ -886,11 +886,14 @@
                                 <div class="d-flex align-content-center justify-content-end flex-wrap">
                                     <div
                                         class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
-                                        <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px" alt=""
-                                            src="{{ asset('/assets/media/qrcode-sample.png') }}">
+                                        {!! QrCode::size(250)->generate(
+                                            json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]),
+                                        ) !!}
+                                        {{-- <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px" alt=""
+                                            src="{{ asset('/assets/media/qrcode-sample.png') }}"> --}}
                                     </div>
                                     <div class="fs-6 fs-lg-3x fw-bolder text-gray-200 text-center w-100">
-                                        32441343
+                                        {{ $data[0]->ticket_code }}
                                     </div>
                                 </div>
                             </div>
