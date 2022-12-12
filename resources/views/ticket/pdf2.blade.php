@@ -1326,8 +1326,8 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-2 px-lg-15">
-                <div class="d-flex justify-content-center mb-2 mb-lg-10">
-                    <div class="w-75 p-5 p-lg-10" style="background-color:#E4E6EF !important;">
+                <div class="d-flex justify-content-center mb-2 mb-lg-10 px-0 px-5">
+                    <div class="p-5 p-lg-7" style="background-color:#E4E6EF !important;">
                         <div class="row justify-content-center">
                             <div class="col-xl-12 col-xxl-10">
                                 <div class="text-center">
@@ -1355,7 +1355,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-25 p-2 p-lg-5" style="background-color:#f1416c !important;">
+                    <div class="p-2 p-lg-5" style="background-color:#f1416c !important;">
                         <div class="d-flex align-content-center justify-content-end flex-wrap h-100">
                             <div
                                 class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-3 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
