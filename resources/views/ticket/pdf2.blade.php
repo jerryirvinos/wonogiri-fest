@@ -1282,7 +1282,7 @@
                         </td>
                         <td>
                             <div class="p-2 p-lg-5" style="background-color:#f1416c !important;">
-                                <div class="d-flex align-content-center justify-content-end flex-wrap h-100">
+                                <div class="d-flex align-content-center justify-content-end flex-wrap">
                                     <div
                                         class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-3 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
                                         <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px" alt=""
