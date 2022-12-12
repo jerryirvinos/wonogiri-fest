@@ -324,16 +324,8 @@
             --bs-border-width: 3px;
         }
 
-        .w-25 {
-            width: 25% !important;
-        }
-
         .w-50 {
             width: 50% !important;
-        }
-
-        .w-75 {
-            width: 75% !important;
         }
 
         .w-100 {
@@ -438,9 +430,9 @@
             padding-left: .75rem !important;
         }
 
-        .px-10 {
-            padding-right: 2.5rem !important;
-            padding-left: 2.5rem !important;
+        .px-5 {
+            padding-right: 1.25rem !important;
+            padding-left: 1.25rem !important;
         }
 
         .py-1 {
@@ -545,8 +537,8 @@
                 padding: 1.25rem !important;
             }
 
-            .p-lg-10 {
-                padding: 2.5rem !important;
+            .p-lg-7 {
+                padding: 1.75rem !important;
             }
 
             .px-lg-5 {
@@ -1327,7 +1319,7 @@
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-2 px-lg-15">
                 <div class="d-flex justify-content-center mb-2 mb-lg-10 px-0 px-5">
-                    <div class="p-5 p-lg-7" style="background-color:#E4E6EF !important;">
+                    <div class="w-50 p-5 p-lg-7" style="background-color:#E4E6EF !important;">
                         <div class="row justify-content-center">
                             <div class="col-xl-12 col-xxl-10">
                                 <div class="text-center">
@@ -1355,7 +1347,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-2 p-lg-5" style="background-color:#f1416c !important;">
+                    <div class="w-50 p-2 p-lg-5" style="background-color:#f1416c !important;">
                         <div class="d-flex align-content-center justify-content-end flex-wrap h-100">
                             <div
                                 class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-3 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
