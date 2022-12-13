@@ -1334,7 +1334,7 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
-                <table style="width: 75%!important;">
+                <table class="mx-auto" style="width: 75%!important;">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
@@ -1345,21 +1345,23 @@
                                                 src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
                                         </div>
                                     </div>
-                                    <div class="col-xl-12 col-xxl-8" style="padding: 2.5rem!important;">
-                                        <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
-                                            Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
-                                                style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
-                                        </div>
-                                        <div
-                                            class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
-                                            <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
-                                                {{ $ticket_type[0]->name }}
+                                    <div class="col-xl-12 col-xxl-10" style="padding: 1.5rem!important;">
+                                        <div class="mw-75 mw-lg-100 w-50">
+                                            <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
+                                                Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
+                                                    style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
                                             </div>
-                                        </div>
-                                        <div
-                                            class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
-                                            <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
-                                                {{ $data[0]->qty }} Ticket
+                                            <div
+                                                class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
+                                                <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
+                                                    {{ $ticket_type[0]->name }}
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
+                                                <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
+                                                    {{ $data[0]->qty }} Ticket
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1439,7 +1441,6 @@
                     </div>
                 </div>
             </div>
-
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_footer.png') }}" alt="">
         </div>
