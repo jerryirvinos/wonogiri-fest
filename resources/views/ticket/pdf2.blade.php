@@ -1334,7 +1334,8 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
-                <table class="mx-auto" style="width: 75%!important;">
+                <table class="mx-auto"
+                    style="width: 75%!important;margin-right: auto!important;margin-left: auto!important">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
@@ -1345,8 +1346,8 @@
                                                 src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
                                         </div>
                                     </div>
-                                    <div class="col-xl-12 col-xxl-10" style="padding: 1.5rem!important;">
-                                        <div class="mw-75 mw-lg-100 w-50">
+                                    <div class="col-xl-12 col-xxl-10" style="padding: 1rem!important;">
+                                        <div class="mw-75 mw-lg-100 w-50" style="width: 50% !important;">
                                             <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
                                                 Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
                                                     style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
