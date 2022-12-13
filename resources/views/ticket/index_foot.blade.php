@@ -62,7 +62,7 @@
                                             ` + weekday[d.getDay()] + `
                                         </div>
                                         <div class="fs-5 fw-bold text-gray-800">
-                                            ` + d.getUTCDate() + ' ' + monthNames[d.getUTCMonth()] + ' ' + d
+                                            ` + d.getDate() + ' ' + monthNames[d.getUTCMonth()] + ' ' + d
                             .getUTCFullYear() + `
                                         </div>
                                     </div>`;
