@@ -1329,7 +1329,7 @@
                 <table class="mx-15 mx-lg-20">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
-                            <div class="ms-15 p-5 p-lg-7">
+                            <div class="p-5 p-lg-7">
                                 <div class="row justify-content-center mx-10">
                                     <div class="col-xl-12 col-xxl-10">
                                         <div class="text-center">
@@ -1338,13 +1338,13 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-xxl-8">
-                                        <div class="fw-semibold fs-8 fs-lg-2 text-muted text-center mb-3 mb-lg-5">
-                                            Hallo, <span
-                                                class="fs-7 fs-lg-1 fw-bold text-gray-800 ms-2">{{ $data[0]->name }}</span>
+                                        <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
+                                            Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
+                                                style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
                                         </div>
                                         <div
                                             class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
-                                            <div class="fs-8 fs-lg-1 fw-bolder text-gray-900">
+                                            <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
                                                 {{ $ticket_type[0]->name }}
                                             </div>
                                         </div>
