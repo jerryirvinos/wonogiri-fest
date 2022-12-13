@@ -1325,6 +1325,12 @@
             src: url(https://fonts.gstatic.com/s/ultra/v19/zOLy4prXmrtY-uT9wrI.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
+
+        .table.table-rounded {
+            border-radius: 0.475rem;
+            border-spacing: 0;
+            border-collapse: separate;
+        }
     </style>
 </head>
 
@@ -1334,8 +1340,8 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
-                <table class="mx-auto"
-                    style="width: 75%!important;margin-right: auto!important;margin-left: auto!important">
+                <table class="mx-auto table table-rounded"
+                    style="width: 75%!important;margin-right: auto!important;margin-left: auto!important;border-radius: 0.475rem;border-spacing: 0;border-collapse: separate;">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
