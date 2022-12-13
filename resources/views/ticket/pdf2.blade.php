@@ -1347,7 +1347,8 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-xxl-10" style="padding: 1rem!important;">
-                                        <div class="mw-75 mw-lg-100 w-50" style="width: 50% !important;">
+                                        <div class="mw-75 mw-lg-100 w-75 mx-auto"
+                                            style="width: 75% !important;margin-right: auto!important;margin-left: auto!important">
                                             <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
                                                 Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
                                                     style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
@@ -1373,7 +1374,7 @@
                             <div class="p-2 p-lg-5">
                                 <div class="d-flex align-content-center justify-content-end flex-wrap">
                                     <div class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto"
-                                        style="background-color: #ffffff !important; padding: 1.15rem!important">
+                                        style="background-color: #ffffff !important; padding: .90rem!important">
                                         <img class="mw-100 mw-lg-100 w-100 h-auto mh-150px"
                                             src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}">
                                     </div>
