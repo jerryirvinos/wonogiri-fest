@@ -357,6 +357,10 @@
             height: auto !important;
         }
 
+        .mh-150px {
+            max-height: 150px !important;
+        }
+
         .mh-200px {
             max-height: 200px !important;
         }
@@ -455,6 +459,10 @@
 
         .pt-0 {
             padding-top: 0 !important;
+        }
+
+        .fs-2 {
+            font-size: 1.5rem !important;
         }
 
         .fs-4 {
@@ -1326,7 +1334,7 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
-                <table class="w-75 mx-15 mx-lg-20">
+                <table style="width: 75%!important;">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
@@ -1337,7 +1345,7 @@
                                                 src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
                                         </div>
                                     </div>
-                                    <div class="col-xl-12 col-xxl-8">
+                                    <div class="col-xl-12 col-xxl-8" style="padding: 2.5rem!important;">
                                         <div class="fw-semibold fs-8 fs-lg-2 text-center mb-3 mb-lg-5">
                                             Hallo, <span class="fs-7 fs-lg-1 fw-bold ms-2"
                                                 style="color:#3F4254 !important;">{{ $data[0]->name }}</span>
@@ -1350,7 +1358,7 @@
                                         </div>
                                         <div
                                             class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
-                                            <div class="fs-8 fs-lg-1 fw-bolder text-gray-900">
+                                            <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
                                                 {{ $data[0]->qty }} Ticket
                                             </div>
                                         </div>
@@ -1361,13 +1369,13 @@
                         <td style="background-color:#f1416c !important;">
                             <div class="p-2 p-lg-5">
                                 <div class="d-flex align-content-center justify-content-end flex-wrap">
-                                    <div
-                                        class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto">
-                                        <img class="mw-100 mw-lg-100 w-100 h-auto mh-200px"
+                                    <div class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto"
+                                        style="background-color: #ffffff !important; padding: 1.15rem!important">
+                                        <img class="mw-100 mw-lg-100 w-100 h-auto mh-150px"
                                             src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}">
                                     </div>
                                     <div class="fs-6
-                                            fs-lg-3x fw-bolder text-gray-200 text-center w-100">
+                                            fs-lg-3x fw-bolder text-center w-100" style="color:#eff2f5 !important;">
                                         {{ $data[0]->ticket_code }}
                                     </div>
                                 </div>
@@ -1376,7 +1384,7 @@
                     </tr>
                 </table>
                 <div class="container">
-                    <div class="fs-4 fs-lg-4x text-white font-title text-base-2 ls-4 text-center my-5"
+                    <div class="fs-2 fs-lg-4x text-white font-title text-base-2 ls-4 text-center my-5"
                         style="color: #eff2f5 !important;">
                         INFORMASI PENTING
                     </div>
