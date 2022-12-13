@@ -30,6 +30,15 @@
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
+                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
+                            <div class="d-flex justify-content-center flex-column flex-wrap">
+                                <div class="card bg-transparent p-0 h-100 mb-3">
                                     <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
                                         style="background-image: url('{{ asset('/assets/media/lineup/kuburan.png') }}')">
                                     </div>
@@ -72,6 +81,15 @@
                                 </div>
                                 <div class="fs-5 fs-lg-1 fw-bolder text-center">
                                     DOWN FOR LIFE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
+                            <div class="d-flex justify-content-center flex-column flex-wrap">
+                                <div class="card bg-transparent p-0 h-100 mb-3">
+                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -144,27 +162,36 @@
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/ndarboy.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    NDARBOY GENK
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/sisi-selatan.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    SISI SELATAN
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/sisi-selatan.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    SISI SELATAN
                                 </div>
                             </div>
                         </div>
@@ -195,9 +222,12 @@
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/vloska.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    VLOSKA
                                 </div>
                             </div>
                         </div>
@@ -228,45 +258,48 @@
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/simple-project.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    SIMPLE PROJECT
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/razeghost.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    RAZEGHOST
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/sweet-escape.png') }}')">
                                     </div>
+                                </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    SWEET ESCAPE
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                    <div class="bgi-no-repeat bgi-size-cover bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                        style="background-image: url('{{ asset('/assets/media/lineup/ocdulas.png') }}')">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
-                            <div class="d-flex justify-content-center flex-column flex-wrap">
-                                <div class="card bg-transparent p-0 h-100 mb-3">
-                                    <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
-                                        style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
-                                    </div>
+                                <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                    OCDULAS
                                 </div>
                             </div>
                         </div>

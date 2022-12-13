@@ -14,24 +14,16 @@
                 <div class="row justify-content-center px-8 px-lg-10">
                     <div class="col-xl-10 col-xxl-8">
                         <div class="lh-xxl fs-6 fs-lg-3 fw-semibold text-white text-center">
-                            <span class="bg-white">siapahayo</span> |
-                            <span class="bg-white">siapahayo</span> |
+                            <span class="bg-white text-white">siapahayo</span> |
+                            <span class="bg-white text-white">siapahayo</span> |
+                            <span class="bg-white text-white">siapahayo</span> |
                             Kuburan | Pas Band | Kugiran Masdo | Down For Life |
+                            <span class="bg-white text-white">siapahayo</span> |
                             <span class="bg-white text-white">siapahayo</span> |
                             Closehead | Feel Koplo | Rosemary |
                             <span class="bg-white text-white">siapahayo</span> |
-                            Hasoe Angels |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            Lord Symphony | OM PNS |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            Ksatria Kegelapan | Dirty Money Syndct |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span>
+                            Hasoe Angels | Ndarboy Genk | Sisi Selatan | Lord Symphony | OM PNS | Vloska | Ksatria
+                            Kegelapan | Dirty Money Syndct | Simple Project | Razeghost | Sweet Escape | Ocdulas
                         </div>
                         <div class="fs-6 fs-lg-2x fw-bolder text-white text-center my-10">
                             MASIH BANYAK <span class="text-base-2">LINEUP</span> BELUM TERUNGKAP!
