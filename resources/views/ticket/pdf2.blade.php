@@ -1439,6 +1439,7 @@
                     </div>
                 </div>
             </div>
+
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_footer.png') }}" alt="">
         </div>
