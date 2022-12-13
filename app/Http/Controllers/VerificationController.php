@@ -164,7 +164,7 @@ class VerificationController extends Controller
             $log = Log::create([
                 'ticket_id' => $id,
                 'logs_status' => 'Terbayar',
-                'modified_by' => 'AdminProgrammer',
+                'modified_by' => session()->get('user')['name'],
             ]);
 
             $log->save();

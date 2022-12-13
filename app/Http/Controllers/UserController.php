@@ -114,6 +114,7 @@ class UserController extends Controller
                 'phone' => strip_tags($request->input('phone')),
                 'role' => strip_tags($request->input('role')),
                 'status' => true,
+                'modified_by'=> session()->get('user')['name'],
                 'password' => Hash::make('wonogirifest')
             ]);
 
@@ -198,6 +199,7 @@ class UserController extends Controller
             $user->address =  strip_tags($request->input('address'));
             $user->phone =  strip_tags($request->input('phone'));
             $user->role =  strip_tags($request->input('role'));
+            $user->modified_by =  session()->get('user')['name'];
             $user->status =  true;
 
             $user->save();
