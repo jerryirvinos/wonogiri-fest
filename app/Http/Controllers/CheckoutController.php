@@ -23,7 +23,7 @@ class CheckoutController extends Controller
         $banks = Bank::where('status',1)->get();;
         $total = (int) $request->total;
         $hasil = (int) $ticket_type->price * (int) $total;
-
+        //cek
         return view('frontend.checkout.index',compact('ticket_type','total','hasil','banks'));
     }
 
