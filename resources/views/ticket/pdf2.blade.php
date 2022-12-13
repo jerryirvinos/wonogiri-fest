@@ -1331,6 +1331,12 @@
             border-spacing: 0;
             border-collapse: separate;
         }
+
+        table.table-rounded {
+            border-radius: 0.475rem;
+            border-spacing: 0;
+            border-collapse: separate;
+        }
     </style>
 </head>
 
@@ -1341,7 +1347,7 @@
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
                 <table class="mx-auto table table-rounded"
-                    style="width: 75%!important;margin-right: auto!important;margin-left: auto!important;border-radius: 0.475rem;border-spacing: 0;border-collapse: separate;">
+                    style="width: 75%!important;margin-right: auto!important;margin-left: auto!important;border-radius: 0.975rem;border-spacing: 0;border-collapse: separate;">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
