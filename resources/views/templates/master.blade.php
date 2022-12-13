@@ -15,13 +15,11 @@
     <meta property="og:url" content="https://wonogirifest.co.id" />
     <meta property="og:site_name" content="Wonogiri Fest" />
     <link rel="canonical" href="https://wonogirifest.com" />
-    <link rel="shortcut icon" href="{{ asset('/assets/media/logos/logo-ramlan.png') }}" />
-    <!--begin::Fonts(mandatory for all pages)-->
+    <link rel="shortcut icon" href="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ultra" />
-    <!--end::Fonts-->
     <script type="text/javascript">
-        (function() {
+        (function () {
             var css = document.createElement('link');
             css.href = "{{ asset('/assets/plugins/global/plugins.bundle.css') }}";
             css.rel = 'stylesheet';
@@ -30,7 +28,7 @@
         })();
     </script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             var css = document.createElement('link');
             css.href = "{{ asset('/assets/plugins/custom/fontawesome/css/all.min.css') }}";
             css.rel = 'stylesheet';
@@ -68,13 +66,9 @@
                     <div class="container-xxl" id="kt_content_container">
                         <div class="row g-5 g-xl-8">
                             @hasSection('content-dasboard')
-                                @yield('content-dasboard')
+                            @yield('content-dasboard')
                             @else
-                                <div class="card">
-                                    <div class="card-body p-0">
-                                        @yield('content')
-                                    </div>
-                                </div>
+                            @yield('content')
                             @endif
                         </div>
                     </div>
