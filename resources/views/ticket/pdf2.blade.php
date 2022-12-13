@@ -1326,11 +1326,11 @@
             <img class="mx-auto w-100 img-fluid rounded-4"
                 src="{{ asset('/assets/media/illustrations/bg_ticket_header.png') }}" alt="">
             <div class="card-body px-10 px-lg-15">
-                <table class="mx-15 mx-lg-20">
+                <table class="w-75 mx-15 mx-lg-20">
                     <tr>
                         <td style="background-color:#E4E6EF !important;">
                             <div class="p-5 p-lg-7">
-                                <div class="row justify-content-center mx-10">
+                                <div class="row justify-content-center mx-5">
                                     <div class="col-xl-12 col-xxl-10">
                                         <div class="text-center">
                                             <img class="mw-75 mw-lg-100 w-50 h-auto mh-350px mb-5 mb-lg-20" alt=""
