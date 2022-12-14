@@ -34,7 +34,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -54,7 +54,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -74,7 +74,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -94,7 +94,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -114,7 +114,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -134,7 +134,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -154,7 +154,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -174,7 +174,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -194,7 +194,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -214,7 +214,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -234,7 +234,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -254,7 +254,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -274,7 +274,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -294,7 +294,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -314,7 +314,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -334,7 +334,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -354,7 +354,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -374,7 +374,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -394,7 +394,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                         <div class="col-lg-4 col-sm-6 px-3">
@@ -414,7 +414,7 @@
                             </div>
                             <a href="https://wa.me/6283164867519" target="_blank"
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
-                                <span class="fs-5 fs-lg-1 fw-bolder">Beli Sekarang</span>
+                                <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
                         </div>
                     </div>
