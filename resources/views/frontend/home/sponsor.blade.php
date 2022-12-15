@@ -63,6 +63,11 @@
                                         style="background-image:url('{{ asset('/assets/media/ticketbox/ko-kok.png') }}')">
                                     </div>
                                 </div>
+                                <div class="symbol symbol-50px symbol-lg-75px m-5">
+                                    <div class="symbol-label bg-transparent"
+                                        style="background-image:url('{{ asset('/assets/media/ticketbox/rowndvsn.png') }}')">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
