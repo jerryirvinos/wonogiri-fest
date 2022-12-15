@@ -165,7 +165,7 @@ class TicketController extends Controller
     public function show($id)
     {
         $id = base64_decode($id);
-        
+
         $order = Order::find($id);
         $visitors = Visitor::where('order_id', $order->id)->get();
         $ticket_type = Ticket_type::find($order->ticket_type);
@@ -211,13 +211,13 @@ class TicketController extends Controller
     public function cetak(Request $request)
     {
         $id = Crypt::decryptString($request->id);
-        
+
         // $data = Order::find($id)->get();
         $data = Order::where('id', $id)->get();
-        $ticket_type = Ticket_type::find($data[0]->ticket_type)->get();
+        $ticket_type = Ticket_type::where('id', $data[0]->ticket_type)->get();
         // return view('ticket.pdf2',compact('data','ticket_type'));
         //titik
-        $pdf = Pdf::loadView('ticket.pdf2', compact('data','ticket_type'));
+        $pdf = Pdf::loadView('ticket.pdf2', compact('data', 'ticket_type'));
         return $pdf->download('laporan-pdf.pdf');
     }
 }

@@ -1354,7 +1354,8 @@
                                 <div class="row justify-content-center mx-5">
                                     <div class="col-xl-12 col-xxl-10">
                                         <div class="text-center">
-                                            <img class="mw-75 mw-lg-100 w-50 h-auto mh-350px mb-5 mb-lg-20" alt=""
+                                            <img class="mw-75 mw-lg-100 w-50 h-auto mh-350px mb-5 mb-lg-20"
+                                                alt=""
                                                 src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}">
                                         </div>
                                     </div>
@@ -1368,7 +1369,7 @@
                                             <div
                                                 class="px-3 px-lg-6 py-1 py-lg-6 rounded-2 bg-base-2 lh-base flex-wrap mb-2 mb-lg-5">
                                                 <div class="fs-8 fs-lg-1 fw-bolder" style="color:#181C32 !important;">
-                                                    {{ $ticket_type[0]->name }}
+                                                    {{ $ticket_type[0]->name . ' ' . $ticket_type[0]->title . ' ' . $ticket_type[0]->detail }}
                                                 </div>
                                             </div>
                                             <div
@@ -1391,7 +1392,8 @@
                                             src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}">
                                     </div>
                                     <div class="fs-6
-                                            fs-lg-3x fw-bolder text-center w-100" style="color:#eff2f5 !important;">
+                                            fs-lg-3x fw-bolder text-center w-100"
+                                        style="color:#eff2f5 !important;">
                                         {{ $data[0]->ticket_code }}
                                     </div>
                                 </div>
