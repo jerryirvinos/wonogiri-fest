@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('ticket_code')->unique();
+            $table->string('uuid')->unique();
             $table->string('identity_number');
             $table->string('name');
             $table->text('address');

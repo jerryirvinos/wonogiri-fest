@@ -9,6 +9,7 @@ use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
+use Ramsey\Uuid\Uuid;
 
 class CheckoutController extends Controller
 {
@@ -83,6 +84,7 @@ class CheckoutController extends Controller
 
         try {
             $order = Order::create([
+                'uuid' => Uuid::uuid4()->toString(),
                 'name' => strip_tags(strtoupper($request->input('name_order'))),
                 'identity_number' => strip_tags($request->input('identity_number_order')),
                 'address' => strip_tags($request->input('address_order')),

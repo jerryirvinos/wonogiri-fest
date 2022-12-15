@@ -131,7 +131,7 @@
                         <div class="bg-secondary w-100 h-50 rounded-4">
                             <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
                                 <div class="d-block" id="qr-code">{!! QrCode::size(250)->generate(
-                                    json_encode(['ticketCode' => $order->ticket_code, 'id' => Crypt::encryptString($order->id)]),
+                                    json_encode(['ticketCode' => $order->ticket_code, 'id' => $order->uuid, 'jns' => true]),
                                 ) !!}</div>
                             </div>
                         </div>

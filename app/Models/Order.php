@@ -10,6 +10,7 @@ class Order extends Model
     use HasFactory,AutoNumberTrait;
 
     protected $fillable = [
+        'uuid',
         'ticket_code',
         'identity_number',
         'name',

@@ -1389,7 +1389,7 @@
                                     <div class="text-center px-1 px-lg-5 py-1 py-lg-5 rounded-2 shadow border border-3 border-white bg-white mb-0 mb-lg-5 mx-auto"
                                         style="background-color: #ffffff !important; padding: .90rem!important">
                                         <img class="mw-100 mw-lg-100 w-100 h-auto mh-150px"
-                                            src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => Crypt::encryptString($data[0]->id)]))) }}">
+                                            src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(json_encode(['ticketCode' => $data[0]->ticket_code, 'id' => $data[0]->uuid, 'jns' => true]))) }}">
                                     </div>
                                     <div class="fs-6
                                             fs-lg-3x fw-bolder text-center w-100"
