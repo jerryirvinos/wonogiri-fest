@@ -13,7 +13,7 @@
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
             <div class="card-body">
-                <div style="width: 500px" id="reader"></div>
+                <div style="width: 100%" id="reader"></div>
             </div>
         </div>
     </div>
