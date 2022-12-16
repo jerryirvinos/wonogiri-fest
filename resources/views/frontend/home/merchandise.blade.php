@@ -17,7 +17,29 @@
                         data-tns-autoplay="true" data-tns-autoplay-timeout="18000" data-tns-controls="true"
                         data-tns-nav="false" data-tns-items="3" data-tns-center="false" data-tns-dots="false"
                         data-tns-prev-button="#go_back" data-tns-next-button="#go_next">
-                        <div class="col-lg-4 col-sm-6 px-3">
+                        @foreach ($merchandises as $merchandise)
+                            <div class="col-lg-4 col-sm-6 px-3">
+                                <div class="card border border-4 border-lg-10 rounded-lg-5 shadow-xs mb-2 mb-lg-5">
+                                    <div class="card-body p-0">
+                                        <div class="img-wrapper rounded-2 rounded-lg-3">
+                                            <img src="{{ asset($merchandise->path) }}" class="h-100 inner-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-5 fs-lg-2x fw-bolder text-white text-uppercase">
+                                    {{ $merchandise->code }}
+                                </div>
+                                <div class="fs-6 fs-lg-1 fs-bold text-white mb-3 mb-lg-5 text-uppercase">
+                                    {{ format_rupiah($merchandise->price) }}
+                                </div>
+                                <a href="{{ $merchandise->link }}" target="_blank"
+                                    class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
+                                    <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
+                                </a>
+                            </div>
+                        @endforeach
+                        {{-- <div class="col-lg-4 col-sm-6 px-3">
                             <div class="card border border-4 border-lg-10 rounded-lg-5 shadow-xs mb-2 mb-lg-5">
                                 <div class="card-body p-0">
                                     <div class="img-wrapper rounded-2 rounded-lg-3">
@@ -416,7 +438,7 @@
                                 class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
                                 <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <button class="btn btn-warning btn-icon btn-active-color-primary" id="go_back">
