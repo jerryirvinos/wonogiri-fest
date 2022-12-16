@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ScanController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
@@ -18,6 +19,7 @@ Route::group(['prefix' => 'admin',  AuthCheck::class], function () {
     Route::post('/loginProcess', [UserController::class, 'loginProcess'])->name('user.loginProcess')->withoutMiddleware([AuthCheck::class]);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
+    Route::resource('scan', ScanController::class);
     Route::get('/cetak', [TicketController::class, 'cetak'])->name('ticket.cetak');
     Route::resource('ticket', TicketController::class);
 });
