@@ -19,11 +19,9 @@
                             <span class="bg-white text-white">siapahayo</span> |
                             Kuburan | Pas Band | Kugiran Masdo | Down For Life |
                             <span class="bg-white text-white">siapahayo</span> |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            Closehead | Feel Koplo | Rosemary |
-                            <span class="bg-white text-white">siapahayo</span> |
-                            Hasoe Angels | Ndarboy Genk | Sisi Selatan | Lord Symphony | OM PNS | Vloska | Ksatria
-                            Kegelapan | Dirty Money Syndct | Simple Project | Razeghost | Sweet Escape | Ocdulas
+                            Juicy Luicy | Closehead | Feel Koplo | Rosemary | Hasoe Angels | Ndarboy Genk | Ravi Andhika
+                            | Sisi Selatan | Lord Symphony | OM PNS | Vloska | Ksatria Kegelapan | Dirty Money Syndct |
+                            Simple Project | Razeghost | Sweet Escape | Ocdulas
                         </div>
                         <div class="fs-6 fs-lg-2x fw-bolder text-white text-center my-10">
                             MASIH BANYAK <span class="text-base-2">LINEUP</span> BELUM TERUNGKAP!
