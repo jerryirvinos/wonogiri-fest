@@ -288,7 +288,14 @@
     position:absolute;
 }
 
-.img-wrapper img {
+.img-wrapper .inner-img {
+    position:absolute;
+}
+
+.image-centered{
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
     position:absolute;
 }
 

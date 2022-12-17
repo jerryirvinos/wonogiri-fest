@@ -20,12 +20,16 @@
                         @foreach ($merchandises as $merchandise)
                             <div class="col-lg-4 col-sm-6 px-3">
                                 <div class="card border border-4 border-lg-10 rounded-lg-5 shadow-xs mb-2 mb-lg-5">
-                                    <div class="card-body p-0">
-                                        <div class="img-wrapper rounded-2 rounded-lg-3">
-                                            <img src="{{ asset($merchandise->path) }}" class="h-100 inner-img"
-                                                alt="">
+                                    <a class="d-block overlay" data-fslightbox="lightbox-hot-sales"
+                                        href="{{ asset($merchandise->path) }}">
+                                        <div class="overlay-wrapper">
+                                            <div class="img-wrapper rounded-2 rounded-lg-3">
+                                                <img src="{{ asset($merchandise->path) }}" class="h-100 image-centered"
+                                                    data-id="{{ $merchandise->code }}" data-toggle="modal"
+                                                    data-target="#modal-product" alt="">
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="fs-5 fs-lg-2x fw-bolder text-white text-uppercase">
                                     {{ $merchandise->code }}
@@ -57,3 +61,7 @@
         </div>
     </div>
 </section>
+
+@section('scripts')
+    <script src="{{ asset('/assets/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
+@endsection
