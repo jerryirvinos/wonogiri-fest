@@ -12,6 +12,12 @@
         var table = $('#kt_datatable').DataTable({
             processing: true,
             serverSide: true,
+            autoWidth: true,
+            scrollX: false,
+            paging: true,
+            responsive: true,
+            searching: true,
+            bFilter: false,
             order: [1, 'asc'],
             ajax: "{{ route('ticket.index') }}",
             columns: [{
