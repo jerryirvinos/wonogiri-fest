@@ -11,7 +11,6 @@
     $(function() {
         var table = $('#kt_datatable').DataTable({
             processing: true,
-            responsive: true,
             serverSide: true,
             order: [1, 'asc'],
             ajax: "{{ route('verification.index') }}",
