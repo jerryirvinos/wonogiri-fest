@@ -2,8 +2,8 @@
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto"
     data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
     <div class="aside-logo flex-column-auto pt-10 pt-lg-20" id="kt_aside_logo">
-        <a href="#">
-            <img alt="Logo" src="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" class="h-40px" />
+        <a href="/">
+            <img alt="Logo" src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}" class="p-2 h-40px" />
         </a>
     </div>
     <div class="aside-menu flex-column-fluid pt-0 pb-7 py-lg-10" id="kt_aside_menu">

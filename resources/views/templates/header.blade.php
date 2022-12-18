@@ -17,11 +17,20 @@
                 </small>
             </h1>
         </div>
-        <div class="d-flex align-items-center flex-wrap">
-            <div class="d-flex align-items-center py-3 py-lg-0">
-                <a href="#" class="btn btn-warning rounded-pill">
-                    <span class="fs-4 fw-bolder">{{ session()->get('user')['role_name'] }}</span>
-                </a>
+        <div class="d-flex align-items-center justify-content-end flex-wrap w-100 w-lg-auto"
+            id="kt_header_user_menu_toggle">
+            <div class="btn cursor-pointer btn-warning rounded-pill" data-kt-menu-trigger="click"
+                data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                <span class="fs-4 fw-bolder">{{ session()->get('user')['role_name'] }}</span>
+            </div>
+            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
+                data-kt-menu="true" style="">
+                <div class="menu-item px-2">
+                    <a href="#" class="menu-link text-hover-danger px-5">
+                        <i class="fa-duotone fa-right-from-bracket fs-1 me-2"></i>
+                        Sign Out
+                    </a>
+                </div>
             </div>
         </div>
     </div>

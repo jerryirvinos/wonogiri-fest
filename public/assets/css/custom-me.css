@@ -317,3 +317,45 @@
     }
 }
 
+/* SCAN CUSTOM */
+.html5-qrcode-element {
+    border: 0;
+    padding: calc(0.775rem + 1px) calc(1.5rem + 1px);
+    --bs-btn-color: var(--kt-body-color);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: transparent;
+    outline: 0!important;
+    border-radius: 1.5rem !important;
+    width: 75%!important;
+    font-size: 1.75rem!important;
+    font-weight: 700!important;
+    padding-top: 1.75rem!important;
+    padding-bottom: 1.75rem!important;
+}
+
+#html5-qrcode-button-camera-start{
+    color: #ffffff;
+    background-color: #04C8C8;
+}
+
+#html5-qrcode-button-camera-stop{
+    color: #ffffff;
+    background-color: #f1416c;
+}
+
+#qr-shaded-region{
+    border-radius: 1.5rem!important;
+}
+
+video[muted="true"]{
+    border-radius: 1.5rem!important;
+}
+
+#reader {
+    border: 0 !important;
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    cursor: pointer !important;
+    margin-top: 1.75rem!important;
+}

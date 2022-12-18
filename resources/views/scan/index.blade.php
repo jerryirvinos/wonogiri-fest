@@ -11,10 +11,8 @@
                 <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk scan ticket</span>
             </h3>
         </div>
-        <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
-            <div class="card-body">
-                <div style="width: 100%" id="reader"></div>
-            </div>
+        <div class="card-body p-0">
+            <div style="width: 100%" id="reader"></div>
         </div>
     </div>
 @endsection

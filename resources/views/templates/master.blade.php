@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ultra" />
     <script type="text/javascript">
-        (function () {
+        (function() {
             var css = document.createElement('link');
             css.href = "{{ asset('/assets/plugins/global/plugins.bundle.css') }}";
             css.rel = 'stylesheet';
@@ -28,7 +28,7 @@
         })();
     </script>
     <script type="text/javascript">
-        (function () {
+        (function() {
             var css = document.createElement('link');
             css.href = "{{ asset('/assets/plugins/custom/fontawesome/css/all.min.css') }}";
             css.rel = 'stylesheet';
@@ -52,8 +52,8 @@
                     <div class="container d-flex flex-stack">
                         <div class="d-flex  align-items-center flex-grow-1 flex-lg-grow-0">
                             <a href="#">
-                                <img alt="Logo" src="{{ asset('/assets/media/logos/logo-ramlan.png') }}"
-                                    class="h-35px" />
+                                <img alt="Logo" src="{{ asset('/assets/media/logos/logo-wonogirifest.png') }}"
+                                    class="ms-4 h-50px" />
                             </a>
                         </div>
                         <button class="btn btn-icon btn-active-color-primary" id="kt_aside_toggle">
@@ -66,9 +66,9 @@
                     <div class="container-xxl" id="kt_content_container">
                         <div class="row g-5 g-xl-8">
                             @hasSection('content-dasboard')
-                            @yield('content-dasboard')
+                                @yield('content-dasboard')
                             @else
-                            @yield('content')
+                                @yield('content')
                             @endif
                         </div>
                     </div>
