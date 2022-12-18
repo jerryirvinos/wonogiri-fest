@@ -37,7 +37,7 @@
                                 <div class="fs-6 fs-lg-1 fs-bold text-white mb-3 mb-lg-5 text-uppercase">
                                     {{ format_rupiah($merchandise->price) }}
                                 </div>
-                                <a href="https://wa.me/6283164867519?text=Hallo%20Kak,%20saya%20atas%20nama%0aNama%20:%20….%0aAlamat%20:%20….%0aTertarik%20membeli%20produk%20{{ $merchandise->code }}"
+                                <a href="https://wa.me/6283164867519?text=Hallo%20Kak,%0aTertarik%20membeli%20produk%20*{{ strtoupper($merchandise->code) }}*"
                                     target="_blank"
                                     class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
                                     <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
