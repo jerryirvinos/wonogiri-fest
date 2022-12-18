@@ -59,9 +59,10 @@
                             href="https://wa.me/6285161834585"><span
                                 class="fw-bold text-white fs-7 fs-lg-4">085161834585
                                 (WA only)</span></a> <br> --}}
-                        <span class="fw-bolder text-white fs-7 fs-lg-2">NOTE : PEMBELIAN TICKET SELAIN DARI OFFICIAL
-                            TICKET, ANAK USIA DIATAS 2 TAHUN DIKENAKAN TIKET DENGAN HARGA NORMAL.
-                            BOX DAN HOTLINE DIANGGAP TIDAK SAH. KUOTA TERBATAS!
+                        <span class="fw-bolder text-white fs-7 fs-lg-2">
+                            ANAK USIA DIATAS 2 TAHUN DIKENAKAN TIKET DENGAN HARGA NORMAL <br>
+                            NOTE : PEMBELIAN TICKET SELAIN DARI OFFICIAL
+                            TICKET BOX DAN HOTLINE DIANGGAP TIDAK SAH. KUOTA TERBATAS!
                         </span>
                         <div class="fw-semibold text-white fs-8 ls-2 fs-lg-2">
                             Informasi : <a href="https://wa.me/6285161834585"><span
