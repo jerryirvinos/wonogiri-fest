@@ -61,7 +61,3 @@
         </div>
     </div>
 </section>
-
-@section('scripts')
-    <script src="{{ asset('/assets/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
-@endsection
