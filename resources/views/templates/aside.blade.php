@@ -14,24 +14,26 @@
                 class="menu menu-column menu-title-gray-600 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-icon-gray-400 menu-arrow-gray-400 fw-semibold fs-6 my-auto"
                 data-kt-menu="true">
                 <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2 here">
-                    <a href="#" class="menu-link menu-center flex-column active">
+                    class="menu-item py-2">
+                    <a href="#" class="menu-link menu-center flex-column">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-chart-pie fs-2x"></i>
                         </span>
                         <div class="menu-title">Dashboard</div>
                     </a>
                 </div>
-                <div class="menu-item py-2">
-                    <a href="{{ route('verification.index') }}" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2 {{ request()->routeIs('verification.index') ? 'here' : '' }}">
+                    <a href="{{ route('verification.index') }}"
+                        class="menu-link menu-center flex-column {{ request()->routeIs('verification.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-file-invoice-dollar fs-2x"></i>
                         </span>
                         <div class="menu-title">Verifikasi</div>
                     </a>
                 </div>
-                <div class="menu-item py-2">
-                    <a href="{{ route('ticket.index') }}" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2 {{ request()->routeIs('ticket.index') ? 'here' : '' }}">
+                    <a href="{{ route('ticket.index') }}"
+                        class="menu-link menu-center flex-column {{ request()->routeIs('ticket.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-file-invoice-dollar fs-2x"></i>
                         </span>
@@ -49,7 +51,7 @@
                 </div>
                 @if (session()->get('user')['role'] == '1')
                     <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                        class="menu-item py-2">
+                        class="menu-item py-2 {{ request()->routeIs('user.index') ? 'here' : '' }}">
                         <span class="menu-link menu-center flex-column">
                             <span class="menu-icon me-0 mb-3">
                                 <i class="fa-light fa-database fs-2x"></i>
@@ -64,7 +66,8 @@
                                 </div>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="{{ route('user.index') }}">
+                                <a class="menu-link {{ request()->routeIs('user.index') ? 'active' : '' }}"
+                                    href="{{ route('user.index') }}">
                                     <span class="menu-icon me-3">
                                         <i class="fa-light fa-users fs-lg"></i>
                                     </span>

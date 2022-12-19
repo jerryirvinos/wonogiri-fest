@@ -5,6 +5,7 @@
         var table = $('#kt_datatable').DataTable({
             processing: true,
             serverSide: true,
+            // responsive: true,
             order: [3, 'asc'],
             ajax: "{{ route('user.index') }}",
             columns: [{
