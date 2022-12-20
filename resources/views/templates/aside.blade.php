@@ -26,7 +26,7 @@
                     <a href="{{ route('verification.index') }}"
                         class="menu-link menu-center flex-column {{ request()->routeIs('verification.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-file-invoice-dollar fs-2x"></i>
+                            <i class="fa-light fa-check-double fs-2x"></i>
                         </span>
                         <div class="menu-title">Verifikasi</div>
                     </a>
@@ -40,9 +40,9 @@
                         <div class="menu-title">Ticket</div>
                     </a>
                 </div>
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2">
-                    <a href="#" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2 {{ request()->routeIs('scan.index') ? 'here' : '' }}">
+                    <a href="{{ route('scan.index') }}"
+                        class="menu-link menu-center flex-column {{ request()->routeIs('scan.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-qrcode fs-2x"></i>
                         </span>
