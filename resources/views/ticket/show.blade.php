@@ -107,14 +107,18 @@
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Status Pembayaran</label>
-                                <div class="d-flex flex-wrap border border-secondary rounded-2 p-3">
+                                <div class="d-flex flex-wrap rounded-2 p-3">
                                     @if ($order->payment_status)
-                                        <span class="badge badge-light-success rounded-pill px-6 py-3">
-                                            <span class="fs-6 fw-bold">Terbayar</span>
+                                        <span
+                                            class="badge badge-light-success border border-2 border-success rounded-3 px-6 py-3 w-50 mx-auto">
+                                            <i class="fa-duotone fa-shield-check text-success fs-2x me-4"></i>
+                                            <span class="fs-3 fw-bold">Terbayar</span>
                                         </span>
                                     @else
-                                        <span class="badge badge-light-danger rounded-pill px-6 py-3">
-                                            <span class="fs-6 fw-bold">Belum Terbayar</span>
+                                        <span
+                                            class="badge badge-light-danger border border-2 border-danger rounded-3 px-6 py-3 w-50 mx-auto">
+                                            <i class="fa-duotone fa-shield-xmark text-danger fs-2x me-4"></i>
+                                            <span class="fs-3 fw-bold">Belum Terbayar</span>
                                         </span>
                                     @endif
 
@@ -123,13 +127,14 @@
                             {{-- <a href="#" class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
                                 id="btn-generate">Cetak</a> --}}
                             <a href="{{ route('ticket.cetak', ['id' => Crypt::encryptString($order->id)]) }}"
-                                class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 d-block"
+                                class="btn btn-warning btn-lg hover-scale rounded-3 w-100 py-5 my-5 fs-3  fw-bolder d-block"
                                 id="btn-generate">Cetak</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 mb-10 mb-lg-2">
-                        <div class="bg-secondary w-100 h-50 rounded-4">
-                            <div class="d-flex justify-content-center align-content-center flex-wrap h-100">
+                        <div class="w-100 h-auto rounded-4 px-5 px-lg-15">
+                            <div
+                                class="d-flex justify-content-center align-content-center flex-wrap h-100 bg-white border border-white border-4 shadow py-3 rounded-4">
                                 <div class="d-block" id="qr-code">{!! QrCode::size(250)->generate(
                                     json_encode(['ticketCode' => $order->ticket_code, 'id' => $order->uuid, 'jns' => true]),
                                 ) !!}</div>
@@ -137,36 +142,62 @@
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12">
-                        <div class="border border-light rounded-3 shadow-xs px-5 py-6">
-                            <div class="fw-bold fs-6 text-gray-800 mb-2">Daftar Pengunjung</div>
-                            <div class="table-responsive">
-                                <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
-                                    <thead>
-                                        <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
-                                            <th>Nomor Identitas</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>No Telepon</th>
-                                            <th>Alamat</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($visitors as $item)
-                                            <tr>
-                                                <td>{{ $item->identity_number }}</td>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td>{{ $item->phone }}</td>
-                                                <td>{{ $item->address }}</td>
+                        <div class="card card-flush rounded-3 shadow-xs">
+                            <div class="card-header pt-5">
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fs-2 fw-bolder text-gray-800">Daftar Pengunjung</span>
+                                    <span class="fs-7 fw-normal text-gray-400 mt-2">
+                                        Data-data calon pengunjung yang telah didaftarkan
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
+                                        <thead>
+                                            <tr class="fs-5 fw-bolder text-gray-700 border-bottom border-gray-200">
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>No Telepon</th>
+                                                <th class="w-500px">Alamat</th>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($visitors as $item)
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <div
+                                                                class="text-gray-800 fw-bolder text-hover-primary mb-1 fs-3">
+                                                                {{ $item->name }}
+                                                            </div>
+                                                            <div class="text-gray-600 fw-semibold d-block fs-6">
+                                                                {{ $item->identity_number }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="text-gray-600 fw-bold fs-6">
+                                                            {{ $item->email }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fs-5 fw-semibold ls-2">
+                                                            {{ $item->phone }}
+
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->address }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

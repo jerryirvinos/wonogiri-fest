@@ -26,7 +26,7 @@
                     <a href="{{ route('verification.index') }}"
                         class="menu-link menu-center flex-column {{ request()->routeIs('verification.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-check-double fs-2x"></i>
+                            <i class="fa-light fa-ballot-check fs-2x"></i>
                         </span>
                         <div class="menu-title">Verifikasi</div>
                     </a>

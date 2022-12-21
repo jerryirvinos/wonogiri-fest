@@ -84,9 +84,10 @@
                             index = 3;
                         }
                         var color = style[index]
-                        var html = `<span class="badge badge-light-` + style[index] + ` rounded-pill px-6 py-3">
-                                        <span class="fs-6 fw-bold">` + row.ticket_name + `</span>
-                                    </span>`;
+                        var html = `<div class="badge badge-light-` + style[index] + ` rounded-pill px-6 py-3 flex-column">
+                                        <div class="fs-6 fw-bolder mb-2">` + row.ticket_name + `</div>
+                                        <div class="fs-7 fw-semibold">` + row.ticket_title + `</div>
+                                    </div>`;
                         return html
                     },
                     orderable: false,

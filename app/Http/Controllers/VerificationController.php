@@ -35,11 +35,11 @@ class VerificationController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('orders')->where('is_online','=','1')->where('payment_status','=','0')->count();
+            $totalRecords = DB::table('orders')->where('is_online', '=', '1')->where('payment_status', '=', '0')->count();
             $totalRecordswithFilter = DB::table('orders')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
-                ->where('is_online','=','1')
-                ->where('payment_status','=','0')
+                ->where('is_online', '=', '1')
+                ->where('payment_status', '=', '0')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -47,10 +47,10 @@ class VerificationController extends Controller
 
 
             $data = DB::table('orders')
-                ->select('orders.*','ticket_types.name AS ticket_name')
+                ->select('orders.*', 'ticket_types.name AS ticket_name', 'ticket_types.title AS ticket_title')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
-                ->where('is_online','=','1')
-                ->where('payment_status','=','0')
+                ->where('is_online', '=', '1')
+                ->where('payment_status', '=', '0')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -113,13 +113,13 @@ class VerificationController extends Controller
     public function edit($id)
     {
         $id = base64_decode($id);
-        
+
         $order = Order::find($id);
         $ticket_type = Ticket_type::find($order->ticket_type);
-        $visitors = Visitor::where('order_id',$order->id)->get();
+        $visitors = Visitor::where('order_id', $order->id)->get();
         $banks = Bank::all();
 
-        return view('verification.edit', compact('order','ticket_type','banks','visitors'));
+        return view('verification.edit', compact('order', 'ticket_type', 'banks', 'visitors'));
     }
 
     /**
@@ -150,7 +150,7 @@ class VerificationController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
+
         try {
             $ticket = Order::find($id);
 
@@ -160,7 +160,7 @@ class VerificationController extends Controller
             $ticket->bank = strip_tags($request->input('bank'));
 
             $ticket->save();
-            
+
             $log = Log::create([
                 'ticket_id' => $id,
                 'logs_status' => 'Terbayar',
