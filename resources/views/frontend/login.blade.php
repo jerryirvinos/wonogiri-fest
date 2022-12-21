@@ -4,8 +4,12 @@
 <head>
     <base href="../../../" />
     <title>{{ env('APP_NAME') }}</title>
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
     <meta name="_token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="{{ env('APP_NAME') }}" />
+    <meta property="og:url" content="https://wonogirifest.co.id" />
+    <meta property="og:site_name" content="{{ env('APP_NAME') }}" />
+    <link rel="canonical" href="https://wonogirifest.com" />
+    <link rel="shortcut icon" href="{{ asset('/assets/media/logos/wonogirifest-icon.ico') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />

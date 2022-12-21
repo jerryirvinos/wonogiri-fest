@@ -86,7 +86,8 @@
                         var color = style[index]
                         var html = `<div class="badge badge-light-` + style[index] + ` rounded-pill px-6 py-3 flex-column">
                                         <div class="fs-6 fw-bolder mb-2">` + row.ticket_name + `</div>
-                                        <div class="fs-7 fw-semibold">` + row.ticket_title + `</div>
+                                        <div class="fs-7 fw-semibold mb-1">` + row.ticket_title + `</div>
+                                        <div class="fs-8 fw-normal">` + row.ticket_detail + `</div>
                                     </div>`;
                         return html
                     },

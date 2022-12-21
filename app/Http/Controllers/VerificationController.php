@@ -47,7 +47,7 @@ class VerificationController extends Controller
 
 
             $data = DB::table('orders')
-                ->select('orders.*', 'ticket_types.name AS ticket_name', 'ticket_types.title AS ticket_title')
+                ->select('orders.*', 'ticket_types.name AS ticket_name', 'ticket_types.title AS ticket_title', 'ticket_types.detail AS ticket_detail')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('is_online', '=', '1')
                 ->where('payment_status', '=', '0')

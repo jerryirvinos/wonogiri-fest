@@ -50,7 +50,7 @@ class TicketController extends Controller
 
 
             $data = DB::table('orders')
-                ->select('orders.*', 'ticket_types.name AS ticket_name', 'ticket_types.title AS ticket_title')
+                ->select('orders.*', 'ticket_types.name AS ticket_name', 'ticket_types.title AS ticket_title', 'ticket_types.detail AS ticket_detail')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('payment_status', '=', '1')
                 ->where(function ($query) use ($searchValue) {
