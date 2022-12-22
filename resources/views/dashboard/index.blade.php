@@ -10,14 +10,15 @@
                 <select class="form-select form-select-lg" data-control="select2" id="kt_docs_select2_rich_content"
                     data-placeholder="Silahkan pilih salah satu" name="ticket">
                     <option value="Semua"
+                        data-href="{{ URL::to('admin/dashboard?filter=Semua') }}
                         {{ request()->get('filter') == 'Semua' || !request()->get('filter') ? 'selected' : '' }}>Semua
                     </option>
                     @foreach ($tickets as $ticket)
-                        <option value="{{ $ticket->id }}"
-                            data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
-                            {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
-                            {{ $ticket->name }}
-                        </option>
+<option value="{{ $ticket->id }}"
+                        data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
+                        {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
+                        {{ $ticket->name }}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -60,7 +61,7 @@
                     <div class="d-flex flex-column flex-wrap">
                         <i class="fa-duotone fa-sack-xmark fs-5x mb-5 text-warning"></i>
                         <div class="fs-5 fs-lg-2x fw-bolder text-gray-800">
-                            {{ $income }}
+                            {{ format_rupiah($income) }}
                         </div>
                         <div class="fs-7 fs-lg-6 fw-normal text-gray-600">
                             Total Income
@@ -98,21 +99,22 @@
                         </span>
                     </h3>
                 </div>
-                <div class="card-body">
-                    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
-                        <thead>
-                            <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
-                                <th>No</th>
-                                <th>ID Ticket*hidden</th>
-                                <th>ID Ticket</th>
-                                <th>Nama Pembeli</th>
-                                <th>Tanggal Pembelian</th>
-                                <th class="text-center">Jenis</th>
-                                <th>Jumlah Ticket</th>
-                                <th class="text-center"><i class="fa-light fa-grip-dots-vertical"></i></th>
-                            </tr>
-                        </thead>
-                    </table>
+                <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
+                    <div class="table-responsive">
+                        <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
+                            <thead>
+                                <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                                    <th>No</th>
+                                    <th>ID Ticket*hidden</th>
+                                    <th>ID Ticket</th>
+                                    <th>Nama Pembeli</th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th class="text-center">Jenis</th>
+                                    <th>Jumlah Ticket</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,10 +128,19 @@
             window.location.href = link;
         });
 
+        const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        const weekday = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+        const style = ["warning", "success", "info", "primary"]
+
         $(function() {
             var table = $('#kt_datatable').DataTable({
                 processing: true,
                 serverSide: true,
+                paging: false,
                 order: [1, 'asc'],
                 ajax: "{{ route('dashboard.index') }}",
                 columns: [{
@@ -220,20 +231,6 @@
                         },
                         orderable: false,
                         className: 'text-center'
-                    },
-                    {
-                        render: function(data, type, row) {
-                            var url_edit = "{{ route('verification.edit', ':id') }}";
-                            url_edit = url_edit.replace(':id', encodeURIComponent(window.btoa(row
-                                .id)));
-
-                            var html = `<div class="d-flex justify-content-center">
-                                    <a href="` + url_edit + `" class="btn btn-icon btn-warning me-1" title=""><i class="fa-duotone fa-check-to-slot fs-lg"></i></a>
-                                    </div>`
-                            return html
-                        },
-                        orderable: false,
-                        searchable: false,
                     },
                 ]
             });

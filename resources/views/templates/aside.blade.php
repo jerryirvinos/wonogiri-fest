@@ -13,9 +13,9 @@
             <div id="kt_aside_menu"
                 class="menu menu-column menu-title-gray-600 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-icon-gray-400 menu-arrow-gray-400 fw-semibold fs-6 my-auto"
                 data-kt-menu="true">
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2">
-                    <a href="#" class="menu-link menu-center flex-column">
+                <div class="menu-item py-2 {{ request()->routeIs('dashboard.index') ? 'here' : '' }}">
+                    <a href="{{ route('dashboard.index') }}"
+                        class="menu-link menu-center flex-column {{ request()->routeIs('dashboard.index') ? 'active' : '' }}">
                         <span class="menu-icon me-0 mb-3">
                             <i class="fa-light fa-chart-pie fs-2x"></i>
                         </span>
@@ -83,10 +83,10 @@
     <div class="aside-footer flex-column-auto pb-5 pb-lg-10" id="kt_aside_footer">
         <div class="d-flex flex-center w-100 scroll-px" data-bs-toggle="tooltip" data-bs-placement="right"
             data-bs-dismiss="click" title="Logout">
-            <button type="button" class="btn btn-custom" data-kt-menu-trigger="click" data-kt-menu-overflow="true"
-                data-kt-menu-placement="top-start">
+            <a href="{{ route('user.logout') }}" class="btn btn-custom" data-kt-menu-trigger="click"
+                data-kt-menu-overflow="true" data-kt-menu-placement="top-start">
                 <i class="fa-light fa-right-from-bracket fs-2x"></i>
-            </button>
+            </a>
         </div>
     </div>
 </div>
