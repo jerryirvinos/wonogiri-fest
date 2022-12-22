@@ -24,7 +24,7 @@
                                         href="{{ asset($merchandise->path) }}">
                                         <div class="overlay-wrapper">
                                             <div class="img-wrapper rounded-2 rounded-lg-3">
-                                                <img src="{{ asset($merchandise->path) }}" class="h-100 image-centered"
+                                                <img src="{{ asset($merchandise->link) }}" class="h-100 image-centered"
                                                     data-id="{{ $merchandise->code }}" data-toggle="modal"
                                                     data-target="#modal-product" alt="">
                                             </div>

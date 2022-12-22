@@ -33,6 +33,7 @@
 
     @include('frontend.home.experience')
 
+    @include('frontend.home.merchandise')
 
     <section class="my-5 my-lg-10 bg-tagline">
         <div class="d-flex justify-content-center flex-wrap h-100">
