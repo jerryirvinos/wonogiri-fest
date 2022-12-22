@@ -42,7 +42,7 @@
                     <div class="row justify-content-center px-8 px-lg-15 row mb-5 mb-lg-20">
                         <div class="col-xl-10 col-xxl-8">
                             <div class="d-flex justify-content-center align-content-center flex-wrap">
-                                <div class="symbol symbol-50px symbol-lg-75px m-5">
+                                <div class="symbol symbol-50px symbol-lg-125px m-5">
                                     <div class="symbol-label bg-transparent"
                                         style="background-image:url('{{ asset('/assets/media/sponsor/ramekakat.png') }}')">
                                     </div>
