@@ -58,7 +58,7 @@
                     </button>
                 </div>
 
-                <div class="fw-bold text-white fs-7 fs-lg-2 mt-5">
+                <div class="fw-bold text-white fs-7 fs-lg-2 mt-5 mt-lg-15 text-center">
                     NOTE : Untuk kaos harga yang tertera sampai dengan ukuran XL,<br>
                     Penambahan 1 X dikenakan tambahan harga <span class="fw-bolder fs-6">Rp 10.000</span>
                 </div>
