@@ -5,28 +5,32 @@
 
 @section('content')
     <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-5">
-            <div class="card card-flush rounded-4 shadow shadow-xs">
-                <div class="card-body">
-                    <div class="d-flex flex-column flex-wrap">
-                        <i class="fa-duotone fa-money-check-dollar-pen fs-5x mb-5 text-warning"></i>
-                        <div class="fs-5 fs-lg-2x fw-bolder text-gray-800">
-                            666
-                        </div>
-                        <div class="fs-7 fs-lg-6 fw-normal text-gray-600">
-                            Total Pendaftar
-                        </div>
-                    </div>
-                </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-5">
+            <div class="d-flex justify-content-end">
+                <select class="form-select form-select-lg" data-control="select2" id="kt_docs_select2_rich_content"
+                    data-placeholder="Silahkan pilih salah satu" name="ticket">
+                    <option value="Semua"
+                        {{ request()->get('filter') == 'Semua' || !request()->get('filter') ? 'selected' : '' }}>Semua
+                    </option>
+                    @foreach ($tickets as $ticket)
+                        <option value="{{ $ticket->id }}"
+                            data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
+                            {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
+                            {{ $ticket->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-5">
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-5">
             <div class="card card-flush rounded-4 shadow shadow-xs">
                 <div class="card-body">
                     <div class="d-flex flex-column flex-wrap">
                         <i class="fa-duotone fa-ticket fs-5x mb-5 text-warning"></i>
                         <div class="fs-5 fs-lg-2x fw-bolder text-gray-800">
-                            666
+                            {{ $ticketSold }}
                         </div>
                         <div class="fs-7 fs-lg-6 fw-normal text-gray-600">
                             Total Ticket Terjual
@@ -35,28 +39,28 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-5">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-5">
             <div class="card card-flush rounded-4 shadow shadow-xs">
                 <div class="card-body">
                     <div class="d-flex flex-column flex-wrap">
                         <i class="fa-duotone fa-people-group fs-5x mb-5 text-warning"></i>
                         <div class="fs-5 fs-lg-2x fw-bolder text-gray-800">
-                            666
+                            {{ $ticketSoldToday }}
                         </div>
                         <div class="fs-7 fs-lg-6 fw-normal text-gray-600">
-                            Total Penonton
+                            Tiket terjual hari ini
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-5">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-5">
             <div class="card card-flush rounded-4 shadow shadow-xs">
                 <div class="card-body">
                     <div class="d-flex flex-column flex-wrap">
                         <i class="fa-duotone fa-sack-xmark fs-5x mb-5 text-warning"></i>
                         <div class="fs-5 fs-lg-2x fw-bolder text-gray-800">
-                            666
+                            {{ $income }}
                         </div>
                         <div class="fs-7 fs-lg-6 fw-normal text-gray-600">
                             Total Income
@@ -99,6 +103,7 @@
                         <thead>
                             <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
                                 <th>No</th>
+                                <th>ID Ticket*hidden</th>
                                 <th>ID Ticket</th>
                                 <th>Nama Pembeli</th>
                                 <th>Tanggal Pembelian</th>
@@ -116,6 +121,124 @@
 
 @section('scripts')
     <script>
+        $('select[name="ticket"]').on('change', function() {
+            var link = $(this).find('option:selected').data('href');
+            window.location.href = link;
+        });
+
+        $(function() {
+            var table = $('#kt_datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                order: [1, 'asc'],
+                ajax: "{{ route('dashboard.index') }}",
+                columns: [{
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        },
+                        orderable: true,
+                        width: '4%',
+                        className: 'text-center'
+                    },
+                    {
+                        name: "created_at",
+                        data: "created_at",
+                        visible: false,
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var html = `<div class="fs-3 text-dark fw-bolder text-hover-primary mb-1">
+                                        ` + row.ticket_code + `
+                                    </div>`;
+                            return html
+                        },
+                        orderable: false,
+                        className: 'text-center'
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var html = `<div class="d-flex align-items-center">
+                                        <div class="d-flex flex-column">
+                                            <div class="fs-4 fw-bolder text-gray-800">
+                                                ` + row.name + `
+                                            </div>
+                                            <div class="fs-6 fw-semibold text-gray-500">
+                                                ` + row.identity_number + `
+                                            </div>
+                                        </div>
+                                    </div>`;
+                            return html
+                        },
+                        orderable: false,
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var d = new Date(row.created_at);
+
+                            var html = `<div class="d-flex flex-column">
+                                        <div class="fs-7 fw-semibold text-gray-700">
+                                            ` + weekday[d.getDay()] + `
+                                        </div>
+                                        <div class="fs-5 fw-bold text-gray-800">
+                                            ` + d.getDate() + ' ' + monthNames[d.getUTCMonth()] + ' ' + d
+                                .getUTCFullYear() + `
+                                        </div>
+                                    </div>`;
+                            return html
+                        },
+                        orderable: false,
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var index;
+                            if (row.ticket_type == 1) {
+                                index = 0;
+                            } else if (row.ticket_type == 2) {
+                                index = 1;
+                            } else if (row.ticket_type == 3) {
+                                index = 2;
+                            } else {
+                                index = 3;
+                            }
+                            var color = style[index]
+                            var html = `<div class="badge badge-light-` + style[index] + ` rounded-pill px-6 py-3 flex-column">
+                                        <div class="fs-6 fw-bolder mb-2">` + row.ticket_name + `</div>
+                                        <div class="fs-7 fw-semibold mb-1">` + row.ticket_title + `</div>
+                                        <div class="fs-8 fw-normal">` + row.ticket_detail + `</div>
+                                    </div>`;
+                            return html
+                        },
+                        orderable: false,
+                        className: 'text-center'
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var html = `<span class="fs-5 text-gray-900">
+                                        ` + row.qty + `
+                                    </span>`;
+                            return html
+                        },
+                        orderable: false,
+                        className: 'text-center'
+                    },
+                    {
+                        render: function(data, type, row) {
+                            var url_edit = "{{ route('verification.edit', ':id') }}";
+                            url_edit = url_edit.replace(':id', encodeURIComponent(window.btoa(row
+                                .id)));
+
+                            var html = `<div class="d-flex justify-content-center">
+                                    <a href="` + url_edit + `" class="btn btn-icon btn-warning me-1" title=""><i class="fa-duotone fa-check-to-slot fs-lg"></i></a>
+                                    </div>`
+                            return html
+                        },
+                        orderable: false,
+                        searchable: false,
+                    },
+                ]
+            });
+        });
+
         var element = document.getElementById('chart_stats');
 
         var height = parseInt(KTUtil.css(element, 'height'));
