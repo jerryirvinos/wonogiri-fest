@@ -16,7 +16,7 @@
                         <option value="{{ $ticket->id }}"
                             data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
                             {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
-                            {{ $ticket->name }}
+                            {{ $ticket->name . ' ' . $ticket->title . ' ' . $ticket->detail }}
                         </option>
                     @endforeach
                 </select>
