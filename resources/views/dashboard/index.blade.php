@@ -9,16 +9,15 @@
             <div class="d-flex justify-content-end">
                 <select class="form-select form-select-lg" data-control="select2" id="kt_docs_select2_rich_content"
                     data-placeholder="Silahkan pilih salah satu" name="ticket">
-                    <option value="Semua"
-                        data-href="{{ URL::to('admin/dashboard?filter=Semua') }}
+                    <option value="Semua" data-href="{{ URL::to('admin/dashboard?filter=Semua') }}"
                         {{ request()->get('filter') == 'Semua' || !request()->get('filter') ? 'selected' : '' }}>Semua
                     </option>
                     @foreach ($tickets as $ticket)
-<option value="{{ $ticket->id }}"
-                        data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
-                        {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
-                        {{ $ticket->name }}
-                    </option>
+                        <option value="{{ $ticket->id }}"
+                            data-href="{{ URL::to('admin/dashboard?filter=' . $ticket->id) }}"
+                            {{ request()->get('filter') == $ticket->id ? 'selected' : '' }}>
+                            {{ $ticket->name }}
+                        </option>
                     @endforeach
                 </select>
             </div>
