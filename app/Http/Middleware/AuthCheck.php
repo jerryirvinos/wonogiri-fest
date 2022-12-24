@@ -19,7 +19,7 @@ class AuthCheck
     {
         if ($request->session()->get('user')) {
             $nameRoute = explode('.', trim(Route::currentRouteName()))[0];
-            if ($nameRoute == 'user' && session()->get('user')['role'] != '1') {
+            if (($nameRoute == 'user' || $nameRoute == 'tickettype') && session()->get('user')['role'] != '1') {
                 return back()->with('message', "Anda tidak mempunyai akses");
             }
 
