@@ -50,32 +50,41 @@
                     </a>
                 </div>
                 @if (session()->get('user')['role'] == '1')
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                    class="menu-item py-2 {{ request()->routeIs('user.index') ? 'here' : '' }}">
-                    <span class="menu-link menu-center flex-column">
-                        <span class="menu-icon me-0 mb-3">
-                            <i class="fa-light fa-database fs-2x"></i>
+                    <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
+                        class="menu-item py-2 {{ request()->routeIs('user.index') || request()->routeIs('tickettype.index') ? 'here' : '' }}">
+                        <span class="menu-link menu-center flex-column">
+                            <span class="menu-icon me-0 mb-3">
+                                <i class="fa-light fa-database fs-2x"></i>
+                            </span>
+                            <div class="menu-title">Master</div>
                         </span>
-                        <div class="menu-title">Master</div>
-                    </span>
-                    <!--begin:Menu sub-->
-                    <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
-                        <div class="menu-item">
-                            <div class="menu-content">
-                                <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
+                            <div class="menu-item">
+                                <div class="menu-content">
+                                    <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link {{ request()->routeIs('user.index') ? 'active' : '' }}"
+                                    href="{{ route('user.index') }}">
+                                    <span class="menu-icon me-3">
+                                        <i class="fa-light fa-users fs-lg"></i>
+                                    </span>
+                                    <span class="menu-title">User</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link {{ request()->routeIs('tickettype.index') ? 'active' : '' }}"
+                                    href="{{ route('tickettype.index') }}">
+                                    <span class="menu-icon me-3">
+                                        <i class="fa-light fa-users fs-lg"></i>
+                                    </span>
+                                    <span class="menu-title">Tiket</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <a class="menu-link {{ request()->routeIs('user.index') ? 'active' : '' }}"
-                                href="{{ route('user.index') }}">
-                                <span class="menu-icon me-3">
-                                    <i class="fa-light fa-users fs-lg"></i>
-                                </span>
-                                <span class="menu-title">User</span>
-                            </a>
-                        </div>
                     </div>
-                </div>
                 @endif
             </div>
         </div>

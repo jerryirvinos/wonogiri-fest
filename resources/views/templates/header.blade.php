@@ -26,7 +26,7 @@
             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
                 data-kt-menu="true" style="">
                 <div class="menu-item px-2">
-                    <a href="#" class="menu-link text-hover-danger px-5">
+                    <a href="{{ route('user.logout') }}" class="menu-link text-hover-danger px-5">
                         <i class="fa-duotone fa-right-from-bracket fs-1 me-2"></i>
                         Sign Out
                     </a>

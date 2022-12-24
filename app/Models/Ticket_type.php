@@ -12,6 +12,7 @@ class Ticket_type extends Model
     protected $fillable = [
         'name',
         'price',
+        'code',
         'quota',
         'title',
         'detail',

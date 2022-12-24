@@ -283,6 +283,6 @@ class UserController extends Controller
     {
         $request->session()->flush();
 
-        return view('landing.index');
+        return redirect()->route('landing.index');
     }
 }
