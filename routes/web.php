@@ -3,6 +3,7 @@
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MerchandiseController;
 use App\Http\Controllers\ScanController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TicketMasterController;
@@ -25,6 +26,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
     Route::resource('scan', ScanController::class);
     Route::get('/cetak', [TicketController::class, 'cetak'])->name('ticket.cetak');
     Route::resource('ticket', TicketController::class);
+    Route::resource('merchandise', MerchandiseController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 
