@@ -17,6 +17,7 @@ class CreateMerchandiseTable extends Migration
             $table->id();
             $table->string('code');
             $table->integer('price');
+            $table->string('thumbnail');
             $table->string('path');
             $table->text('link');
             $table->boolean('status');

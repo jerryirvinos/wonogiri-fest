@@ -19,3 +19,11 @@ function retrive_bool($value)
 
     return $hasil;
 }
+
+function renameFiles($str)
+{
+    $word = preg_replace("/[^a-zA-Z0-9_-]/s", "", $str);
+    $word = str_replace("-", "", $word);
+
+    return str_replace(" ", "_", $word);
+}

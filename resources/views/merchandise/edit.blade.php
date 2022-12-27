@@ -7,8 +7,8 @@
     <div class="card card-flush">
         <div class="card-header pt-lg-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fs-2 fw-bolder text-gray-800">Tambah Merchandise</span>
-                <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk menambah Merchandise</span>
+                <span class="card-label fs-2 fw-bolder text-gray-800">Edit Merchandise</span>
+                <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk mengubah Merchandise</span>
             </h3>
             <div class="card-toolbar">
                 <a href="{{ route('merchandise.index') }}" class="btn btn-active-light-danger">
@@ -19,14 +19,15 @@
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
             <div class="card-body">
                 <form class="form fv-plugins-bootstrap fv-plugins-framework mt-5" method="POST"
-                    enctype="multipart/form-data" action="{{ route('merchandise.store') }}">
+                    enctype="multipart/form-data" action="{{ route('merchandise.update', $merchandise->id) }}">
                     @csrf
+                    @method('put')
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 mb-10 mb-lg-2">
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Kode</label>
-                                <input type="text" class="form-control form-control-lg" name="code" value=""
-                                    placeholder="1WB">
+                                <input type="text" class="form-control form-control-lg" name="code"
+                                    value="{{ $merchandise->code }}" placeholder="1WB">
                                 <small class="text-danger">
                                     @error('code')
                                         {{ $message }}
@@ -35,8 +36,8 @@
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Harga</label>
-                                <input type="number" class="form-control form-control-lg" name="price" value=""
-                                    min="0" placeholder="20000">
+                                <input type="number" class="form-control form-control-lg" name="price"
+                                    value="{{ $merchandise->price }}" min="0" placeholder="20000">
                                 <small class="text-danger">
                                     @error('price')
                                         {{ $message }}
@@ -45,7 +46,7 @@
                             </div>
                             <div class="mb-10">
                                 <label class="form-label fs-7 text-gray-700">Link WA</label>
-                                <textarea class="form-control form-control-lg" name="link" placeholder="https://wa.me/62831648xxxx"></textarea>
+                                <textarea class="form-control form-control-lg" name="link" placeholder="https://wa.me/62831648xxxx">{{ $merchandise->link }}</textarea>
                                 <small class="text-danger">
                                     @error('link')
                                         {{ $message }}
@@ -57,7 +58,7 @@
                                     <div class="col-md-6 col-xl-6 col-sm-12">
                                         <div><label class="form-label fs-7 text-gray-700">Gambar Thumbnail</label></div>
                                         <div class="image-input image-input-empty" data-kt-image-input="true"
-                                            style="background-image: url({{ asset('/assets/media/avatars/blank.png') }})">
+                                            style="background-image: url({{ $merchandise->thumbnail }})">
                                             <div class="image-input-wrapper w-125px h-125px"></div>
 
                                             <label
@@ -93,7 +94,7 @@
                                     <div class="col-md-6 col-xl-6 col-sm-12">
                                         <div><label class="form-label fs-7 text-gray-700">Gambar</label></div>
                                         <div class="image-input image-input-empty" data-kt-image-input="true"
-                                            style="background-image: url({{ asset('/assets/media/avatars/blank.png') }})">
+                                            style="background-image: url({{ $merchandise->path }})">
                                             <div class="image-input-wrapper w-125px h-125px"></div>
 
                                             <label
@@ -144,12 +145,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-
-        });
-    </script>
 @endsection
