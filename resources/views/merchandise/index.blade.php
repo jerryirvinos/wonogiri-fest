@@ -18,7 +18,6 @@
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
             <div class="card-body">
-                <img src="{{ asset('storage/21672149500.png') }}" alt="" />
                 <div class="table-responsive">
                     <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
                         <thead>
