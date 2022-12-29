@@ -10,6 +10,7 @@ use App\Http\Controllers\TicketMasterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Middleware\AuthCheck;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,6 +30,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
     Route::resource('merchandise', MerchandiseController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
+
+Route::get('/linkstorage', function () { $targetFolder = base_path().'/storage/app/public'; $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; symlink($targetFolder, $linkFolder); });
 
 Route::get('/login', function () {
     return view('frontend.login');
