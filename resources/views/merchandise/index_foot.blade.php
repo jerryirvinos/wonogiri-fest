@@ -58,11 +58,8 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var check = row.status ? 'checked' : '';
-                        var stats = row.status ? false : true;
-                        console.log(row.status);
-                        console.log(check);
-                        console.log(stats);
+                        var check = row.status == '1' ? 'checked' : '';
+                        var stats = row.status == '1' ? false : true;
                         var url_update = "{{ route('merchandise.update', ':id') }}";
                         url_update = url_update.replace(':id', row.id);
 
@@ -105,7 +102,7 @@
             var id = $(this).children().data('id');
             console.log(id);
             var status = '';
-            if (id) {
+            if (id == 1) {
                 status = 'Tidak Aktif';
             } else {
                 status = 'Aktif';
