@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LineupController;
 use App\Http\Controllers\MerchandiseController;
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
     Route::resource('ticket', TicketController::class);
     Route::resource('merchandise', MerchandiseController::class);
     Route::resource('lineup', LineupController::class);
+    Route::resource('instagram', InstagramController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 
