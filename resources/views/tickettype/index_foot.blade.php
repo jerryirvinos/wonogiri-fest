@@ -38,8 +38,8 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var check = row.status ? 'checked' : '';
-                        var stats = row.status ? false : true;
+                        var check = row.status == '1' ? 'checked' : '';
+                        var stats = row.status == '1' ? false : true;
 
                         var url_update = "{{ route('tickettype.update', ':id') }}";
                         url_update = url_update.replace(':id', row.id);
@@ -60,8 +60,8 @@
                 },
                 {
                     render: function(data, type, row) {
-                        var check = row.is_release ? 'checked' : '';
-                        var stats = row.is_release ? false : true;
+                        var check = row.is_release == '1' ? 'checked' : '';
+                        var stats = row.is_release == '1' ? false : true;
 
                         var url_update = "{{ route('tickettype.update', ':id') }}";
                         url_update = url_update.replace(':id', row.id);
@@ -105,7 +105,7 @@
             var id = $(this).children().data('id');
 
             var status = '';
-            if (id) {
+            if (id == '1') {
                 status = 'Tidak Aktif';
             } else {
                 status = 'Aktif';
@@ -133,7 +133,7 @@
             var id = $(this).children().data('id');
 
             var status = '';
-            if (id) {
+            if (id == '1') {
                 status = 'Tidak Aktif';
             } else {
                 status = 'Aktif';
