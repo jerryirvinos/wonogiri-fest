@@ -60,7 +60,8 @@
                     render: function(data, type, row) {
                         var check = row.status ? 'checked' : '';
                         var stats = row.status ? false : true;
-
+                        console.log(check);
+                        console.log(stats);
                         var url_update = "{{ route('merchandise.update', ':id') }}";
                         url_update = url_update.replace(':id', row.id);
 
@@ -101,7 +102,7 @@
         $('#kt_datatable').on('click', '.status', function(e) {
             e.preventDefault();
             var id = $(this).children().data('id');
-
+            console.log(id);
             var status = '';
             if (id) {
                 status = 'Tidak Aktif';
