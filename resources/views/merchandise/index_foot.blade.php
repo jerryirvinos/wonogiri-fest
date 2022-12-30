@@ -60,6 +60,7 @@
                     render: function(data, type, row) {
                         var check = row.status ? 'checked' : '';
                         var stats = row.status ? false : true;
+                        console.log(row.status);
                         console.log(check);
                         console.log(stats);
                         var url_update = "{{ route('merchandise.update', ':id') }}";
