@@ -3,6 +3,7 @@
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LineupController;
 use App\Http\Controllers\MerchandiseController;
 use App\Http\Controllers\ScanController;
 use App\Http\Controllers\TicketController;
@@ -28,10 +29,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
     Route::get('/cetak', [TicketController::class, 'cetak'])->name('ticket.cetak');
     Route::resource('ticket', TicketController::class);
     Route::resource('merchandise', MerchandiseController::class);
+    Route::resource('lineup', LineupController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 
-Route::get('/linkstorage', function () { $targetFolder = base_path().'/storage/app/public'; $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; symlink($targetFolder, $linkFolder); });
+// Route::get('/linkstorage', function () { $targetFolder = base_path().'/storage/app/public'; $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; symlink($targetFolder, $linkFolder); });
 
 Route::get('/login', function () {
     return view('frontend.login');
