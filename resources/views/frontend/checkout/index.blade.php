@@ -323,9 +323,279 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-12 col-xxl-12 text-center px-0 mx-0">
-                                            <img class="w-100 mw-100 mw-lg-100 h-auto text-center mx-auto mb-10"
-                                                alt=""
-                                                src="{{ asset('/assets/media/illustrations/tata-cara.jpg') }}">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-12 text-center mb-2">
+                                                    <div class="fs-3x text-base fw-bolder">
+                                                        PEMBAYARAN
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-sm-12 text-center">
+                                                    <img class="w-75 mw-75 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                        alt=""
+                                                        src="{{ asset('/assets/media/atm/atm-title.png') }}">
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12 mb-10 mb-lg-0">
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                1.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-1.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Kunjungi ATM terdekat, kemudian masukan
+                                                                kartu ATM dan PIN kamu
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                2.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-2.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Di menu utama, pilih <b>Transaksi Lainnya</b>, kemudian
+                                                                pilih <b>Transfer</b>. Masukkan total pembayaran yang sesuai
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                3.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-75 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-3.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Masukkan nomor rekening <b>CATRI PUTRA ABRINAYA PT</b>
+                                                                Sesuai dengan bank tujuan
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12 mb-10 mb-lg-0">
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                4.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-4.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Isi nomor referensi atau berita dengan <b>nomor order</b>
+                                                                yang kamu terima melalui SMS atau email kamu
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                5.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-5.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Konfirmasi transter kamu. Setelah transaksi berhasil, kamu
+                                                                akan mendapatkan <b>struk bukti transfer</b>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                6.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-6.png') }}">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Struk tersebut jangan langsung dibuang. Foto dulu bukti
+                                                                transter kamu ya!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="separator border-4 separator-dashed border-primary my-5">
+                                                </div>
+
+                                                <div class="col-lg-12 col-sm-12 text-center">
+                                                    <img class="w-75 mw-75 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                        alt=""
+                                                        src="{{ asset('/assets/media/ebanking/ebanking-title.png') }}">
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12 mb-10 mb-lg-0">
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                1.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/ebanking/ebanking-1.png') }}">
+                                                            <div
+                                                                class="separator separator-dotted separator-content border-dark my-8">
+                                                                <span class="fs-2 fs-lg-2x fw-bolder">atau</span>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex flex-column justify-content-center flex-wrap">
+                                                                <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                    alt=""
+                                                                    src="{{ asset('/assets/media/ebanking/ebanking-2.png') }}">
+                                                            </div>
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold">
+                                                                Akses e-banking melalui komputer / laptop atau smartonone
+                                                                kamu. Pilih menu <b>Transfer</b> Kemudian masukkan <b>Total
+                                                                    Pembayaran</b> sesuai pesananmu
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                2.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold mb-2 mb-lg-5">
+                                                                Masukkan nomor rekening <b>CATRI PUTRA ABRINAYA PT</b>
+                                                                Sesuai dengan bank tujuan
+                                                            </div>
+                                                            <img class="w-50 mw-100 mw-lg-75 h-auto text-center mx-auto"
+                                                                alt=""
+                                                                src="{{ asset('/assets/media/atm/atm-3.png') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12 mb-10 mb-lg-0">
+                                                    <div
+                                                        class="d-flex justify-content-center align-content-start mb-5 mb-lg-10">
+                                                        <div class="symbol symbol-circle symbol-35px me-3">
+                                                            <div
+                                                                class="symbol-label fs-2 fw-bolder bg-base text-white text-center p-2">
+                                                                3.
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center flex-wrap">
+                                                            <div class="fs-2 fs-lg-5 text-gray-800 fw-bold  mb-2 mb-lg-5">
+                                                                Untuk menyimpan bukti transfer kamu bisa menggunakan
+                                                                beberapa cara di bawah ini:
+                                                            </div>
+                                                            <div class="d-flex justify-content-start">
+                                                                <img class="w-50 mw-50 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                    alt=""
+                                                                    src="{{ asset('/assets/media/ebanking/ebanking-3.png') }}">
+                                                                <div
+                                                                    class="d-flex flex-column justify-content-start flex-wrap my-auto">
+                                                                    <div
+                                                                        class="symbol symbol-circle symbol-35px mx-auto mb-3 mb-lg-5">
+                                                                        <div
+                                                                            class="symbol-label fs-2 fw-bolder bg-warning text-white text-center border border-3 border-dark p-2">
+                                                                            <i
+                                                                                class="fa-solid fa-check text-danger fs-2x"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="fs-2 fs-lg-5 text-gray-800 fw-bold text-start">
+                                                                        <b><i>Screenshot</i></b> bukti transfer di
+                                                                        smartphone
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="separator separator-dotted separator-content border-dark my-10">
+                                                                <span class="fs-2 fs-lg-2x fw-bolder">atau</span>
+                                                            </div>
+                                                            <div class="d-flex flex-column justify-content-start">
+                                                                <div
+                                                                    class="symbol symbol-circle symbol-35px mx-auto mb-3 mb-lg-5">
+                                                                    <div
+                                                                        class="symbol-label fs-2 fw-bolder bg-warning text-white text-center border border-3 border-dark p-2">
+                                                                        <i class="fa-solid fa-check text-danger fs-2x"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-start flex-wrap my-auto">
+                                                                    <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                        alt=""
+                                                                        src="{{ asset('/assets/media/ebanking/ebanking-4.png') }}">
+                                                                    <div
+                                                                        class="fs-2 fs-lg-5 text-gray-800 fw-bold text-start">
+                                                                        <b><i>Screenshot</i></b> bukti transfer di komputer
+                                                                        / laptop dengan menggunakan tombol <b>Print
+                                                                            Screen</b>.
+                                                                        Buka aplikasi <b>Paint</b> kemudian <b>"Paste"</b>
+                                                                        dan <b>"Save"</b> gambar tersebut
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="separator separator-dotted separator-content border-dark my-10">
+                                                                <span class="fs-2 fs-lg-2x fw-bolder">atau</span>
+                                                            </div>
+                                                            <div class="d-flex flex-column justify-content-start">
+                                                                <div
+                                                                    class="symbol symbol-circle symbol-35px mx-auto mb-3 mb-lg-5">
+                                                                    <div
+                                                                        class="symbol-label fs-2 fw-bolder bg-warning text-white text-center border border-3 border-dark p-2">
+                                                                        <i class="fa-solid fa-check text-danger fs-2x"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-start flex-wrap my-auto">
+                                                                    <img class="w-50 mw-100 mw-lg-50 h-auto text-center mx-auto mb-2 mb-lg-5"
+                                                                        alt=""
+                                                                        src="{{ asset('/assets/media/ebanking/ebanking-5.png') }}">
+                                                                    <div
+                                                                        class="fs-2 fs-lg-5 text-gray-800 fw-bold text-start">
+                                                                        <b><i>Screenshot</i></b> bukti transfer di komputer
+                                                                        / laptop dengan Aplikasi <b>Snipping Tool</b>. Klik
+                                                                        <b><i>"New"</i></b>. Pilih bagian yang ingin
+                                                                        di-Screenshoot kemudian klik <b>"Save"</b>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!--begin::Accordion-->
                                         {{-- <div class="accordion" id="kt_accordion_1">
