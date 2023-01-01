@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center mb-12">
-                    <div class="fs-4x text-white font-title ls-4 mb-7" id="experience"
+                    <div class="fs-4x text-white font-title ls-4 mb-7" id="merchandise"
                         data-kt-scroll-offset="{default: 100, lg: 150}">
                         MERCHANDISE
                     </div>

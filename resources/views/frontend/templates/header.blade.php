@@ -46,6 +46,12 @@
                                     </a>
                                 </div>
                                 <div class="menu-item">
+                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#merchandise"
+                                        data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
+                                        Merchandise
+                                    </a>
+                                </div>
+                                <div class="menu-item">
                                     <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="{{ url('/aboutus/') }}"
                                         data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">
                                         About Us
