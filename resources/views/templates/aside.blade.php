@@ -1,4 +1,10 @@
-<div id="kt_aside" class="aside overflow-visible pb-5 pt-5 pt-lg-0 drawer drawer-start drawer-on" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle" style="width: 100px !important;">
+<div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside"
+    data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto"
+    data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
+
+    {{-- <div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside"
+        data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto"
+        data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle"> --}}
     <div class="aside-logo flex-column-auto pt-10 pt-lg-20" id="kt_aside_logo">
         <a href="/">
             <img alt="Logo" src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}" class="p-2 h-40px" />
@@ -48,41 +54,41 @@
                     </a>
                 </div>
                 @if (session()->get('user')['role'] == '1')
-                    <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                        class="menu-item py-2 {{ request()->routeIs('user.index') || request()->routeIs('tickettype.index') ? 'here' : '' }}">
-                        <span class="menu-link menu-center flex-column">
-                            <span class="menu-icon me-0 mb-3">
-                                <i class="fa-light fa-database fs-2x"></i>
-                            </span>
-                            <div class="menu-title">Master</div>
+                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
+                    class="menu-item py-2 {{ request()->routeIs('user.index') || request()->routeIs('tickettype.index') ? 'here' : '' }}">
+                    <span class="menu-link menu-center flex-column">
+                        <span class="menu-icon me-0 mb-3">
+                            <i class="fa-light fa-database fs-2x"></i>
                         </span>
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
-                            <div class="menu-item">
-                                <div class="menu-content">
-                                    <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->routeIs('user.index') ? 'active' : '' }}"
-                                    href="{{ route('user.index') }}">
-                                    <span class="menu-icon me-3">
-                                        <i class="fa-light fa-users fs-lg"></i>
-                                    </span>
-                                    <span class="menu-title">User</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->routeIs('tickettype.index') ? 'active' : '' }}"
-                                    href="{{ route('tickettype.index') }}">
-                                    <span class="menu-icon me-3">
-                                        <i class="fa-light fa-users fs-lg"></i>
-                                    </span>
-                                    <span class="menu-title">Tiket</span>
-                                </a>
+                        <div class="menu-title">Master</div>
+                    </span>
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-dropdown py-4 w-200px w-lg-225px">
+                        <div class="menu-item">
+                            <div class="menu-content">
+                                <span class="menu-section fs-5 fw-bolder text-gray-800 ps-1 py-1">Master</span>
                             </div>
                         </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->routeIs('user.index') ? 'active' : '' }}"
+                                href="{{ route('user.index') }}">
+                                <span class="menu-icon me-3">
+                                    <i class="fa-light fa-users fs-lg"></i>
+                                </span>
+                                <span class="menu-title">User</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->routeIs('tickettype.index') ? 'active' : '' }}"
+                                href="{{ route('tickettype.index') }}">
+                                <span class="menu-icon me-3">
+                                    <i class="fa-light fa-users fs-lg"></i>
+                                </span>
+                                <span class="menu-title">Tiket</span>
+                            </a>
+                        </div>
                     </div>
+                </div>
                 @endif
             </div>
         </div>
