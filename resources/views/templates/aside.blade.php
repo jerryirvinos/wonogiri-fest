@@ -1,6 +1,4 @@
-<div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside"
-    data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto"
-    data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
+<div id="kt_aside" class="aside overflow-visible pb-5 pt-5 pt-lg-0 drawer drawer-start drawer-on" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle" style="width: 100px !important;">
     <div class="aside-logo flex-column-auto pt-10 pt-lg-20" id="kt_aside_logo">
         <a href="/">
             <img alt="Logo" src="{{ asset('/assets/media/logos/wonogiri-fest-logo.png') }}" class="p-2 h-40px" />
