@@ -21,10 +21,10 @@
                             <div class="col-lg-4 col-sm-6 px-3">
                                 <div class="card border border-4 border-lg-10 rounded-lg-5 shadow-xs mb-2 mb-lg-5">
                                     <a class="d-block overlay" data-fslightbox="lightbox-hot-sales"
-                                        href="{{ $merchandise->thumbnail }}">
+                                        href="{{ $merchandise->path }}">
                                         <div class="overlay-wrapper">
                                             <div class="img-wrapper rounded-2 rounded-lg-3">
-                                                <img src="{{ $merchandise->link }}" class="h-100 image-centered"
+                                                <img src="{{ $merchandise->thumbnail }}" class="h-100 image-centered"
                                                     data-id="{{ $merchandise->code }}" data-toggle="modal"
                                                     data-target="#modal-product" alt="">
                                             </div>
@@ -37,8 +37,7 @@
                                 <div class="fs-6 fs-lg-1 fs-bold text-white mb-3 mb-lg-5 text-uppercase">
                                     {{ format_rupiah($merchandise->price) }}
                                 </div>
-                                <a href="https://wa.me/6283164867519?text=Hallo%20Kak,%0aTertarik%20membeli%20produk%20*{{ strtoupper($merchandise->code) }}*"
-                                    target="_blank"
+                                <a href="{{ $merchandise->link }}" target="_blank"
                                     class="btn btn-warning w-100 hover-elevate-up border border-4 shadow py-2 py-lg-4 rounded-4">
                                     <span class="fs-7 fs-lg-1 fw-bolder">Beli</span>
                                 </a>
