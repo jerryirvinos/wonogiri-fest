@@ -21,10 +21,10 @@
                             <div class="col-lg-4 col-sm-6 px-3">
                                 <div class="card border border-4 border-lg-10 rounded-lg-5 shadow-xs mb-2 mb-lg-5">
                                     <a class="d-block overlay" data-fslightbox="lightbox-hot-sales"
-                                        href="{{ $merchandise->path }}">
+                                        href="{{ $merchandise->thumbnail }}">
                                         <div class="overlay-wrapper">
                                             <div class="img-wrapper rounded-2 rounded-lg-3">
-                                                <img src="{{ $merchandise->thumbnail }}" class="h-100 image-centered"
+                                                <img src="{{ $merchandise->path }}" class="h-100 image-centered"
                                                     data-id="{{ $merchandise->code }}" data-toggle="modal"
                                                     data-target="#modal-product" alt="">
                                             </div>
