@@ -361,3 +361,7 @@ video[muted='true'] {
    cursor: pointer !important;
    margin-top: 1.75rem !important;
 }
+
+.align-justify {
+   text-align: justify !important;
+}
