@@ -207,11 +207,6 @@
    font-weight: 800 !important;
 }
 
-/* .aside.drawer.drawer-on {
-   background-color: rgba(255, 255, 255, 0.85) !important;
-   backdrop-filter: blur(10px) !important;
-} */
-
 .badge-light-primary-custom {
    color: rgba(7, 78, 159, 1) !important;
    background-color: rgba(7, 78, 159, 0.2) !important;
@@ -253,11 +248,6 @@
 [data-kt-sticky-landing-header='on'] .col-lg-4.col-sm-12 .card-checkout {
    top: 9% !important;
 }
-
-/* .drawer {
-    background-color: rgba(10, 9, 9, .9) !important;
-    backdrop-filter: blur(10px) !important;
-} */
 
 [data-kt-sticky-landing-header='on'] .bg-landing-checkout {
    background-color: rgba(255, 255, 255, 0.75) !important;
