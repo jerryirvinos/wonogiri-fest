@@ -18,33 +18,34 @@ class LineupController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            $draw = $request->get('draw');
-            $start = $request->get("start");
-            $rowperpage = $request->get("length"); // Rows display per page
-            $search_arr = $request->get('search');
-            $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('lineups')->count();
-            $totalRecordswithFilter = DB::table('lineups')
-                ->where(function ($query) use ($searchValue) {
-                    $query->where('lineups.title', 'like', '%' . $searchValue . '%');
-                })->count();
+            return Line_up::all();
+            // $draw = $request->get('draw');
+            // $start = $request->get("start");
+            // $rowperpage = $request->get("length"); // Rows display per page
+            // $search_arr = $request->get('search');
+            // $searchValue = $search_arr['value']; // S
+            // $totalRecords = DB::table('lineups')->count();
+            // $totalRecordswithFilter = DB::table('lineups')
+            //     ->where(function ($query) use ($searchValue) {
+            //         $query->where('lineups.title', 'like', '%' . $searchValue . '%');
+            //     })->count();
 
 
-            $users = DB::table('lineups')
-                ->where(function ($query) use ($searchValue) {
-                    $query->where('lineups.title', 'like', '%' . $searchValue . '%');
-                })
-                ->skip($start)
-                ->take($rowperpage)
-                ->get();
+            // $users = DB::table('lineups')
+            //     ->where(function ($query) use ($searchValue) {
+            //         $query->where('lineups.title', 'like', '%' . $searchValue . '%');
+            //     })
+            //     ->skip($start)
+            //     ->take($rowperpage)
+            //     ->get();
 
-            $output = array(
-                "draw" => $draw,
-                "recordsTotal" => $totalRecords,
-                "recordsFiltered" => $totalRecordswithFilter,
-                "data" => $users,
-            );
-            return $output;
+            // $output = array(
+            //     "draw" => $draw,
+            //     "recordsTotal" => $totalRecords,
+            //     "recordsFiltered" => $totalRecordswithFilter,
+            //     "data" => $users,
+            // );
+            // return $output;
         }
 
         return view('lineup.index');
@@ -90,7 +91,7 @@ class LineupController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
+
         try {
             $lineup = Line_up::create([
                 'title' => ($request->input('title')),
@@ -139,7 +140,7 @@ class LineupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token', '_method', 'status','is_release','thumbnail_remove','thumbnail');
+        $data = $request->except('_token', '_method', 'status', 'is_release', 'thumbnail_remove', 'thumbnail');
         if ($request->status) {
             $status = $request->only('status')['status'] == 'true' ? true : false;
             $data = array_merge(['status' => $status], $data);
@@ -161,8 +162,8 @@ class LineupController extends Controller
 
         try {
             Line_up::where('id', $id)
-            ->update($data);
-            
+                ->update($data);
+
             return redirect()->route('lineup.index')->with('success', 'Berhasil Disimpan');
         } catch (\Exception $e) {
             return redirect()->route('lineup.index')->with('warning', $e->getMessage());
@@ -178,5 +179,9 @@ class LineupController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function save_order()
+    {
     }
 }

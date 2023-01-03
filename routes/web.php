@@ -21,7 +21,7 @@ Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::post('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
 
-Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth.check'], function () {
     Route::post('/loginProcess', [UserController::class, 'loginProcess'])->name('user.loginProcess')->withoutMiddleware([AuthCheck::class]);
     Route::resource('user', UserController::class);
     Route::resource('verification', VerificationController::class);
@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth.check'], function () {
     Route::get('/cetak', [TicketController::class, 'cetak'])->name('ticket.cetak');
     Route::resource('ticket', TicketController::class);
     Route::resource('merchandise', MerchandiseController::class);
+    Route::post('/save_order', [LineupController::class, 'save_order'])->name('lineup.save_order');
     Route::resource('lineup', LineupController::class);
     Route::resource('instagram', InstagramController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
