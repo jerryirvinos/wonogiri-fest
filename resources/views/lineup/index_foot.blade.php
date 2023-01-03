@@ -14,12 +14,13 @@
             timeout: 5000,
             dataType: "JSON",
             success: function(data) {
+                console.log(data)
                 var output = '';
 
                 function buildItem(item) {
                     var html = "<li class='dd-item dd3-item' data-id='" + item.id + "'>";
                     html += "<div class='dd-handle dd3-handle'></div>";
-                    html += `<div class='float-right dd-nodrag pt-1 px-3 d-flex'>`;
+                    html += `<div class='justify-content-end dd-nodrag pt-1 px-3 d-flex'>`;
 
                     var check = (item.status == '1') ? 'checked="checked"' : '';
                     var stats = (item.status == '0') ? '0' : '1';
@@ -34,7 +35,7 @@
                     html += `
                     <a href="menu/edit/` + encodeURIComponent(window.btoa(item.id)) + `"><span class="btn btn-primary btn-sm btn-icon rounded-sm mx-2" title="Edit Data"><i class="fal fa-edit"></i></span></a>
                     <a href="" class="delete btn btn-danger btn-sm btn-icon rounded-sm" title="Delete" data-name="` +
-                        item.name + `">
+                        item.title + `">
                         <i class="fal fa-trash-alt"></i>
                         <form method="post" action="menu/destroy/` + encodeURIComponent(window.btoa(item.id)) + `">
                                 {{ csrf_field() }}
@@ -44,19 +45,8 @@
                     </div>`;
 
                     var attribute = ''
-                    if (item.link && item.icon) {
-                        attribute = "<span class='float-right'>[ LINK : " + item.link +
-                            " | ICON : <i class='" + item.icon + "'></i> ]</span>"
-                    } else if (item.link) {
-                        attribute = "<span class='float-right'>[ LINK : " + item.link + " ]</span>"
-                    } else if (item.icon) {
-                        attribute = "<span class='float-right'>[ ICON : <i class='" + item.icon +
-                            "'></i> ]</span>"
-                    } else {
-                        attribute = ""
-                    }
 
-                    html += "<div class='dd3-content'>" + item.name + attribute + "</div>";
+                    html += "<div class='dd3-content'>" + item.title + attribute + "</div>";
 
                     if (item.children) {
                         html += "<ol class='dd-list'>";

@@ -1,7 +1,7 @@
 @extends('templates.master')
 
 @section('styles')
-    <link href="{{ asset('js/custom/nestable/jquery.nestable.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/js/custom/nestable/jquery.nestable.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -56,6 +56,6 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/custom/nestable/jquery.nestable.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/nestable/jquery.nestable.js') }}"></script>
     @include('lineup.index_foot')
 @endsection
