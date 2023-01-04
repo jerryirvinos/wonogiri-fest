@@ -34,9 +34,6 @@
                     </table>
                 </div> --}}
                 <div class="card-title pr-4">
-                    <button class="btn btn-warning btn-sm float-left exp mx-1" data-action="collapse-all">
-                        Collapse Menu <i class="fa fa-chevron-up"></i>
-                    </button>
                     <a class="btn btn-info btn-sm btn-shadow save">
                         <i class="fa fa-check"></i> Simpan Urutan
                         <form method="post" class="d-flex pull-right" action="{{ route('lineup.save_order') }}">

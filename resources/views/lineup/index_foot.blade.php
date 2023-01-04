@@ -18,35 +18,49 @@
                 var output = '';
 
                 function buildItem(item) {
-                    var html = "<li class='dd-item dd3-item' data-id='" + item.id + "'>";
+                    var html = "<li class='dd-item dd3-item d-flex justify-content-between' data-id='" +
+                        item.id + "'>";
                     html += "<div class='dd-handle dd3-handle'></div>";
-                    html += `<div class='justify-content-end dd-nodrag pt-1 px-3 d-flex'>`;
 
-                    var check = (item.status == '1') ? 'checked="checked"' : '';
-                    var stats = (item.status == '0') ? '0' : '1';
+                    html += "<div class='dd3-content'>" + item.title + "</div>";
+                    html += `<div class='justify-content-end dd-nodrag px-3 d-flex my-auto'>`;
 
-                    html += `<span class="switch">
-																<label>
-																	<input type="checkbox"  ` + check + ` name="select">
-																	<span></span>
-																</label>
-															</span>`;
+                    var checkis_release = item.is_release == '1' ? 'checked' : '';
+                    var statsis_release = item.is_release == '1' ? false : true;
+
+                    var url_update = "{{ route('lineup.update', ':id') }}";
+                    url_update = url_update.replace(':id', item.id);
+
+                    html += `<div class="form-check form-check-info form-switch form-check-custom form-check-solid is_release mx-2" title="Apakah Rilis?">
+                            <input class="form-check-input" data-id="` + item.is_release +
+                        `" type="checkbox" id="flexSwitchChecked" ` + checkis_release + ` />
+                            <form method="post" action="` + url_update + `">
+                                {{ csrf_field() }}
+                                {{ method_field('put') }}
+                                <input type="hidden" name="is_release" value="` + statsis_release + `" />
+                            </form>
+                            </div>`;
+
+                    var check = item.status == '1' ? 'checked' : '';
+                    var stats = item.status == '1' ? false : true;
+
+                    html += `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status" title="Apakah Tampil?">
+                            <input class="form-check-input" data-id="` + item.status +
+                        `" type="checkbox" id="flexSwitchChecked" ` + check + ` />
+                            <form method="post" action="` + url_update + `">
+                                {{ csrf_field() }}
+                                {{ method_field('put') }}
+                                <input type="hidden" name="status" value="` + stats + `" />
+                            </form>
+                            </div>`;
+                    var url_edit = "{{ route('lineup.edit', ':id') }}";
+                    url_edit = url_edit.replace(':id', item.id);
 
                     html += `
-                    <a href="menu/edit/` + encodeURIComponent(window.btoa(item.id)) + `"><span class="btn btn-primary btn-sm btn-icon rounded-sm mx-2" title="Edit Data"><i class="fal fa-edit"></i></span></a>
-                    <a href="" class="delete btn btn-danger btn-sm btn-icon rounded-sm" title="Delete" data-name="` +
-                        item.title + `">
-                        <i class="fal fa-trash-alt"></i>
-                        <form method="post" action="menu/destroy/` + encodeURIComponent(window.btoa(item.id)) + `">
-                                {{ csrf_field() }}
-                                {{ method_field('delete') }}
-                        </form>
-                        </a>
+                    <a href="` + url_update + `"><span class="btn btn-primary btn-sm btn-icon rounded-sm mx-2" title="Edit Data"><i class="fal fa-edit"></i></span></a>
                     </div>`;
 
-                    var attribute = ''
 
-                    html += "<div class='dd3-content'>" + item.title + attribute + "</div>";
 
                     if (item.children) {
                         html += "<ol class='dd-list'>";
@@ -107,13 +121,19 @@
         }
     });
 
-    $('.dd').on('click', '.delete', function(e) {
+    $('.dd').on('click', '.status', function(e) {
         e.preventDefault();
-        var name = $(this).data('name');
+        var id = $(this).children().data('id');
+        var status = '';
+        if (id == 1) {
+            status = 'Tidak Aktif';
+        } else {
+            status = 'Aktif';
+        }
 
         Swal.fire({
             title: 'Apakah anda yakin?',
-            text: "untuk menghapus " + name,
+            text: "merubah status lineup menjadi " + status,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -127,7 +147,7 @@
         })
     });
 
-    $('.dd').on('click', '.status', function(e) {
+    $('.dd').on('click', '.is_release', function(e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -139,7 +159,7 @@
 
         Swal.fire({
             title: 'Apakah anda yakin?',
-            text: "merubah status menu menjadi " + status,
+            text: "merubah status rilis menjadi " + status,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -158,7 +178,7 @@
 
         Swal.fire({
             title: 'Anda yakin untuk',
-            text: "menyimpan urutan menu ini?",
+            text: "menyimpan urutan lineup ini?",
             icon: 'info',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

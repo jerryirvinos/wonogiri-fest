@@ -19,6 +19,7 @@ class CreateLineupsTable extends Migration
             $table->string('thumbnail');
             $table->boolean('status');
             $table->boolean('is_release');
+            $table->integer('orders');
             $table->timestamps();
         });
     }

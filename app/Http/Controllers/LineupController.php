@@ -18,34 +18,7 @@ class LineupController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            return Line_up::all();
-            // $draw = $request->get('draw');
-            // $start = $request->get("start");
-            // $rowperpage = $request->get("length"); // Rows display per page
-            // $search_arr = $request->get('search');
-            // $searchValue = $search_arr['value']; // S
-            // $totalRecords = DB::table('lineups')->count();
-            // $totalRecordswithFilter = DB::table('lineups')
-            //     ->where(function ($query) use ($searchValue) {
-            //         $query->where('lineups.title', 'like', '%' . $searchValue . '%');
-            //     })->count();
-
-
-            // $users = DB::table('lineups')
-            //     ->where(function ($query) use ($searchValue) {
-            //         $query->where('lineups.title', 'like', '%' . $searchValue . '%');
-            //     })
-            //     ->skip($start)
-            //     ->take($rowperpage)
-            //     ->get();
-
-            // $output = array(
-            //     "draw" => $draw,
-            //     "recordsTotal" => $totalRecords,
-            //     "recordsFiltered" => $totalRecordswithFilter,
-            //     "data" => $users,
-            // );
-            // return $output;
+            return Line_up::orderBy('orders', 'ASC')->get();
         }
 
         return view('lineup.index');
@@ -181,7 +154,21 @@ class LineupController extends Controller
         //
     }
 
-    public function save_order()
+    public function save_order(Request $request)
     {
+        try {
+            if (request()->input('menu')) {
+                $lists = json_decode(request()->input('menu'));
+    
+                foreach ($lists as $key => $val) {
+                    Line_up::where('id', $val->id)
+                    ->update(['orders' => $key + 1]);
+                }
+            }
+
+            return redirect()->route('lineup.index')->with('success', 'Berhasil Diurutkan');
+        } catch (\Exception $e) {
+            return redirect()->route('lineup.index')->with('warning', $e->getMessage());
+        }
     }
 }

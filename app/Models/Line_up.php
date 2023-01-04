@@ -15,5 +15,6 @@ class Line_up extends Model
         'thumbnail',
         'status',
         'is_release',
+        'orders'
     ];
 }
