@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Ticket_type;
 use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -59,13 +60,13 @@ class DashboardController extends Controller
         $tickets = Ticket_type::where('status', 1)->get();
         if ($request->filter == 'Semua' || !$request->filter) {
             $ticketSold = Order::where('payment_status', '1')->count();
-            $ticketSoldToday = Order::where('payment_status', '0')->count();
+            $ticketSoldToday = Order::where('payment_status', '1')->whereDate('created_at', Carbon::today())->count();
             $income = Order::where('payment_status', '1')->sum('total_pay');
         }
 
         if ($request->filter) {
             $ticketSold = Order::where('payment_status', '1')->where('ticket_type', $request->filter)->count();
-            $ticketSoldToday = Order::where('payment_status', '0')->where('ticket_type', $request->filter)->count();
+            $ticketSoldToday = Order::where('payment_status', '1')->whereDate('created_at', Carbon::today())->where('ticket_type', $request->filter)->count();
             $income = Order::where('payment_status', '1')->where('ticket_type', $request->filter)->sum('total_pay');
         }
 

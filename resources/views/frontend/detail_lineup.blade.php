@@ -9,7 +9,33 @@
                         Line Up
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
+                        @foreach ($lineups as $item)
+                            @if ($item->is_release == '0')
+                                <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
+                                    <div class="d-flex justify-content-center flex-column flex-wrap">
+                                        <div class="card bg-transparent p-0 h-100 mb-3">
+                                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                                style="background-image: url('{{ asset('/assets/media/lineup/siapa-hayo.png') }}')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
+                                    <div class="d-flex justify-content-center flex-column flex-wrap">
+                                        <div class="card bg-transparent p-0 h-100 mb-3">
+                                            <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
+                                                style="background-image: url('{{ $item->thumbnail }}')">
+                                            </div>
+                                        </div>
+                                        <div class="fs-5 fs-lg-1 fw-bolder text-center">
+                                            {{ $item->title }}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                        {{-- <div class="col-lg-3 col-sm-6 mb-10 mb-lg-20">
                             <div class="d-flex justify-content-center flex-column flex-wrap">
                                 <div class="card bg-transparent p-0 h-100 mb-3">
                                     <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative min-h-100px min-h-lg-200px mw-100 h-100 content-lineup"
@@ -308,7 +334,7 @@
                                     OCDULAS
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/lineuplist', [LandingController::class, 'lineuplist'])->name('landing.lineuplist');
 Route::post('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
 
@@ -50,9 +51,9 @@ Route::get('/aboutus', function () {
     return view('frontend.aboutus');
 });
 
-Route::get('/lineup', function () {
-    return view('frontend.detail_lineup');
-});
+// Route::get('/lineuplist', function () {
+//     return view('frontend.detail_lineup');
+// });
 
 Route::get('/pdf', function () {
     return view('verification.preview2');
