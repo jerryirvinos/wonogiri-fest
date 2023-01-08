@@ -51,6 +51,27 @@
                         </div>
                     </div>
 
+                    <div class="row ">
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="text-center mb-12">
+                                <div class="fs-5 fs-lg-2x fw-bolder text-white mb-7">
+                                    Media Partner
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center px-8 px-lg-15 row mb-5 mb-lg-20">
+                        <div class="col-xl-10 col-xxl-8">
+                            <div class="d-flex justify-content-center align-content-center flex-wrap">
+                                <div class="symbol symbol-50px symbol-lg-125px m-5">
+                                    <div class="symbol-label bg-transparent"
+                                        style="background-image:url('{{ asset('/assets/media/media-partner/solo-radio.png') }}')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-12 col-sm-12">
                             <div class="text-center mb-12">
