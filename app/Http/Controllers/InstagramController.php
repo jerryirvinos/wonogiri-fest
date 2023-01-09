@@ -81,10 +81,20 @@ class InstagramController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
+
         try {
+            $thumbnail = null;
+            if ($request->hasFile('thumbnail')) {
+                $imageName = substr(renameFiles(pathinfo($request->thumbnail->getClientOriginalName(), PATHINFO_FILENAME)), 0, 40) . time() . '.' . $request->thumbnail->extension();
+                $pathThumbnail = $request->thumbnail->storeAs('public', $imageName);
+                if ($pathThumbnail) {
+                    $thumbnail = URL::asset('storage/' . $imageName);
+                }
+            }
+
             $instagram = Instagram::create([
                 'title' => ($request->input('title')),
+                'path' => $thumbnail,
                 'status' => true,
             ]);
 
@@ -134,10 +144,19 @@ class InstagramController extends Controller
             $data = array_merge(['status' => $status], $data);
         }
 
+        if ($request->hasFile('thumbnail')) {
+            $imageName = substr(renameFiles(pathinfo($request->thumbnail->getClientOriginalName(), PATHINFO_FILENAME)), 0, 40) . time() . '.' . $request->thumbnail->extension();
+            $pathThumbnail = $request->thumbnail->storeAs('public', $imageName);
+            if ($pathThumbnail) {
+                $thumbnail = URL::asset('storage/' . $imageName);
+                $data = array_merge(['path' => $thumbnail], $data);
+            }
+        }
+
         try {
             Instagram::where('id', $id)
-            ->update($data);
-            
+                ->update($data);
+
             return redirect()->route('instagram.index')->with('success', 'Berhasil Disimpan');
         } catch (\Exception $e) {
             return redirect()->route('instagram.index')->with('warning', $e->getMessage());

@@ -33,6 +33,47 @@
                                 </small>
                             </div>
                             <div class="mb-10">
+                                <div class="row">
+                                    <div class="col-md-6 col-xl-6 col-sm-12">
+                                        <div><label class="form-label fs-7 text-gray-700">Gambar Thumbnail</label></div>
+                                        <div class="image-input image-input-empty" data-kt-image-input="true"
+                                            style="background-image: url({{ asset('/assets/media/avatars/blank.png') }})">
+                                            <div class="image-input-wrapper w-125px h-125px"></div>
+
+                                            <label
+                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                                data-bs-dismiss="click" title="Change thumbnail">
+                                                <i class="bi bi-pencil-fill fs-7"></i>
+
+                                                <input type="file" name="thumbnail" accept=".png, .jpg, .jpeg" />
+                                                <input type="hidden" name="thumbnail_remove" />
+                                            </label>
+
+                                            <span
+                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                                data-bs-dismiss="click" title="Cancel thumbnail">
+                                                <i class="bi bi-x fs-2"></i>
+                                            </span>
+
+                                            <span
+                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                                data-bs-dismiss="click" title="Remove thumbnail">
+                                                <i class="bi bi-x fs-2"></i>
+                                            </span>
+                                        </div>
+                                        <small class="text-danger">
+                                            @error('thumbnail')
+                                                {{ $message }}
+                                            @enderror
+                                        </small>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mb-10">
                                 <a href="{{ route('instagram.index') }}"
                                     class="btn btn-light-primary font-weight-bolder px-5 py-2"><i
                                         class="fa fa-chevron-left"></i>

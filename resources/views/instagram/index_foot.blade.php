@@ -22,6 +22,20 @@
                 },
                 {
                     render: function(data, type, row) {
+                        var html = `<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
+														<a href="` + row.path + `">
+															<div class="symbol-label">
+																<img src="` + row.path + `" alt="Emma Smith" class="w-100">
+															</div>
+														</a>
+													</div>`;
+                        return html
+                    },
+                    orderable: false,
+                    searchable: false,
+                },
+                {
+                    render: function(data, type, row) {
                         var check = row.status == '1' ? 'checked' : '';
                         var stats = row.status == '1' ? false : true;
 

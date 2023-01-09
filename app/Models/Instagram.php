@@ -13,6 +13,7 @@ class Instagram extends Model
 
     protected $fillable = [
         'title',
+        'path',
         'status',
     ];
 }
