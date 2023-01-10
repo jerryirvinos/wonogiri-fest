@@ -21,6 +21,10 @@
                     data: "title"
                 },
                 {
+                    name: "link",
+                    data: "link"
+                },
+                {
                     render: function(data, type, row) {
                         var html = `<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
 														<a href="` + row.path + `">

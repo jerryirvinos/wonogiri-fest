@@ -94,6 +94,7 @@ class InstagramController extends Controller
 
             $instagram = Instagram::create([
                 'title' => ($request->input('title')),
+                'link' => ($request->input('link')),
                 'path' => $thumbnail,
                 'status' => true,
             ]);

@@ -24,6 +24,7 @@
                             <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
                                 <th>NO</th>
                                 <th>TITLE</th>
+                                <th>LINK</th>
                                 <th>THUMBNAIL</th>
                                 <th>STATUS</th>
                                 <th></th>

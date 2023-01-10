@@ -17,6 +17,7 @@ class CreateEmbedigTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('path');
+            $table->string('link');
             $table->boolean('status');
             $table->timestamps();
         });

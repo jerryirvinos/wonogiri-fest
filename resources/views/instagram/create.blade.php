@@ -24,10 +24,19 @@
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 mb-10 mb-lg-2">
                             <div class="mb-10">
-                                <label class="form-label fs-7 text-gray-700">Link Instagram</label>
+                                <label class="form-label fs-7 text-gray-700">Caption</label>
                                 <input type="text" class="form-control form-control-lg" name="title" value="">
                                 <small class="text-danger">
                                     @error('title')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
+                            </div>
+                            <div class="mb-10">
+                                <label class="form-label fs-7 text-gray-700">Link Instagram</label>
+                                <input type="text" class="form-control form-control-lg" name="link" value="">
+                                <small class="text-danger">
+                                    @error('link')
                                         {{ $message }}
                                     @enderror
                                 </small>
