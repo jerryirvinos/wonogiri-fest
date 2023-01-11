@@ -110,8 +110,21 @@
                         url_edit = url_edit.replace(':id', encodeURIComponent(window.btoa(row
                             .id)));
 
+                        var url_delete = "{{ route('verification.destroy', ':id') }}";
+                        url_delete = url_delete.replace(':id', encodeURIComponent(window.btoa(
+                            row
+                            .id)));
+
                         var html = `<div class="d-flex justify-content-center">
                                     <a href="` + url_edit + `" class="btn btn-icon btn-warning me-1" title=""><i class="fa-duotone fa-check-to-slot fs-lg"></i></a>
+                                    <a class="delete btn btn-danger btn-icon" title="Delete" 
+                                        data-name="` + row.name + `">
+                                            <i class="fal fa-trash-alt"></i>
+                                            <form method="post" action="` + url_delete + `">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                            </form>
+                                        </a>
                                     </div>`
                         return html
                     },

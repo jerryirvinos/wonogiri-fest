@@ -35,11 +35,12 @@ class VerificationController extends Controller
             $columnName = $columnName_arr[$columnIndex]['data']; // Column namearr);
             $columnSortOrder = $order_arr[0]['dir']; // asc or desc
             $searchValue = $search_arr['value']; // S
-            $totalRecords = DB::table('orders')->where('is_online', '=', '1')->where('payment_status', '=', '0')->count();
+            $totalRecords = DB::table('orders')->where('is_online', '=', '1')->where('payment_status', '=', '0')->whereNull('deleted_at')->count();
             $totalRecordswithFilter = DB::table('orders')
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('is_online', '=', '1')
                 ->where('payment_status', '=', '0')
+                ->whereNull('deleted_at')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -51,6 +52,7 @@ class VerificationController extends Controller
                 ->join('ticket_types', 'ticket_types.id', '=', 'orders.ticket_type')
                 ->where('is_online', '=', '1')
                 ->where('payment_status', '=', '0')
+                ->whereNull('deleted_at')
                 ->where(function ($query) use ($searchValue) {
                     $query->where('orders.ticket_code', 'like', '%' . $searchValue . '%')
                         ->orWhere('orders.name', 'like', '%' . $searchValue . '%');
@@ -183,6 +185,14 @@ class VerificationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {  
+            $id = base64_decode($id);
+            $order= Order::findOrFail($id);
+            $order->delete();
+
+            return redirect()->route('verification.index')->with('success', 'Berhasil Dihapus');
+        } catch (\Exception $e) {
+            return redirect()->route('verification.index')->with('warning', $e->getMessage());
+        }
     }
 }
