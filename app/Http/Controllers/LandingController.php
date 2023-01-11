@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instagram;
 use App\Models\Line_up;
 use App\Models\Merchandise;
 use App\Models\Ticket_type;
@@ -14,8 +15,9 @@ class LandingController extends Controller
         $tickets = Ticket_type::where('status',1)->get();
         $merchandises = Merchandise::where('status',1)->get();
         $lineups= Line_up::where('status',1)->orderBy('orders', 'ASC')->get();
+        $instagram= Instagram::where('status',1)->limit(3)->orderBy('created_at', 'DESC')->get();
         
-        return view('frontend.landing',compact('tickets','merchandises','lineups'));
+        return view('frontend.landing',compact('tickets','merchandises','lineups','instagram'));
     }
 
     public function lineuplist(){

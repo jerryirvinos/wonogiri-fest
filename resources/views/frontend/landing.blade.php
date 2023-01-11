@@ -35,6 +35,8 @@
 
     @include('frontend.home.merchandise')
 
+    @include('frontend.home.instagram')
+
     <section class="my-5 my-lg-10 bg-tagline">
         <div class="d-flex justify-content-center flex-wrap h-100">
             <img src="{{ asset('/assets/media/illustrations/tagline.png') }}" class="mh-auto w-100 mw-100 my-auto"

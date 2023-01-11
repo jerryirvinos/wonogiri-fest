@@ -49,7 +49,7 @@
                                     <div class="col-md-6 col-xl-6 col-sm-12">
                                         <div><label class="form-label fs-7 text-gray-700">Gambar Thumbnail</label></div>
                                         <div class="image-input image-input-empty" data-kt-image-input="true"
-                                            style="background-image: url({{ $lineup->path }})">
+                                            style="background-image: url({{ $instagram->path }})">
                                             <div class="image-input-wrapper w-125px h-125px"></div>
 
                                             <label

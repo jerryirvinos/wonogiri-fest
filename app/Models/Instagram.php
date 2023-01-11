@@ -14,6 +14,7 @@ class Instagram extends Model
     protected $fillable = [
         'title',
         'path',
+        'link',
         'status',
     ];
 }

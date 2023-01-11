@@ -139,7 +139,7 @@ class InstagramController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token', '_method', 'status');
+        $data = $request->except('_token', '_method', 'status','thumbnail_remove','thumbnail');
         if ($request->status) {
             $status = $request->only('status')['status'] == 'true' ? true : false;
             $data = array_merge(['status' => $status], $data);
