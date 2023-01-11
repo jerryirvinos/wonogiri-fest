@@ -82,6 +82,15 @@ class CheckoutController extends Controller
             return json_encode(['status' => $status, 'msg' => $msg]);
         }
 
+        for ($i = 0; $i < count($request->identity_number); $i++) {
+            $check = Visitor::where('identity_number', $request->identity_number[$i])->first();
+            if($check){
+                $status = false;
+                $msg = "NIK Pengunjung ".$request->identity_number[$i]." sudah terdaftar ";
+                return json_encode(['status' => $status, 'msg' => $msg]);
+            }
+        }
+
         try {
             $order = Order::create([
                 'uuid' => Uuid::uuid4()->toString(),

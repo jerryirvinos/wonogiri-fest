@@ -948,7 +948,20 @@
                                             customClass: {
                                                 confirmButton: "btn btn-primary"
                                             }
-                                        })
+                                        }).then(
+                                            (
+                                                result
+                                            ) => {
+
+
+                                                formSubmitButton.disabled = false;
+
+                                                // Show loading indication
+                                                formSubmitButton.setAttribute(
+                                                    'data-kt-indicator', 'off');
+
+                                            }
+                                        );
                                     }
                                 },
                                 error: function(
