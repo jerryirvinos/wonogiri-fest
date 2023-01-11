@@ -365,3 +365,18 @@ video[muted='true'] {
 .align-justify {
    text-align: justify !important;
 }
+
+.dd3-content {
+   border: none !important;
+   height: auto !important;
+}
+
+.dd3-handle:before {
+   content: '\f07d' !important;
+   font: var(--fa-font-solid);
+   margin-top: auto !important;
+   margin-bottom: auto !important;
+   height: 100% !important;
+   flex-wrap: wrap !important;
+   align-content: center !important;
+}

@@ -1,6 +1,6 @@
 <script>
     "use strict";
-    $(document).ready(function() {
+    $(document).ready(function () {
         nestable();
     });
 
@@ -13,17 +13,23 @@
             },
             timeout: 5000,
             dataType: "JSON",
-            success: function(data) {
+            success: function (data) {
                 console.log(data)
                 var output = '';
 
                 function buildItem(item) {
-                    var html = "<li class='dd-item dd3-item d-flex justify-content-between' data-id='" +
+                    var html =
+                        "<li class='dd-item dd3-item d-flex justify-content-between border rounded-2 my-3' data-id='" +
                         item.id + "'>";
-                    html += "<div class='dd-handle dd3-handle'></div>";
+                    html += "<div class='dd-handle dd3-handle h-100 my-auto'></div>";
 
-                    html += "<div class='dd3-content'>" + item.title + "</div>";
-                    html += `<div class='justify-content-end dd-nodrag px-3 d-flex my-auto'>`;
+                    html +=
+                        "<div class='dd3-content d-flex justify-content-start flex-wrap'><div class='symbol symbol-50px symbol-2by3'><img src='" +
+                        item.thumbnail + "'></div><div class='fs-4 fw-bolder text-gray-800 my-auto ms-3'>" +
+                        item.title +
+                        "</div></div></div>";
+                    html +=
+                        `<div class='d-flex justify-content-end dd-nodrag px-3 my-2'>`;
 
                     var checkis_release = item.is_release == '1' ? 'checked' : '';
                     var statsis_release = item.is_release == '1' ? false : true;
@@ -31,21 +37,24 @@
                     var url_update = "{{ route('lineup.update', ':id') }}";
                     url_update = url_update.replace(':id', item.id);
 
-                    html += `<div class="form-check form-check-info form-switch form-check-custom form-check-solid is_release mx-2" title="Apakah Rilis?">
-                            <input class="form-check-input" data-id="` + item.is_release +
+                    html += `<div class="form-check form-check-info form-switch form-check-custom form-check-solid is_release flex-column flex-wrap text-start mx-2" title="Apakah Rilis?">
+                                <label class="form-check-label fs-8 fw-semibold text-gray-500">Rilis :</label>
+                                <input class="form-check-input form-check-input-lg w-60px" data-id="` + item
+                        .is_release +
                         `" type="checkbox" id="flexSwitchChecked" ` + checkis_release + ` />
-                            <form method="post" action="` + url_update + `">
-                                {{ csrf_field() }}
-                                {{ method_field('put') }}
-                                <input type="hidden" name="is_release" value="` + statsis_release + `" />
-                            </form>
+                                    <form method="post" action="` + url_update + `">
+                                        {{ csrf_field() }}
+                                        {{ method_field('put') }}
+                                        <input type="hidden" name="is_release" value="` + statsis_release + `" />
+                                    </form>
                             </div>`;
 
                     var check = item.status == '1' ? 'checked' : '';
                     var stats = item.status == '1' ? false : true;
 
-                    html += `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status" title="Apakah Tampil?">
-                            <input class="form-check-input" data-id="` + item.status +
+                    html += `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status flex-column flex-wrap text-start mx-2" title="Apakah Tampil?">
+                        <label class="form-check-label fs-8 fw-semibold text-gray-500">Tampilkan :</label>
+                            <input class="form-check-input form-check-input-lg w-60px" data-id="` + item.status +
                         `" type="checkbox" id="flexSwitchChecked" ` + check + ` />
                             <form method="post" action="` + url_update + `">
                                 {{ csrf_field() }}
@@ -57,7 +66,11 @@
                     url_edit = url_edit.replace(':id', item.id);
 
                     html += `
-                    <a href="` + url_update + `"><span class="btn btn-primary btn-sm btn-icon rounded-sm mx-2" title="Edit Data"><i class="fal fa-edit"></i></span></a>
+                    <a href="` + url_update + `" class="my-auto">
+                        <span class="btn btn-warning btn-sm btn-icon rounded-sm p-6 mx-2" title="Edit Data">
+                            <i class="fa-duotone fa-pen-to-square fs-2"></i>
+                        </span>
+                    </a>
                     </div>`;
 
 
@@ -66,7 +79,7 @@
                         html += "<ol class='dd-list'>";
 
                         item.children.sort((a, b) => (a.order > b.order ? 1 : -1))
-                        $.each(item.children, function(index, sub) {
+                        $.each(item.children, function (index, sub) {
                             html += buildItem(sub);
                         });
                         html += "</ol>";
@@ -78,11 +91,11 @@
                     return html;
                 }
 
-                $.each(data, function(index, item) {
+                $.each(data, function (index, item) {
                     output += buildItem(item);
                 });
 
-                var updateOutput = function(e) {
+                var updateOutput = function (e) {
                     var list = e.length ? e : $(e.target),
                         output = list.data('output');
 
@@ -103,7 +116,7 @@
         });
     }
 
-    $('.exp').on('click', function(e) {
+    $('.exp').on('click', function (e) {
         var target = $(e.target),
             action = target.data('action');
 
@@ -121,7 +134,7 @@
         }
     });
 
-    $('.dd').on('click', '.status', function(e) {
+    $('.dd').on('click', '.status', function (e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -147,7 +160,7 @@
         })
     });
 
-    $('.dd').on('click', '.is_release', function(e) {
+    $('.dd').on('click', '.is_release', function (e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -173,7 +186,7 @@
         })
     });
 
-    $('.save').click(function(e) {
+    $('.save').click(function (e) {
         e.preventDefault();
 
         Swal.fire({
