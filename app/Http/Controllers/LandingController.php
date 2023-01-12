@@ -25,4 +25,10 @@ class LandingController extends Controller
         
         return view('frontend.detail_lineup',compact('lineups'));
     }
+
+    public function instagramlist(){
+        $instagram= Instagram::where('status',1)->orderBy('created_at', 'DESC')->get();
+        
+        return view('frontend.detail_instagram',compact('instagram'));
+    }
 }
