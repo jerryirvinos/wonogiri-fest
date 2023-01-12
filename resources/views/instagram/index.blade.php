@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <div class="card card-flush">
+    <div class="card card-flush shadow-sm">
         <div class="card-header pt-lg-5">
             <h3 class="card-title align-items-start flex-column">
                 <span class="card-label fs-2 fw-bolder text-gray-800">Instagram</span>
@@ -17,21 +17,17 @@
             </div>
         </div>
         <div class="card-body px-0 px-lg-3 px-0 px-lg-3">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
-                        <thead>
-                            <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
-                                <th>NO</th>
-                                <th>TITLE</th>
-                                <th>LINK</th>
-                                <th>THUMBNAIL</th>
-                                <th>STATUS</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_datatable">
+                    <thead>
+                        <tr class="fw-semibold fs-6 text-gray-800 border-bottom border-gray-200">
+                            <th class="w-50px">No</th>
+                            <th>Konten</th>
+                            <th class="w-150px">Status</th>
+                            <th class="w-50px"></th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

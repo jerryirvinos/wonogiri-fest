@@ -17,26 +17,17 @@
                     className: 'text-center'
                 },
                 {
-                    name: "title",
-                    data: "title"
-                },
-                {
-                    name: "link",
-                    data: "link"
-                },
-                {
                     render: function(data, type, row) {
-                        var html = `<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-														<a href="` + row.path + `">
-															<div class="symbol-label">
-																<img src="` + row.path + `" alt="Emma Smith" class="w-100">
-															</div>
-														</a>
-													</div>`;
+                        var html = `<div class="d-flex justify-content-start">
+                                        <div class="symbol symbol-50px me-4">
+                                            <img src="` + row.path + `">
+                                        </div>
+                                        <div class="d-flex justify-content-start align-items-start flex-column">
+                                            <div class="text-gray-800 fw-semibold">` + row.title + `</div>
+                                        </div>
+                                    </div>`;
                         return html
-                    },
-                    orderable: false,
-                    searchable: false,
+                    }
                 },
                 {
                     render: function(data, type, row) {
@@ -47,7 +38,7 @@
                         url_update = url_update.replace(':id', row.id);
 
                         var html = `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status">
-                            <input class="form-check-input" data-id="` + row.status +
+                            <input class="form-check-input form-check-input-lg w-60px" data-id="` + row.status +
                             `" type="checkbox" id="flexSwitchChecked" ` + check + ` />
                             <form method="post" action="` + url_update + `">
                                 {{ csrf_field() }}
@@ -66,7 +57,7 @@
                         url_edit = url_edit.replace(':id', row.id);
 
                         var html = `<div class="d-flex justify-content-center">
-                                    <a href="` + url_edit + `" class="edit btn btn-icon btn-warning me-2"><i class="fa-duotone fa-pen-to-square fs-lg"></i></a>
+                                    <a href="` + url_edit + `" class="edit btn btn-warning btn-sm btn-icon rounded-sm p-6 mx-2"><i class="fa-duotone fa-pen-to-square fs-2"></i></a>
                                     </div>`
                         return html
                     },

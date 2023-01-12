@@ -11,7 +11,7 @@
                 <span class="fs-6 fw-normal text-gray-400 mt-1">Modul untuk verifikasi hasil pembelian ticket online</span>
             </h3>
             <div class="card-toolbar">
-                <a href="{{ route('verification.index') }}" class="btn btn-active-light-danger">
+                <a href="{{ route('ticket.index') }}" class="btn btn-active-light-danger">
                     <span class="text-danger fw-bolder">Batal</span>
                 </a>
             </div>
