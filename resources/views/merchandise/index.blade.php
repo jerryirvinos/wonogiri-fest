@@ -25,8 +25,6 @@
                                 <th>NO</th>
                                 <th>CODE</th>
                                 <th>HARGA</th>
-                                <th>THUMBNAIL</th>
-                                <th>GAMBAR</th>
                                 <th>LINK</th>
                                 <th>STATUS</th>
                                 <th></th>

@@ -13,7 +13,6 @@
                         return meta.row + meta.settings._iDisplayStart + 1;
                     },
                     orderable: true,
-                    width: '4%',
                     className: 'text-center'
                 },
                 {
