@@ -379,4 +379,10 @@ video[muted='true'] {
    height: 100% !important;
    flex-wrap: wrap !important;
    align-content: center !important;
+   top: 50% !important;
+}
+
+.rounded-start-2 {
+   border-bottom-left-radius:0.95rem!important;
+   border-top-left-radius:0.95rem!important
 }

@@ -1,6 +1,6 @@
 <script>
     "use strict";
-    $(document).ready(function () {
+    $(document).ready(function() {
         nestable();
     });
 
@@ -13,23 +13,23 @@
             },
             timeout: 5000,
             dataType: "JSON",
-            success: function (data) {
+            success: function(data) {
                 console.log(data)
                 var output = '';
 
                 function buildItem(item) {
                     var html =
-                        "<li class='dd-item dd3-item d-flex justify-content-between border rounded-2 my-3' data-id='" +
+                        "<li class='dd-item dd3-item d-flex justify-content-between rounded-2 my-3 bg-white shadow-sm' data-id='" +
                         item.id + "'>";
-                    html += "<div class='dd-handle dd3-handle h-100 my-auto'></div>";
+                    html += "<div class='dd-handle dd3-handle h-100 my-auto rounded-start-2'></div>";
 
                     html +=
-                        "<div class='dd3-content d-flex justify-content-start flex-wrap'><div class='symbol symbol-50px symbol-2by3'><img src='" +
+                        "<div class='dd3-content d-flex justify-content-start flex-wrap flex-column flex-lg-row'><div class='symbol symbol-50px symbol-2by3'><img src='" +
                         item.thumbnail + "'></div><div class='fs-4 fw-bolder text-gray-800 my-auto ms-3'>" +
                         item.title +
                         "</div></div></div>";
                     html +=
-                        `<div class='d-flex justify-content-end dd-nodrag px-3 my-2'>`;
+                        `<div class='d-flex justify-content-end flex-wrap dd-nodrag px-3 my-2 flex-column flex-lg-row'>`;
 
                     var checkis_release = item.is_release == '1' ? 'checked' : '';
                     var statsis_release = item.is_release == '1' ? false : true;
@@ -37,7 +37,7 @@
                     var url_update = "{{ route('lineup.update', ':id') }}";
                     url_update = url_update.replace(':id', item.id);
 
-                    html += `<div class="form-check form-check-info form-switch form-check-custom form-check-solid is_release flex-column flex-wrap text-start mx-2" title="Apakah Rilis?">
+                    html += `<div class="form-check form-check-info form-switch form-check-custom form-check-solid is_release flex-column flex-wrap text-start mx-2 my-2 my-lg-0" title="Apakah Rilis?">
                                 <label class="form-check-label fs-8 fw-semibold text-gray-500">Rilis :</label>
                                 <input class="form-check-input form-check-input-lg w-60px" data-id="` + item
                         .is_release +
@@ -52,7 +52,7 @@
                     var check = item.status == '1' ? 'checked' : '';
                     var stats = item.status == '1' ? false : true;
 
-                    html += `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status flex-column flex-wrap text-start mx-2" title="Apakah Tampil?">
+                    html += `<div class="form-check form-check-success form-switch form-check-custom form-check-solid status flex-column flex-wrap text-start mx-2 my-2 my-lg-0" title="Apakah Tampil?">
                         <label class="form-check-label fs-8 fw-semibold text-gray-500">Tampilkan :</label>
                             <input class="form-check-input form-check-input-lg w-60px" data-id="` + item.status +
                         `" type="checkbox" id="flexSwitchChecked" ` + check + ` />
@@ -67,7 +67,7 @@
 
                     html += `
                     <a href="` + url_update + `" class="my-auto">
-                        <span class="btn btn-warning btn-sm btn-icon rounded-sm p-6 mx-2" title="Edit Data">
+                        <span class="btn btn-warning btn-sm btn-icon rounded-sm p-6 mx-2 my-2 my-lg-0" title="Edit Data">
                             <i class="fa-duotone fa-pen-to-square fs-2"></i>
                         </span>
                     </a>
@@ -76,10 +76,10 @@
 
 
                     if (item.children) {
-                        html += "<ol class='dd-list'>";
+                        html += "<ol class='dd-list p-3 p-lg-6 bg-light rounded-2'>";
 
                         item.children.sort((a, b) => (a.order > b.order ? 1 : -1))
-                        $.each(item.children, function (index, sub) {
+                        $.each(item.children, function(index, sub) {
                             html += buildItem(sub);
                         });
                         html += "</ol>";
@@ -91,11 +91,11 @@
                     return html;
                 }
 
-                $.each(data, function (index, item) {
+                $.each(data, function(index, item) {
                     output += buildItem(item);
                 });
 
-                var updateOutput = function (e) {
+                var updateOutput = function(e) {
                     var list = e.length ? e : $(e.target),
                         output = list.data('output');
 
@@ -116,7 +116,7 @@
         });
     }
 
-    $('.exp').on('click', function (e) {
+    $('.exp').on('click', function(e) {
         var target = $(e.target),
             action = target.data('action');
 
@@ -134,7 +134,7 @@
         }
     });
 
-    $('.dd').on('click', '.status', function (e) {
+    $('.dd').on('click', '.status', function(e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -160,7 +160,7 @@
         })
     });
 
-    $('.dd').on('click', '.is_release', function (e) {
+    $('.dd').on('click', '.is_release', function(e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -186,7 +186,7 @@
         })
     });
 
-    $('.save').click(function (e) {
+    $('.save').click(function(e) {
         e.preventDefault();
 
         Swal.fire({
