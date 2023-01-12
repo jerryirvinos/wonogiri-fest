@@ -20,7 +20,7 @@
                                 <div class="card bg-transparent h-100 py-0 py-lg-5 mx-auto {{ $ticket->is_release ? 'ticketClick' : '' }}"
                                     style="filter: grayscale(.95);">
                         @endif
-                        <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto"
+                        <div class="bgi-no-repeat bgi-size-contain bgi-position-center position-relative my-auto min-h-175px mw-100 h-auto px-5"
                             style="background-image: url('{{ asset('/assets/media/illustrations/tiket3.png') }}')">
                             <div class="card-body text-center">
                                 <div class="d-flex justify-content-start flex-column flex-wrap mb-5">
