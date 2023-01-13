@@ -1,7 +1,7 @@
 <script>
     "use strict";
 
-    $(function() {
+    $(function () {
         var table = $('#kt_datatable').DataTable({
             processing: true,
             serverSide: true,
@@ -9,17 +9,17 @@
             order: [1, 'asc'],
             ajax: "{{ route('merchandise.index') }}",
             columns: [{
-                    render: function(data, type, row, meta) {
+                    render: function (data, type, row, meta) {
                         return meta.row + meta.settings._iDisplayStart + 1;
                     },
                     orderable: true,
                     className: 'text-center'
                 },
                 {
-                    render: function(data, type, row) {
+                    render: function (data, type, row) {
                         var html = `<div class="d-flex justify-content-start">
                                         <div class="symbol symbol-50px me-4 border border-white border-4 shadow-sm bg-white">
-                                            <img src="` + row.link + `">
+                                            <img src="` + row.thumbnail + `">
                                         </div>
                                         <div class="d-flex justify-content-start align-items-start flex-column">
                                             <div class="text-gray-800 fw-semibold">` + row.code + `</div>
@@ -31,7 +31,7 @@
                 {
                     name: "price",
                     data: "price",
-                    render: function(data, type, row) {
+                    render: function (data, type, row) {
                         var html = `<div class="fs-4 text-gray-700 fw-bolder">
                                         ` + row.price + `
                                     </div>`;
@@ -43,7 +43,7 @@
                     data: "link"
                 },
                 {
-                    render: function(data, type, row) {
+                    render: function (data, type, row) {
                         var check = row.status == '1' ? 'checked' : '';
                         var stats = row.status == '1' ? false : true;
                         var url_update = "{{ route('merchandise.update', ':id') }}";
@@ -63,7 +63,7 @@
                     }
                 },
                 {
-                    render: function(data, type, row) {
+                    render: function (data, type, row) {
                         var url_edit = "{{ route('merchandise.edit', ':id') }}";
                         url_edit = url_edit.replace(':id', row.id);
 
@@ -78,11 +78,11 @@
             ]
         });
 
-        $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+        $(".alert").fadeTo(2000, 500).slideUp(500, function () {
             $(".alert").slideUp(500);
         });
 
-        $('#kt_datatable').on('click', '.status', function(e) {
+        $('#kt_datatable').on('click', '.status', function (e) {
             e.preventDefault();
             var id = $(this).children().data('id');
             console.log(id);

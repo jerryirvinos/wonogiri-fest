@@ -1,6 +1,6 @@
 <script>
     "use strict";
-    $(document).ready(function() {
+    $(document).ready(function () {
         nestable();
     });
 
@@ -13,7 +13,7 @@
             },
             timeout: 5000,
             dataType: "JSON",
-            success: function(data) {
+            success: function (data) {
                 console.log(data)
                 var output = '';
 
@@ -66,7 +66,7 @@
                     url_edit = url_edit.replace(':id', item.id);
 
                     html += `
-                    <a href="` + url_update + `" class="my-auto">
+                    <a href="` + url_edit + `" class="my-auto">
                         <span class="btn btn-warning btn-sm btn-icon rounded-sm p-6 mx-2 my-2 my-lg-0" title="Edit Data">
                             <i class="fa-duotone fa-pen-to-square fs-2"></i>
                         </span>
@@ -79,7 +79,7 @@
                         html += "<ol class='dd-list p-3 p-lg-6 bg-light rounded-2'>";
 
                         item.children.sort((a, b) => (a.order > b.order ? 1 : -1))
-                        $.each(item.children, function(index, sub) {
+                        $.each(item.children, function (index, sub) {
                             html += buildItem(sub);
                         });
                         html += "</ol>";
@@ -91,11 +91,11 @@
                     return html;
                 }
 
-                $.each(data, function(index, item) {
+                $.each(data, function (index, item) {
                     output += buildItem(item);
                 });
 
-                var updateOutput = function(e) {
+                var updateOutput = function (e) {
                     var list = e.length ? e : $(e.target),
                         output = list.data('output');
 
@@ -116,7 +116,7 @@
         });
     }
 
-    $('.exp').on('click', function(e) {
+    $('.exp').on('click', function (e) {
         var target = $(e.target),
             action = target.data('action');
 
@@ -134,7 +134,7 @@
         }
     });
 
-    $('.dd').on('click', '.status', function(e) {
+    $('.dd').on('click', '.status', function (e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -160,7 +160,7 @@
         })
     });
 
-    $('.dd').on('click', '.is_release', function(e) {
+    $('.dd').on('click', '.is_release', function (e) {
         e.preventDefault();
         var id = $(this).children().data('id');
         var status = '';
@@ -186,7 +186,7 @@
         })
     });
 
-    $('.save').click(function(e) {
+    $('.save').click(function (e) {
         e.preventDefault();
 
         Swal.fire({
